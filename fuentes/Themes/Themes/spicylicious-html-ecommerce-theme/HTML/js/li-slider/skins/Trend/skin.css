@@ -1,0 +1,205 @@
+@charset "utf-8";
+@import url('../li-slider.css'); 
+/* 
+		Skin name: Trend
+*/
+/* =========================== */	
+/*       Preloader Image       */	
+/* =========================== */	
+.li-banner {
+	/* PRELOADER image - JS hides the preloader automatically */
+	background: url(../images/preloader-circle5.gif) no-repeat center; 
+	}
+
+/* =========================== */	
+/*  PREVIOUS and NEXT Buttons  */	
+/* =========================== */	
+.li-banner .prev-btn {
+	top: 50%;
+	left: 0px;
+	width: 53px;
+	height: 217px;
+	margin-top: -108px!important;
+	background:url(images/next-arrow.png) bottom left no-repeat;
+	z-index:200;
+	}
+.li-banner .next-btn {
+	top: 50%;
+	right: 0px;
+	width: 53px;
+	height: 217px;
+	margin-top: -108px!important;
+	background:url(images/next-arrow.png) bottom right no-repeat;
+	z-index:200;
+	}
+
+/* onMouse Over Event  */		
+.li-banner .prev-btn:hover { 
+	background:url(images/next-arrow.png) top left no-repeat;
+	}
+.li-banner .next-btn:hover {
+	background:url(images/next-arrow.png) top right no-repeat;
+	}
+
+
+/* =========================== */	
+/*    PLAY and PAUSE Buttons   */	
+/* =========================== */	
+.li-banner .play-btn, .li-banner .pause-btn {
+	width: 47px;
+	height: 47px;
+	top: 50%;
+	left: 50%;
+	margin-top: -23px!important;
+	margin-left: -23px!important;
+	}
+
+.li-banner .play-btn { 
+	background-image: url(images/play.png);
+	}
+	
+.li-banner .pause-btn {
+	background-image: url(images/pause.png);
+	}
+	
+/* this controls the visual for onMouse Over event  */
+.li-banner .play-btn:hover, .li-banner .pause-btn:hover {
+	background-position: 0 -50px;
+	}
+	
+/* this controls the visual for onMouse click event  */
+.li-banner .play-btn:active, .li-banner .pause-btn:active {
+	top: 50%;
+	left: 50%;
+	margin-top: -22px!important;
+	margin-left: -22px!important;
+	}
+
+/* =========================== */	
+/*        MIDDLE Buttons       */	
+/* =========================== */	
+/* When you change the vertical position of this you need to change the Tooltip positions as well. Tooltip styles are below */
+.li-banner .nav-btns {
+	text-align: center;											/* HORIZONTAL position of all dots: left/center/right */
+	margin: 0px 0px -37px 0px!important;	/* VERTICAL dots position/shifting. Use bottom positive value to push them upward. Top value to push them downward. Negative values will reverse the effect */
+	padding: 0px 0px 0px 0px!important;	/* SPACING DOTS. If you use values for left/right you need to manually calculate the width (equal to the banner width minus the padding/margin */
+	bottom: 0px;													/* VERTICAL POSITION - General - "top" or "bottom". If you need the dots at the top/bottom change this rule to "top" or "bottom" and adjust the margin above */
+	right: 0;
+	width: 100%;
+	height: 20px;
+	}
+	
+/* Individual button properties */
+.li-banner .nav-btn {
+	width: 20px; /* DOTS WIDTH AND SPACING. Used for space between dots. If your image is 20px wide and you need 5px from both sides, use 30px. Do not use padding/margin, it will break IE7 */
+	height: 20px;
+	background-image: url(images/button.png);
+	margin: 0px 0px 0px 0px!important; /* VERTICAL DOTS alignement only if background is present for .nav-btns*/
+	}
+
+/* Hack for IE =< 7 for the lack of support for display:inline-block. This is partitial support for IE6 and below. In the next update the support for IE6 and below will be dropped */
+.li-banner .nav-btns, {
+	bottom: 0px;
+	}
+	
+.li-banner .nav-btn, {	
+	display:inline;
+	zoom:1;
+	}
+
+/* This controls the visual for onMouse Over event  */
+.li-banner .nav-btns .nav-btn:hover {
+	background-position: center -20px;
+	}
+	
+/* This controls the visual for onMouse click event  */
+.li-banner .nav-btns .nav-btn.current-slide {
+	background-position: center -40px;
+	}
+	
+
+/* =========================== */	
+/*        TIMERS Settings      */	
+/* =========================== */	
+/* Below are all styles for all timers. Change only the style for timer you used in the slider settings in HTML page */
+
+.li-banner .timer-vertical-right {
+	width: 5px;
+	background-color: #dbdbdb; /* You can combine color and background image if the background image is transparent PNG24 */
+	-moz-opacity:0.5;
+	-khtml-opacity: 0.5;
+  opacity: 0.5;
+	filter:alpha(opacity=50);
+}
+
+.li-banner .timer-vertical-left {
+	width: 5px;
+	background-color: #fff; /* You can combine color and background image if the background image is transparent PNG24 */
+	-moz-opacity:0.5;
+	-khtml-opacity: 0.5;
+  opacity: 0.5;
+	filter:alpha(opacity=50);
+}
+
+.li-banner .timer-horizontal-bottom { /* If you have horizontal bottom timer change here */
+	height: 5px; /* Height of the timer */
+	background-color: #000; /* You can combine color and background image if the background image is transparent PNG24 */
+	-moz-opacity:0.3;
+	-khtml-opacity: 0.3;
+  	opacity: 0.3;
+	filter:alpha(opacity=30);	
+				
+}
+
+.li-banner .timer-horizontal-top { /* If you have horizontal top timer change here */
+	height: 5px; /* Height of the timer */
+	background-color: #dbdbdb; /* You can combine color and background image if the background image is transparent PNG24 */
+	-moz-opacity:0.5;
+	-khtml-opacity: 0.5;
+  opacity: 0.5;
+	filter:alpha(opacity=50);
+}
+
+/* =========================== */	
+/*     TOOLTIP IMAGE/TEXT      */	
+/* =========================== */	
+/* The tooltip is the image preview when the mouse is over the small buttons. The size of it is controlled by Javascript
+   The tooltip is consist of one div tag and an image inside of it.
+   The only thing you can not change through CSS is the horizontal alignement. It is automatically calculate to center of the thumbnail */
+
+.li-banner .tooltip { /* Here you can set the vertical distance and an arrow (if you want to have one) */
+	bottom: -10px; /* change the vertical position. It is relative to .nav-btns class (it holds all small buttons). */
+	background-image: url(images/thumbnails-arrow.png); /* Thumbnail arrow */
+	margin: 0px 5px 0px -3px!important; /* Tooltip alignement. If your tooltip is shifted left or right adjust the negative value so the tooltip is centered */
+	background-repeat: no-repeat;
+	background-position: center bottom;
+	padding-bottom: 1px!important;
+}
+
+*:first-child+html .li-banner .tooltipi {padding-bottom: 5px!important;} /* Fix for IE7. If you change the thumbnail position (image only) you need to adjust it. */
+
+/* Tooltip with an image */
+.li-banner .tooltip img {
+	border: 5px solid #111!important;
+	-moz-border-radius: 5px;/* CSS3 round corners and shadow. Not available in IE7/8 */
+  -webkit-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  border-radius: 5px;
+
+}
+
+/* Tooltip with text */
+.li-banner .tooltip .tooltip-text {
+	font-family: Tahoma, Geneva, sans-serif!important;
+	font-size: 11px!important;
+	color: #404040;
+	letter-spacing: .1em;
+	background-color: #dbdbdb;
+	padding: 3px 3px 3px 3px!important;/* Tooltip alignement. If your tooltip is shifted left or right adjust the negative value so the tooltip is centered */
+	margin-bottom: 5px!important;
+	-moz-border-radius: 3px; /* CSS3 round corners and shadow. Not available in IE7/8 */
+  -webkit-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  border-radius: 3px;
+	display: block!important;
+}

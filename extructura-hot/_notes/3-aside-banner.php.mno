@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_AsideBan" value="name:id_banner;datatype:int,name:nom_banner;datatype:string,name:img_banner;datatype:string,name:url_banner;datatype:string,name:fechareg_banner;datatype:datetime,name:estado_banner;datatype:int,name:clicks_banners;datatype:int" />
+</info>

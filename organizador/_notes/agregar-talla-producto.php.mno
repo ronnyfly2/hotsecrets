@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_DefTallasProducto" value="name:id_talla;datatype:int,name:nom_talla;datatype:string,name:precio_talla;datatype:string" />
+</info>

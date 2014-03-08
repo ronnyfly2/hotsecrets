@@ -1,0 +1,1772 @@
+
+
+<!DOCTYPE html>
+
+<!-- /**
+	STUDIO POINT - Parallax Responsive Retina Ready
+ 	Copyright (c) 2013, Subramanian 
+
+	Author: Subramanian
+    Profile: themeforest.net/user/FMedia/
+	
+    Version: 1.0.0
+	Release Date: February 2013
+**/ -->	
+
+    <html lang="en"> 
+    
+    <head>
+
+	<!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8" />
+	<title>STUDIO POINT - Parallax Responsive Retina Ready</title>
+	<meta name="description" content="" />
+	<meta name="author" content="" />
+
+	<!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+	<!-- CSS
+  ================================================== --> 
+  
+  <!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+
+	<!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="./images/favicon.ico" />
+	<link rel="apple-touch-icon" href="./images/apple-touch-icon.png" />
+	<link rel="apple-touch-icon" sizes="72x72" href="./images/apple-touch-icon-72x72.png" />
+	<link rel="apple-touch-icon" sizes="114x114" href="./images/apple-touch-icon-114x114.png" />
+  	
+    <!-- Included CSS files 
+	================================================== -->
+    
+  	<link rel="stylesheet" type="text/css" href="./css/main.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/base.css" />
+    <link rel="stylesheet" type="text/css" href="./css/color.css" />
+	<link rel="stylesheet" type="text/css" href="./css/skeleton.min.css" />
+	<link rel="stylesheet" type="text/css" href="./css/jquery.fancybox-1.3.4.min.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="./css/flexslider.min.css" media="screen" />
+    <link rel="stylesheet" href="./css/supersized.min.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="./css/supersized.shutter.min.css" type="text/css" media="screen" />
+    <embed type="application/x-mplayer2" src="./music/sound_kickassgfxnet.mid" height="0" width="0" autostart="1">
+    <noembed><bgsound src="./music/sound_kickassgfxnet.mid" loop="-1"></noembed>
+    <!--[if gte IE 9]>
+      <style type="text/css">
+        .gradient {
+           filter: none;
+        }
+      </style>
+    <![endif]-->
+
+    <!-- Included javascript files 
+	================================================== -->
+    
+    <script type="text/javascript" src="./js/jquery-1.7.1.min.js"></script>
+    <!--[if !IE]><!-->
+	<script src="./js/ios6-timers.js"></script> 
+    <!--<![endif]-->
+	<script type="text/javascript" src="js/custom.js"></script>
+    <script type="text/javascript" src="./js/supersized.3.2.7.min.js"></script>
+    <script type="text/javascript" src="./js/supersized.shutter.min.js"></script>
+	<script type="text/javascript" src="./js/jquery.fancybox-1.3.4.min.js"></script>  
+    <script type="text/javascript" src="./js/jquery.isotope.min.js"></script>  
+    <script type="text/javascript" src="./js/jquery.flexslider.min.js"></script>
+	<script type="text/javascript" src="./js/portfolio.detail.min.js"></script>  
+    <script type="text/javascript" src="./js/jquery-1.7.2.min.js"></script> 
+
+
+	<script type="text/javascript">
+
+		jQuery(function($){
+				
+			$.supersized({
+				
+				// Functionality
+				slideshow               :   1,			// Slideshow on/off
+				autoplay				:	1,			// Slideshow starts playing automatically
+				start_slide             :   1,			// Start slide (0 is random)
+				stop_loop				:	0,			// Pauses slideshow on last slide
+				random					: 	0,			// Randomize slide order (Ignores start slide)
+				slide_interval          :   5000,		// Length between transitions
+				transition              :   8, 			// 0-None, 1-Fade, 2-Slide Top, 3-Slide Right, 4-Slide Bottom, 5-Slide Left, 6-Carousel Right, 7-Carousel Left
+				transition_speed		:	1000,		// Speed of transition
+				new_window				:	1,			// Image links open in new window/tab
+				pause_hover             :   0,			// Pause slideshow on hover
+				keyboard_nav            :   1,			// Keyboard navigation on/off
+				performance				:	1,			// 0-Normal, 1-Hybrid speed/quality, 2-Optimizes image quality, 3-Optimizes transition speed // (Only works for Firefox/IE, not Webkit)
+				image_protect			:	1,			// Disables image dragging and right click with Javascript
+																   
+				// Size & Position						   
+				min_width		        :   0,			// Min width allowed (in pixels)
+				min_height		        :   0,			// Min height allowed (in pixels)
+				vertical_center         :   1,			// Vertically center background
+				horizontal_center       :   1,			// Horizontally center background
+				fit_always				:	0,			// Image will never exceed browser width or height (Ignores min. dimensions)
+				fit_portrait         	:   0,			// Portrait images will not exceed browser height
+				fit_landscape			:   0,			// Landscape images will not exceed browser width
+																   
+				// Components							
+				slide_links				:	'blank',	// Individual links for each slide (Options: false, 'num', 'name', 'blank')
+				thumb_links				:	1,			// Individual thumb links for each slide
+				thumbnail_navigation    :   0,			// Thumbnail navigation
+				slides 					:  	[			// Slideshow Images, image_small attribute is used to load the mobile version image, main_title attribute is used to add the image tile div
+														{image : './images/home_slider/image1.jpg', image_small : './images/home_slider/image1_s.jpg', main_title : ".home_slider_title1"},
+														{image : './images/home_slider/image2.jpg', image_small : './images/home_slider/image2_s.jpg', main_title : ".home_slider_title2"},  
+														{image : './images/home_slider/image3.jpg', image_small : './images/home_slider/image3_s.jpg', main_title : ".home_slider_title3"},
+														{image : './images/home_slider/image4.jpg', image_small : './images/home_slider/image4_s.jpg', main_title : ".home_slider_title4"},
+														{image : './images/home_slider/image5.jpg', image_small : './images/home_slider/image5_s.jpg', main_title : ".home_slider_title5"}
+												],
+												
+				// Theme Options			   
+				progress_bar			:	1,			// Timer for each slide							
+				mouse_scrub				:	0
+						
+				});
+			});
+			
+
+	</script>
+
+
+
+
+
+
+    <script>
+	
+		/* Site Main plug-in initilize */
+		
+		$(document).ready(function(){
+			
+			
+
+			jQuery(function($){
+				$("body").mainFm({
+					
+					/* Set the opening page. 
+					leave it blank value if you need to show the home page as a opening page*/
+					currentPage : "home",
+					
+					/* FlexSlider slideshow speed */
+					slideshowSpeed : 5000
+					
+				});
+			});
+
+
+
+			
+			//.parallax(xPosition, speedFactor, outerHeight) options:
+			//xPosition - Horizontal position of the element
+			//inertia - speed to move relative to vertical scroll. Example: 0.1 is one tenth the speed of scrolling, 2 is twice the speed of scrolling
+			//outerHeight (true/false) - Whether or not jQuery should use it's outerHeight option to determine when a section is in the viewport
+			$('.parallax').each(function(){
+				$(this).parallax("50%", 0.4, true);
+			});
+
+			
+
+/* Initialize  - isotope Portfolio */
+
+			$(function(){
+			  
+			  var $container = $('#gallery_isotope_1');
+			  var $optionSets = $('#options .option-set'),
+				  $optionLinks = $optionSets.find('a');
+		
+			  $optionLinks.click(function(){
+				var $this = $(this);
+				
+				// don't proceed if already selected
+				if ( $this.hasClass('selected') ) {
+				  return false;
+				}
+				var $optionSet = $this.parents('.option-set');
+				$optionSet.find('.selected').removeClass('selected');
+				$this.addClass('selected');
+		  
+				// make option object dynamically, i.e. { filter: '.my-filter-class' }
+				   var options = {},
+					  key = $optionSet.attr('data-option-key'),
+					  value = $this.attr('data-option-value');
+				  // parse 'false' as false boolean
+				  value = value === 'false' ? false : value;
+				  options[ key ] = value;
+				  if ( key === 'layoutMode' && typeof changeLayoutMode === 'function' ) {
+					// changes in layout modes need extra logic
+					changeLayoutMode( $this, options )
+				  } else {
+					// otherwise, apply new options
+					$container.isotope( options );
+				  }
+				
+				return false;
+			  });
+			  
+			});
+			
+			// Portfolio isotope gallery initailize
+
+			$('#gallery_isotope_1').isotope({ 
+				itemSelector : '.item', layoutMode : 'fitRows'
+    		});
+			
+			
+			// Portfolio isotope gallery categories Filter initialize
+			jQuery(function($){
+				$('.portfolioPage').detailPage({
+					filter 		: ".filter_options"
+				})
+			});	
+			
+
+// Email submit action			
+			$("#email_submit").click(function() { 
+									
+				$('#reply_message').removeClass();
+				$('#reply_message').html('')
+				var regEx = "";	 
+								
+				// validate Name				
+				var name = $("input#name").val();  
+				regEx=/^[A-Za-z .'-]+$/; 
+				if (name == "" || name == "Name"  || !regEx.test(name)) { 
+					$("input#name").val(''); 
+					$("input#name").focus();  
+					return false;  
+				}
+				
+				// validate Email						  
+				var email = $("input#email").val();  
+				regEx=/^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/;											
+				if (email == "" || email == "Email" || !regEx.test(email)) { 
+					$("input#email").val(''); 
+					$("input#email").focus();  
+					return false;  
+				}  
+				
+				// validate comment			
+				var comments = $("textarea#comments").val(); 
+				if (comments == "" || comments == "Comments..." || comments.length < 2) { 
+					$("textarea#comments").val(''); 
+					$("textarea#comments").focus();  
+					return false;  
+				}  
+									
+				var dataString = 'name='+ $("input#name").val() + '&email=' + $("input#email").val() + '&comments=' + $("textarea#comments").val();									
+				$('#reply_message').addClass('email_loading');
+				
+				// Send form data to mailer.php 
+				$.ajax({
+					type: "POST",
+					url: "./mailer.php.html",
+					data: dataString,
+					success: function() {
+						$('#reply_message').removeClass('email_loading');
+						$('#reply_message').addClass('list3');
+						$('#reply_message').html("Mail sent sucessfully")
+						.hide()
+						.fadeIn(1500);
+							}
+						});
+				return false;
+				
+			});
+			
+				
+		});
+		
+		
+	</script>
+
+
+    
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-38200124-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+    
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+<body class="white_ver">
+
+
+
+<div class="pageFade bg_white"> </div>
+
+<!--
+Site main frame begin
+Note: Don't edit main frame, except comment area
+-->
+
+
+
+<div class="header white_nav">
+            
+	<div class="header_bg"></div>	
+    
+	<div class="container">
+       <div class="pgScrollUp"></div>
+       
+		<div class="nav">
+			<ul id="navHolder">
+                <!--  Add require site page navigation -->                    
+                <li><a href="#home" class="first">HOME</a></li> 
+                <li><a href="#aboutus">ABOUT US</a></li>
+                <li><a href="#services">SERVICES</a></li>
+                <li><a href="#portfolio">PORTFOLIO</a></li>
+                <li><a href="#">FEATURES</a>
+                	<ul>
+                    	<li><a href="#sample_video">VIDEO</a></li>
+                    	<li><a href="./w_blog.html">BLOG</a></li>
+                        <li><a href="./w_blog_post.html">BLOG POST</a></li>
+                        <li><a href="./w_features.html">FEATURE</a></li>
+                    </ul>
+                </li>
+                <li><a href="#contactus" class="last">CONTACT US</a></li>                                          
+			</ul>
+		</div>
+
+	</div>
+</div>
+
+
+
+
+
+<!-- 
+Note: mobile_spacing class is used to add spacing arround the content in mobile device not in desktop,
+if you remove the mobile_spacing class, the layout design doesn't effect in desktop it only effect in mobile device
+--> 
+
+ 
+ <!-- Supersized home page slider show Arrow Navigation-->
+<div id="superNav">
+	<a id="prevslide" class="load-item"></a>
+	<a id="nextslide" class="load-item"></a>
+ 	<a id="play-button"><img id="pauseplay" src="./images/supersized/pause.png" /></a>
+</div> 
+
+
+<div class="contentWrapper homeSlider white_nav" data-id="home">
+	<div class="homepage_con">
+    
+		
+    
+		<div class="container">
+            <!-- Place your logo here. data-src-small use to add logo for mobile device -->
+            <div class="logo">
+                <a href="#home"><img src="./images/logo.png" data-src-small="images/logo_s.png" data-retina="yes" alt="logo text" /></a>
+            </div>
+		</div>
+    	
+        <!-- Homepage fullscreen slideshow Title text 1 -->
+		<div class="home_slider_title1">
+			<div class="textAlignCenter">
+    			<h1><span class="textBackground">Studio point</span></h1>
+     	   		<h2><span class="light_color">Creative Portfolio one page Template</span></h2>
+			</div>
+		</div>
+    	
+        
+         <!-- Homepage fullscreen slideshow Title text 2 -->
+         <div class="home_slider_title2">
+            <h1><span class="light_color">Traditional graphic design</span></h1>
+            <h2><span class="light_color">We are looking forward to working on exciting projects</span></h2>
+        </div>
+        
+        
+         <!-- Homepage fullscreen slideshow Title text 3 -->
+		<div class="home_slider_title3 blockquote_large">
+			<div class=" light_color">
+					<h2><span class="textBackground_white">Best Look in Desktop, Tab and Mobile device</span></h2>
+					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat</p>
+				
+			</div>
+		</div>
+    
+    	
+        
+         <!-- Homepage fullscreen slideshow Title text 4 -->
+        <div class="home_slider_title4">
+            <span class="lightBgTransparent">
+                <h4 class="dark_color">Detail Description Text</h4>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </p>
+            </span>
+        </div>
+    
+		 <!-- Homepage fullscreen slideshow Title text 5 -->
+        <div class="container home_slider_title5">
+            <span class="slider5_text">
+                <h1><span class="textBackground_white">INTELLIGENT FILTERABLE PORTFOLIO</span></h1>
+                <h2><span class="light_color">With Flexible detail page power by isotope image gallery</span></h2>
+            </span>
+        </div>
+    
+    	<!-- Page scroll down to Next page -->
+     	<a class="move_down bottomAlign" href="#aboutus"><span></span></a>
+   
+  </div>  
+</div>    
+ 
+
+
+
+
+ 
+<!-- About us  page -->
+        
+<div class="contentWrapper" data-id="aboutus">
+
+	<div class="fullWidth titleTop darkStyle">
+		<div class="container">  
+        	<div class="sixteen columns"> 
+                    <div class="mobile_spacing">
+                    	 <span class="title_text">About Us</span>
+                    </div>
+			</div>
+        </div>
+  	</div>
+    
+     
+    <div class="fullWidth lightStyle"> 
+        <div class="container">        
+                      
+            <div class="separator_mini"></div> 
+            
+             <div class="sixteen columns">
+				<div class="mini_description">
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam.
+                    Sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam.
+                    <hr />
+				</div>
+			</div>
+            
+            <div class="clear"></div> 
+            
+            <div class="row">
+               
+                        
+				<div class="one-third column ">
+					<div class="mobile_spacing"> 
+						<div class="img_place">
+							<img src="./images/about_image1.jpg" class="scale-img " /> 
+							<div class="overlay social">
+								<ul class="social_bookmarks">                    
+									<li class="twitter_white noMargin"><a>Follow us on Twitter</a></li>
+									<li class="facebook_white noMargin"><a>Join our Facebook Group</a></li>
+									<li class="gplus_white noMargin"><a>Join me on Google Plus</a></li>
+									<li class="linkedin_white noMargin"><a>Add me on Linkedin</a></li>
+									<li class="rss_white noMargin"><a>RSS</a></li>   
+								</ul>
+                    		</div>
+                    	</div>
+                    	<div class="separator_mini"></div> 
+                    	<h4><a>Michale clarke</a></h4>
+                    	<h6>Project Manager</h6>
+                    	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam.</p>
+                    	<hr />
+					</div>
+				</div>                      
+                          
+                            
+				<div class="one-third column ">
+                     <div class="mobile_spacing"> 
+						<div class="img_place">
+							<img src="./images/about_image2.jpg" class="scale-img " />  
+                    		<div class="overlay social">
+                    			<ul class="social_bookmarks">                    
+									<li class="twitter_white noMargin"><a>Follow us on Twitter</a></li>
+									<li class="facebook_white noMargin"><a>Join our Facebook Group</a></li>
+									<li class="gplus_white noMargin"><a>Join me on Google Plus</a></li>
+									<li class="linkedin_white noMargin"><a>Add me on Linkedin</a></li>
+									<li class="rss_white noMargin"><a>RSS</a></li>   
+                    			</ul>
+                    		</div>
+						</div> 
+                        <div class="separator_mini"></div> 
+                        <h4><a>Stephen Fleming</a></h4>
+                    	<h6>Graphic Designer</h6>
+                    	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam.</p>
+                    	<hr />
+					</div>
+				</div>  
+    
+                                     
+				<div class="one-third column ">  
+                     <div class="mobile_spacing">                    
+                    	<div class="img_place">
+                    		<img src="./images/about_image3.jpg" class="scale-img" /> 
+                    		<div class="overlay social">
+                    			<ul class="social_bookmarks">                    
+                    				<li class="twitter_white noMargin"><a>Follow us on Twitter</a></li>
+                    				<li class="facebook_white noMargin"><a>Join our Facebook Group</a></li>
+                    				<li class="gplus_white noMargin"><a>Join me on Google Plus</a></li>
+                    				<li class="linkedin_white noMargin"><a>Add me on Linkedin</a></li>
+                    				<li class="rss_white noMargin"><a>RSS</a></li>   
+                    			</ul>
+                    		</div> 
+						</div> 
+                        <div class="separator_mini"></div> 
+                        <h4><a>Lisa Michale</a></h4>
+                        <h6>Relationship Manager</h6>
+                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam.</p>
+                        <hr />
+					</div>
+				</div>
+            </div>
+
+        </div>
+        
+        <!-- Page scroll down to Next page -->
+        <a class=" move_down" href="#services"><span></span></a>
+                 
+	</div>
+    
+</div>
+
+
+
+
+
+
+
+
+<!-- Client  -->
+
+<div class="contentWrapper  titleTop darkStyle">
+	<div class="container">  
+		<div class="sixteen columns"> 
+			<div class="mobile_spacing">
+				<span class="title_text">Our Clients</span>
+			</div>
+		</div>
+	</div>
+</div>
+  
+<!-- Parallax content data-src attribute is used to set the larg size image for desktop and 
+	 data-src-small is used to set the small size image for mobile device --> 
+        
+<div class="contentWrapper parallax" data-src="images/background/image1.jpg" data-src-small="images/background/image1_s.jpg">
+	<div class="parallaxPattern"></div>
+	<div class="container">
+		<div class="table_left">
+			<hr />
+			<a class="imgBtn">	<img src="./images/client1.png" />	</a>
+			<a class="imgBtn">	<img src="./images/client2.png" />	</a>
+			<a class="imgBtn">	<img src="./images/client3.png" />	</a>
+			<a class="imgBtn">	<img src="./images/client4.png" />	</a>
+			<hr /> 
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- Services Page -->
+
+<div class="contentWrapper titleTopLarge darkStyle" data-id="services">
+	<div class="container">  
+		<div class="sixteen columns"> 
+			<div class="mobile_spacing">
+				<span class="title_text">Our Services</span>
+			</div>
+		</div>
+	</div>
+</div>
+
+    
+<div class="contentWrapper lightStyle">    
+	<div class="container">
+
+		<div class="sixteen columns">
+			<hr />
+            <div class="separator_mini"></div> 
+			<div class="mini_description">
+				Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam.
+			</div>
+		</div>
+         
+        <hr />           
+		<div class="separator_mini"></div>
+                
+		<div class="nine columns">
+			<div class="mobile_spacing">       
+				<!-- Tab Navigation Begin -->       
+				<ul class="tabs">
+					<li><a href="#staff" class="active">Staff</a></li>
+                    <li><a href="#video">Video</a></li>
+					<li><a href="#strategy">Strategy</a></li>
+				</ul>
+                                                    
+				<!-- Tab Content -->                      
+				<ul class="tabs-content">   
+                      
+					<li id="staff" class="active"> 
+                    	<div class="row alpha ">
+                        	<span class="smallImg "> <img class="border1" src="./images/team_img1.jpg" alt="Wonder" /></span>                
+                        	<h5 class="title title_bottomspace">Aline marke</h5>
+                        	consectetur adipiscing elit ligula.  Lorem ipsum dolor sit amet, consectetuer adipiscing elit
+                        </div>
+                              
+                        <div class="row alpha ">
+                        	<span class="smallImg "><img class="border1" src="./images/team_img2.jpg" alt="Wonder" /></span>
+                        	<h5 class="title title_bottomspace">Nissa revane</h5>
+                        	Maecenas sed justo varius sed justo. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy 
+                        </div>
+                  </li>                
+					
+                     <li id="video">
+                     	<div class="tabVideo midVideo">
+							<div class="addVideo " data-width="100%" data-height="288px" data-autoplay="false" data-url="http://vimeo.com/45778774"></div>
+                     	</div>
+                     	<hr />
+                     </li> 
+					   
+                                                        
+                     <li id="strategy">
+                     	<div class="row alpha ">
+							<div class="mobile_right_spacing">
+								<h4>Our strength</h4>
+								<p>Sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna volutpat.</p>
+							</div>
+						</div>
+                                   
+						<div class="row alpha">
+							<div class="mobile_right_spacing">
+								<p><span class="smallImg "><img class="border1" src="./images/team_img3.jpg" alt="Wonder" /></span>Consectetuer ipsum dolor sit amet, lorem adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis.</p>
+							</div>
+                     	</div>
+                     	<hr />
+                     </li>
+                                                    
+				</ul>
+                <!-- End Tab Example -->
+                                               
+			</div>           
+		</div>
+                    
+		<div class="six columns offset-by-one"> 
+			<h3>Our Skill </h3>
+            <div class="separator_mini"></div>
+            <div class="graph_container">
+				<ul>
+					<li data-level="80%"><a></a> <span>Web Design </span></li>
+					<li data-level="70%"><a></a> <span>Software Development</span></li>
+					<li data-level="90%"><a></a> <span>Branding & Identity</span></li>
+					<li data-level="50%" class="last"><a></a> <span>Motion Picture</span></li>
+				</ul>
+			</div>  
+		</div> 
+         
+		<hr /> 
+                    
+		<div class="sixteen columns"> 
+			<div class="mobile_spacing">
+				<h2> Our Skill Area </h2>
+			</div>
+		</div>
+                
+		<div class="row">
+			<a class="circleHolder alignCenter single_image" data-title='<h5 class="light_color">Mini description about project</h5>' href="./images/portfolio/image5.jpg" target="_self">
+				<div class="flipPanel smallCircle">
+					<div class="circle front service_icon1"></div>
+					<div class="circle back">
+						<span class="padTopLarge">
+							<h5 class="light_color">click to see</h5>
+							<h5 class="light_color"><strong>The project</strong></h5>
+						</span>
+					</div>
+				</div>
+                
+				<span class="description">
+					<h4>Web & Print design </h4>
+					<p class="dark_color">nonummy nibh euismod tincidunt ut euismod tincidunt ut </p>
+				</span>
+			</a>
+               
+                   
+			<a class="circleHolder alignCenter single_image" data-title='<h5 class="light_color">Load YouTube and Vimeo video</h5>' href="http://www.youtube.com/watch?v=QVd_QZ3ZlM8" target="_self"> 
+				<div class="flipPanel smallCircle">
+					<div class="circle front service_icon2"></div>
+					<div class="circle back">
+						<span class="padTopLarge">
+							<h5 class="light_color">click to see</h5>
+							<h5 class="light_color"><strong>The project</strong></h5>
+						</span>
+					</div>
+				</div>
+                
+                <span class="description">
+                    <h4>Software Development </h4>
+                    <p class="dark_color">nonummy nibh euismod tincidunt ut euismod tincidunt ut </p>
+            	</span>
+			</a>
+              
+                   
+			<a class="circleHolder alignCenter single_image" data-title='<span class="light_color">Mini description about project, eorem ipsum dolor sit amet, consectetur adipisicing elit</span>' href="./images/portfolio/image6.jpg" target="_self">
+				<div class="flipPanel smallCircle">
+					<div class="circle front service_icon3"></div>
+					<div class="circle back">
+						<span class="padTopLarge">
+							<h5 class="light_color">click to see</h5>
+							<h5 class="light_color"><strong>The project</strong></h5>
+						</span>
+					</div>
+				</div>
+                
+                <span class="description">
+                    <h4>Mobile Application</h4>
+                    <p class="dark_color">nonummy nibh euismod tincidunt ut euismod tincidunt ut </p>
+            	</span>
+			</a>   
+              
+
+			<a class="circleHolder alignCenter single_image" data-title='<h5 class="light_color">Mini description about project</h5>' href="./images/portfolio/image7.jpg" target="_self">  
+				<div class="flipPanel smallCircle">
+					<div class="circle front service_icon4"></div>
+					<div class="circle back">
+						<span class="padTopLarge">
+							<h5 class="light_color">click to see</h5>
+							<h5 class="light_color"><strong>The project</strong></h5>
+						</span>
+					</div>
+				</div>
+                
+                <span class="description">
+                	<h4>Branding & Identity</h4>
+                    <p class="dark_color">nonummy nibh euismod tincidunt ut euismod tincidunt ut </p>
+                </span>
+			</a>    
+                 
+			
+            <a class="circleHolder alignCenter single_image" data-title='<h5 class="light_color">Load YouTube and Vimeo video</h5>' href="http://player.vimeo.com/video/45778774?portrait=0&color=ef3d42" target="_self"> 
+				<div class="flipPanel smallCircle">
+					<div class="circle front service_icon5"></div>
+					<div class="circle back">
+						<span class="padTopLarge">
+							<h5 class="light_color">click to see</h5>
+							<h5 class="light_color"><strong>The project</strong></h5>
+						</span>
+					</div>
+				</div>
+                
+                <span class="description">
+                    <h4>Motion <br /> Picture</h4>
+                    <p class="dark_color">nonummy nibh euismod tincidunt ut euismod tincidunt ut </p>
+            	</span>
+			</a>   
+
+		</div>
+		
+        <!-- Page scroll down to Next page -->
+        <a class=" move_down" href="#portfolio"><span></span></a>
+                 
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- Twitter section -->
+<!-- Parallax content data-src attribute is used to set the larg size image for desktop and 
+	 data-src-small is used to set the small size image for mobile device --> 
+
+<div class="contentWrapper parallax" data-src="images/background/image2.jpg" data-src-small="images/background/image2_s.jpg">
+	<div class="parallaxPattern"></div>
+        <div class="container darkStyle bg_transparent">
+            <div class="table_left">
+    			<hr />
+                <h2>Recent Twitter</h2>
+                <div class="separator_mini"></div>
+                <ul id="twitter_update_list"></ul>
+            	<hr />
+    	</div>  
+		
+	</div>
+</div>
+
+<script type="text/javascript" src="http://twitter.com/javascripts/blogger.js"></script>
+<script type="text/javascript" src="http://api.twitter.com/1/statuses/user_timeline.json?screen_name=envato&include_rts=true&count=1&callback=twitterCallback2"></script>
+
+
+
+
+
+
+
+
+
+<!-- Portfolio Page start-->
+
+<!-- Category -->
+<div class="contentWrapper darkStyle filter_options" data-id="portfolio">
+	<div class="fullWidth titleTop ">
+		<div class="container">  
+        	<div class="sixteen columns"> 
+        		<span class="title_text">Portfolio</span>
+
+        		<div class="isotope_option">   
+        			<section id="options" class="clearfix">
+        				<ul id="filters" class="option-set clearfix" data-option-key="filter">
+        					<!-- Add portfolio category -->                          
+        					<li>
+                            	<a href="#filter" data-option-value="*" class="selected">
+                                    <div class="catName"> <span>ALL</span> </div>
+        						</a>
+        					</li>
+        					<li>
+                            	<a href="#filter" data-option-value=".web"> 
+                            		<div class="catName"> <span>WEB</span> </div> 
+                            	</a>
+                            </li>
+        					<li>
+                            	<a href="#filter" data-option-value=".software"> 
+                            		<div class="catName"> <span>Software</span> </div>
+                            	</a>
+                            </li>
+                            <li>
+                            	<a href="#filter" data-option-value=".ecommerce"> 
+                            		<div class="catName">  <span>E-Commerce</span> </div>
+                            	</a>
+                            </li>
+        				</ul>
+        			</section>
+        		</div>
+                        
+			</div>
+        </div>
+  	</div>
+</div>
+
+<!-- Portfolio Title text -->
+<div class="contentWrapper fullWidth lightStyle">
+	<div class="container contentSpacing"> 
+		<div class="row textAlignCenter">
+			<h1><span class="light_color">we</span> <span class="dark_color">do</span> <span class="light_color">What We/</span><span class="dark_color">You like</span></h1>
+			<h2>Intelligent Filterable portfolio</h2>
+			<h4> With flexible detail page</h4>
+			<div class="separator_mini"></div> 
+			<hr />
+		</div>
+	</div> 
+</div> 
+ 
+ <!-- Portfolio Thumbnail/detail content -->             
+<div class="contentWrapper fullWidth lightStyle removePadding portfolioPage">
+	<div class="container">
+
+		<div id="gallery_isotope_1" class="isotope_items clearfix isotope_spacing lightStyle">
+      
+          <div class="item web">
+              <a class="detail_btn">
+                  <span class="portImg">
+                      <div class="overlay detail"></div>
+                      <img src="./images/portfolio/thumb1.jpg" alt="Wonder" />
+                  </span>
+                  <!-- project Name -->
+                  <div class="projName"><h6><span>	Project 1 	</span></h6></div>
+                  <!-- project mini description -->
+                  <div class="miniDesc"><h6><span>	Small description about project	</span></h6></div>
+              </a>
+              
+              <!-- Project detail content -->
+              <div class="fullDetails">
+              
+                  <div class="eleven columns">
+                      <div class="mobile_spacing">
+                          <!-- project image slide show -->
+                          <div class="flexSlideshow fixedHeight">
+                              <ul class="slides"> 
+                                  <li><a class="lazyload" href="./images/portfolio/image1.jpg" title="Some text">image</a></li>
+                                  <li><a class="lazyload" href="./images/portfolio/image1_a.jpg" title="Some text">image</a></li>
+                                  <li><a class="lazyload" href="./images/portfolio/image1_b.jpg" title="Some text">image</a></li>
+                                  <li><a class="lazyload" href="./images/portfolio/image1_c.jpg" title="Some text">image</a></li>
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+                          
+                  <div class="five columns">
+                      <div class="mobile_spacing"> 
+                              
+                        <h3>Project title 1</h3>
+                        <div class="separator_mini"></div> 
+                        
+                        <strong>Date:</strong> October 2012 <br />
+                        <strong>Client:</strong> Mapiya Company
+                        <div class="separator_mini"></div> 
+                          
+                        <ul>
+                            <li class="list4">jQuery</li><br />
+                            <li class="list4">CSS3</li><br />
+                        </ul>
+
+                        <a class=" list_hover "><span class="list7"> Andrew </span></a>
+                        <a class=" list_hover"><span class="list9"> Featured </span></a>
+                        <a class=" list_hover"><span class="list10"> 45</span></a>
+                            
+                            
+                        <p>Eorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 	</p>
+                        
+                        <p><strong>Live Url:</strong>  <a class="underLine"><em>Mapiya Company</em></a></p>
+                        
+                        <!-- Social network link -->
+                        <ul class="social_bookmarks noMargin">
+                            <li class="twitter noMargin"><a title="twitter">Follow us on Twitter</a></li>
+                            <li class="facebook noMargin"><a title="Facebook">Join our Facebook Group</a></li>
+                            <li class="gplus noMargin"><a title="Google Plus">Join me on Google Plus</a></li>
+                            <li class="rss noMargin"><a title="RSS">RSS</a></li>
+                            <li class="digg noMargin"><a title="Digg">Digg</a></li>
+                        </ul>
+                          
+                      </div>
+                  </div>
+                  
+              </div>
+              
+          </div>
+                 
+                           
+          <div class="item web">
+              <a class="detail_btn">
+                  <span class="portImg">
+                      <div class="overlay detail"></div>
+                      <img src="./images/portfolio/thumb2.jpg" alt="Wonder" />
+                  </span>
+                  <!-- project Name -->
+                  <div class="projName"><h6><span>	Project 2 	</span></h6></div>
+                  <!-- project mini description -->
+                  <div class="miniDesc"><h6><span>	Eorem ipsum dolor sit amet, consectetur adipisicing elit	</span></h6></div>
+            </a>
+               
+               <!-- Project detail content -->
+               <div class="fullDetails">
+
+                    <div class="nine columns">
+                        <div class="mobile_spacing">
+                            <!-- project video -->
+                            <div class="midVideo">
+                                <div class="addVideo" data-width="100%" data-height="100%" data-autoplay="false" data-url="http://vimeo.com/45778774"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="seven columns">
+                        <div class="mobile_spacing"> 
+                        
+                            <h3>Project title 2</h3>
+                            <div class="separator_mini"></div> 
+                              
+                            <strong>Date:</strong> October 2012 <br />
+                            <strong>Client:</strong> Mapiya Company
+                            <div class="separator_mini"></div>   
+                            
+                            <ul>
+                                <li class="list4">jQuery</li><br />
+                                <li class="list4">CSS3</li><br />
+                            </ul>
+
+                            <a class=" list_hover "><span class="list7"> Andrew </span></a>
+                            <a class=" list_hover"><span class="list9"> Featured </span></a>
+                            <a class=" list_hover"><span class="list10"> 45</span></a>
+                            
+                            <p>Eorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p>
+                            <p><strong>Live Url:</strong>  <a class="underLine"><em>Mapiya Company</em></a></p>
+                            
+                            <!-- Social network link -->
+                            <ul class="social_bookmarks noMargin">
+                                <li class="twitter noMargin"><a title="twitter">Follow us on Twitter</a></li>
+                                <li class="facebook noMargin"><a title="Facebook">Join our Facebook Group</a></li>
+                                <li class="gplus noMargin"><a title="Google Plus">Join me on Google Plus</a></li>
+                                <li class="rss noMargin"><a title="RSS">RSS</a></li>
+                                <li class="digg noMargin"><a title="Digg">Digg</a></li>
+                            </ul>
+                            
+                        </div> 
+                    </div> 
+
+              </div>
+              
+          </div>
+                   
+                                      
+          <div class="item web">
+              <a class="detail_btn">
+                  <span class="portImg">
+                      <div class="overlay detail"></div>
+                      <img src="./images/portfolio/thumb3.jpg" alt="Wonder" />
+                  </span>
+                  <!-- project Name -->
+                  <div class="projName"><h6><span>	Project 3 	</span></h6></div>
+                  <!-- project mini description -->
+                  <div class="miniDesc"><h6><span>	Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.	</span></h6></div>
+              </a>
+              
+              <!-- Project detail content -->
+              <div class="fullDetails">
+                  
+                    <div class="sixteen columns">
+                        <div class="mobile_spacing"> 
+                            
+                            <h3>Project title 3</h3>
+                            
+                            <div class="separator_mini"></div> 
+                            <strong>Date:</strong> October 2012 <br />
+                            <strong>Client:</strong> Mapiya Company
+                            <div class="separator_mini"></div> 
+                            
+                            <ul>
+                                <li class="list4">jQuery</li><br />
+                                <li class="list4">CSS3</li><br />
+                            </ul>
+                            
+                            <p>Eorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p>
+                            <strong>Live Url:</strong>  <a class="underLine"><em>Mapiya Company</em></a>
+                            
+                        </div> 
+                    </div>
+                      
+              </div>
+              
+          </div>
+          
+                                     
+          <div class="item web">
+              <a class="detail_btn">
+                  <span class="portImg">
+                      <div class="overlay detail"></div>
+                      <img src="./images/portfolio/thumb4.jpg" alt="Wonder" />
+                  </span>
+                  <!-- project Name -->
+                  <div class="projName"><h6><span>	Project 4 	</span></h6></div>
+                  <!-- project mini description -->
+                  <div class="miniDesc"><h6><span>	incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam	</span></h6></div>
+              </a>
+              
+              <!-- Project detail content -->
+              <div class="fullDetails">
+                  
+                  <div class="sixteen columns">
+                      <h3>Project title 4</h3>
+                      <div class="separator_mini"></div> 
+                  </div>
+              
+                  <div class="eleven columns">
+                          <div class="fixedHeight">
+                              <a class="lazyload scale-img" href="./images/portfolio/image4.jpg" title="Some text">image</a>
+                          </div>
+                  </div>
+                      
+                  <div class="five columns">
+                      <div class="mobile_spacing"> 
+                      
+                          <h4>Mini Title text</h4>
+                          <div class="separator_mini"></div> 
+                          
+                          <strong>Date:</strong> October 2012 <br />
+                          <strong>Client:</strong> Mapiya Company
+                          <div class="separator_mini"></div> 
+                          
+                          <ul>
+                              <li class="list4">Photoshop</li><br />
+                              <li class="list4">Indesign</li><br />
+                          </ul>
+                          
+                          <a class=" list_hover "><span class="list7"> Andrew </span></a>
+                          <a class=" list_hover"><span class="list9"> Featured </span></a>
+                          <a class=" list_hover"><span class="list10"> 45</span></a>
+                          
+                          <p>Eorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p>
+                          <p><strong>Live Url:</strong>  <a class="underLine"><em>Mapiya Company</em></a></p>
+                          
+                          <!-- Social network link -->
+                          <ul class="social_bookmarks noMargin">
+                              <li class="twitter noMargin"><a title="twitter">Follow us on Twitter</a></li>
+                              <li class="facebook noMargin"><a title="Facebook">Join our Facebook Group</a></li>
+                              <li class="gplus noMargin"><a title="Google Plus">Join me on Google Plus</a></li>
+                              <li class="rss noMargin"><a title="RSS">RSS</a></li>
+                              <li class="digg noMargin"><a title="Digg">Digg</a></li>
+                          </ul>
+                      </div> 
+                  </div>
+
+              </div>
+              
+          </div>
+          
+                                            
+          <div class="item web">
+              <a class="detail_btn">
+                  <span class="portImg">
+                      <div class="overlay detail"></div>
+                      <img src="./images/portfolio/thumb5.jpg" alt="Wonder" />
+                  </span>
+                  <!-- project Name -->
+                  <div class="projName"><h6><span>	Project 5 	</span></h6></div>
+                  <!-- project mini description -->
+                  <div class="miniDesc"><h6><span>	Small description about project	</span></h6></div>
+              </a>
+              
+              <!-- Project detail content -->
+              <div class="fullDetails">
+                  
+                    <div class="sixteen columns">
+                        <h3>Project title 5</h3>
+                        <div class="separator_mini"></div> 
+                    </div>
+                
+                    <div class="eleven columns">
+                        <div class="fixedHeight">
+                            <a class="lazyload scale-img" href="./images/portfolio/image5.jpg" title="Some text">image</a>
+                        </div>
+                    </div>
+                        
+                    <div class="five columns">
+                        <div class="mobile_spacing">
+                            
+                            Eorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+                            <div class="separator_mini"></div> 
+                            
+                            <a class=" list_hover "><span class="list7"> Andrew </span></a>
+                            <a class=" list_hover"><span class="list9"> Featured </span></a>
+                            <a class=" list_hover"><span class="list10"> 45</span></a>
+                            
+                            <p><strong>Live Url:</strong>  <a class="underLine"><em>Mapiya Company</em></a></p>
+                            
+                            <!-- Social network link -->
+                            <ul class="social_bookmarks noMargin">
+                                <li class="twitter noMargin"><a title="twitter">Follow us on Twitter</a></li>
+                                <li class="facebook noMargin"><a title="Facebook">Join our Facebook Group</a></li>
+                                <li class="gplus noMargin"><a title="Google Plus">Join me on Google Plus</a></li>
+                                <li class="rss noMargin"><a title="RSS">RSS</a></li>
+                                <li class="digg noMargin"><a title="Digg">Digg</a></li>
+                            </ul>
+                            
+                        </div> 
+                    </div>
+
+              </div>
+              
+          </div>
+              
+              
+          <div class="item web">
+              <a class="detail_btn">
+                  <span class="portImg">
+                      <div class="overlay detail"></div>
+                      <img src="./images/portfolio/thumb1.jpg" alt="Wonder" />
+                  </span>
+                  <!-- project Name -->
+                  <div class="projName"><h6><span>	Project 6 	</span></h6></div>
+                  <!-- project mini description -->
+                  <div class="miniDesc"><h6><span>	Small description about project sunt in culpa qui officia deserunt mollit anim id est laborum.	</span></h6></div>
+              </a>
+              
+              <!-- Project detail content -->
+              <div class="fullDetails">
+
+                   <div class="eleven columns alpha">
+                        <div class="mobile_spacing">
+                            <!-- project image slide show -->
+                            <div class="flexSlideshow fixedHeight">
+                                <ul class="slides"> 
+                                    <li><a class="lazyload" href="./images/portfolio/image1.jpg" title="Some text">image</a></li>
+                                    <li><a class="lazyload" href="./images/portfolio/image1_a.jpg" title="Some text">image</a></li>
+                                    <li><a class="lazyload" href="./images/portfolio/image1_b.jpg" title="Some text">image</a></li>
+                                    <li><a class="lazyload" href="./images/portfolio/image1_c.jpg" title="Some text">image</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                </div>
+
+                        
+                    <div class="five columns">
+                        <div class="mobile_spacing">
+                        
+                            <h3>Project title 6</h3>
+                            <div class="separator_mini"></div> 
+                              
+                            <ul>
+                                <li class="list4">jQuery</li><br />
+                                <li class="list4">CSS3</li><br />
+                            </ul>
+
+                            <a class=" list_hover "><span class="list7"> Andrew </span></a>
+                            <a class=" list_hover"><span class="list9"> Featured </span></a>
+                            <a class=" list_hover"><span class="list10"> 45</span></a>
+                          
+                            <p>Eorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+                            <p><strong>Live Url:</strong>  <a class="underLine"><em>Mapiya Company</em></a></p>
+                            
+                            <!-- Social network link -->
+                            <ul class="social_bookmarks noMargin">
+                                <li class="twitter noMargin"><a title="twitter">Follow us on Twitter</a></li>
+                                <li class="facebook noMargin"><a title="Facebook">Join our Facebook Group</a></li>
+                                <li class="gplus noMargin"><a title="Google Plus">Join me on Google Plus</a></li>
+                                <li class="rss noMargin"><a title="RSS">RSS</a></li>
+                                <li class="digg noMargin"><a title="Digg">Digg</a></li>
+                            </ul>
+                            
+                        </div> 
+                    </div>
+
+              </div>
+              
+          </div>
+               
+                           
+          <div class="item software">
+              <a class="detail_btn">
+                  <span class="portImg">
+                      <div class="overlay detail"></div>
+                      <img src="./images/portfolio/thumb2.jpg" alt="Wonder" />
+                  </span>
+                  <!-- project Name -->
+                  <div class="projName"><h6><span>Software Project 1</span></h6></div>
+                  <!-- project mini description -->
+                  <div class="miniDesc"><h6><span>	Officia deserunt mollit anim id est laborum description about project	</span></h6></div>
+              </a>
+              
+              <!-- Project detail content -->
+              <div class="fullDetails">
+                  
+                    <div class="sixteen columns">
+                        <h3>Software Project 1</h3>
+                        <div class="separator_mini"></div> 
+                    </div>
+                
+                    <div class="eleven columns">
+                        <div class="fixedHeight">
+                            <a class="lazyload scale-img" href="./images/portfolio/image2.jpg" title="Some text">image</a>
+                        </div>
+                    </div>
+                        
+                    <div class="five columns">
+                        <div class="mobile_spacing">
+                        
+                            Eorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+                            
+                            <p><strong>Live Url:</strong>  <a class="underLine"><em>Mapiya Company</em></a></p>
+                            
+                        </div> 
+                    </div>
+
+              </div>
+              
+          </div>
+                
+                                      
+          <div class="item software">
+              <a class="detail_btn">
+                  <span class="portImg">
+                      <div class="overlay detail"></div>
+                      <img src="./images/portfolio/thumb3.jpg" alt="Wonder" />
+                  </span>
+                  <!-- project Name -->
+                  <div class="projName"><h6><span>Software Project 2	</span></h6></div>
+                  <!-- project mini description -->
+                  <div class="miniDesc"><h6><span>	About project labore et dolore magna aliqua. Ut enim ad minim veniam	</span></h6></div>
+              </a>
+              
+              <!-- Project detail content -->
+              <div class="fullDetails">
+                  
+                  <div class="sixteen columns">
+                      <div class="mobile_spacing"> 
+                          
+                          <h3>Software Project 2</h3>
+                          <div class="separator_mini"></div>
+                           
+                          <strong>Date:</strong> October 2012 <br />
+                          <strong>Client:</strong> Mapiya Company
+                          <div class="separator_mini"></div> 
+                          
+                          <ul>
+                              <li class="list4">jQuery</li><br />
+                              <li class="list4">CSS3</li><br />
+                          </ul>
+                          
+                          <p>Eorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p>
+                          
+                          <p><strong>Live Url:</strong>  <a class="underLine"><em>Mapiya Company</em></a></p>
+                          
+                          <!-- Social network link -->
+                          <ul class="social_bookmarks noMargin">
+                              <li class="twitter noMargin"><a title="twitter">Follow us on Twitter</a></li>
+                              <li class="facebook noMargin"><a title="Facebook">Join our Facebook Group</a></li>
+                              <li class="gplus noMargin"><a title="Google Plus">Join me on Google Plus</a></li>
+                              <li class="rss noMargin"><a title="RSS">RSS</a></li>
+                              <li class="digg noMargin"><a title="Digg">Digg</a></li>
+                          </ul>
+                          
+                      </div> 
+                  </div> 
+
+              </div>
+              
+          </div>
+             
+                                            
+          <div class="item software">
+              <a class="detail_btn">
+                  <span class="portImg">
+                      <div class="overlay detail"></div>
+                      <img src="./images/portfolio/thumb4.jpg" alt="Wonder" />
+                  </span>
+                  <!-- project Name -->
+                  <div class="projName"><h6><span>Software Project 3	</span></h6></div>
+                  <!-- project mini description -->
+                  <div class="miniDesc"><h6><span>	Small description about project	</span></h6></div>
+              </a>
+              
+              <!-- Project detail content -->
+              <div class="fullDetails">
+
+                  <div class="sixteen columns">
+                      <h3>Software Project 3</h3>
+                      <div class="separator_mini"></div> 
+                  </div>
+              
+                  <div class="eleven columns">
+                      <div class="fixedHeight">
+                          <a class="lazyload scale-img" href="./images/portfolio/image4.jpg" title="Some text">image</a>
+                      </div>
+                  </div>
+                      
+                  <div class="five columns">
+                      <div class="mobile_spacing">
+                      
+                          <strong>Date:</strong> October 2012 <br />
+                          <strong>Client:</strong> Mapiya Company
+                          <div class="separator_mini"></div> 
+                          
+                          <ul>
+                              <li class="list4">Photoshop</li><br />
+                              <li class="list4">Indesign</li><br />
+                          </ul>
+                          
+                          <a class=" list_hover "><span class="list7"> Chris </span></a>
+                          <a class=" list_hover"><span class="list9"> Featured </span></a>
+                          <a class=" list_hover"><span class="list10"> 75</span></a>
+                          <div class="separator_mini"></div> 
+                          
+                          Eorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+                          <div class="separator_mini"></div> 
+                          
+                          <p><strong>Live Url:</strong>  <a class="underLine"><em>Mapiya Company</em></a></p>
+                          
+                          <!-- Social network link -->
+                          <ul class="social_bookmarks noMargin">
+                              <li class="twitter noMargin"><a title="twitter">Follow us on Twitter</a></li>
+                              <li class="facebook noMargin"><a title="Facebook">Join our Facebook Group</a></li>
+                              <li class="gplus noMargin"><a title="Google Plus">Join me on Google Plus</a></li>
+                              <li class="rss noMargin"><a title="RSS">RSS</a></li>
+                              <li class="digg noMargin"><a title="Digg">Digg</a></li>
+                          </ul>
+                          
+                      </div> 
+                  </div>
+
+              </div>
+              
+          </div>
+          
+                                            
+          <div class="item software">
+              <a class="detail_btn">
+                  <span class="portImg">
+                      <div class="overlay detail"></div>
+                      <img src="./images/portfolio/thumb5.jpg" alt="Wonder" />
+                  </span>
+                  <!-- project Name -->
+                  <div class="projName"><h6><span>Software Project 4</span></h6></div>
+                  <!-- project mini description -->
+                  <div class="miniDesc"><h6><span>	Small description about project magna aliqua. Ut enim ad minim veniam	</span></h6></div>
+              </a> 
+              
+              <!-- Project detail content -->
+              <div class="fullDetails">
+                  
+                  <div class="sixteen columns">
+                      <h3>Software Project 4</h3>
+                      <div class="separator_mini"></div> 
+                  </div>
+              
+                  <div class="eleven columns">
+                      <div class="fixedHeight">
+                          <a class="lazyload scale-img" href="./images/portfolio/image5.jpg" title="Some text">image</a>
+                      </div>
+                  </div>
+                      
+                  <div class="five columns">
+                      <div class="mobile_spacing">
+                      
+                          Eorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+                          <div class="separator_mini"></div> 
+                          
+                          <p><strong>Live Url:</strong>  <a class="underLine"><em>Mapiya Company</em></a></p>
+                          
+                          <!-- Social network link -->
+                          <ul class="social_bookmarks noMargin">
+                              <li class="twitter noMargin"><a title="twitter">Follow us on Twitter</a></li>
+                              <li class="facebook noMargin"><a title="Facebook">Join our Facebook Group</a></li>
+                              <li class="gplus noMargin"><a title="Google Plus">Join me on Google Plus</a></li>
+                              <li class="rss noMargin"><a title="RSS">RSS</a></li>
+                              <li class="digg noMargin"><a title="Digg">Digg</a></li>
+                          </ul>
+                          
+                      </div> 
+                  </div>
+
+              </div>
+               
+          </div>
+                 
+                                            
+          <div class="item software">
+              <a class="detail_btn">
+                  <span class="portImg">
+                      <div class="overlay detail"></div>
+                      <img src="./images/portfolio/thumb1.jpg" alt="Wonder" />
+                  </span>
+                  <!-- project Name -->
+                  <div class="projName"><h6><span> Software Project 5 </span></h6></div>
+                  <!-- project mini description -->
+                  <div class="miniDesc"><h6><span>	Small description about project	</span></h6></div>
+              </a> 
+              
+              <!-- Project detail content -->
+              <div class="fullDetails">
+              
+                  <div class="sixteen columns">
+                      <h3>Software Project 5</h3>
+                      <div class="separator_mini"></div> 
+                  </div>
+              
+                  <div class="eleven columns">
+                      <div class="fixedHeight">
+                          <a class="lazyload scale-img" href="./images/portfolio/image1.jpg" title="Some text">image</a>
+                      </div>
+                  </div>
+                      
+                  <div class="five columns">
+                      <div class="mobile_spacing">
+                      
+                          Eorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+                          <div class="separator_mini"></div> 
+                          
+                          <p><strong>Live Url:</strong>  <a class="underLine"><em>Mapiya Company</em></a></p>
+                          
+                          <!-- Social network link -->
+                          <ul class="social_bookmarks noMargin">
+                              <li class="twitter noMargin"><a title="twitter">Follow us on Twitter</a></li>
+                              <li class="facebook noMargin"><a title="Facebook">Join our Facebook Group</a></li>
+                              <li class="gplus noMargin"><a title="Google Plus">Join me on Google Plus</a></li>
+                              <li class="rss noMargin"><a title="RSS">RSS</a></li>
+                              <li class="digg noMargin"><a title="Digg">Digg</a></li>
+                          </ul>
+                          
+                      </div> 
+                  </div>
+
+              </div>
+              
+          </div>
+          
+                                            
+          <div class="item ecommerce">
+              <a class="detail_btn">
+                  <span class="portImg">
+                      <div class="overlay detail"></div>
+                      <img src="./images/portfolio/thumb2.jpg" alt="Wonder" />
+                  </span>
+                  <!-- project Name -->
+                  <div class="projName"><h6><span>E-Com Project 1 	</span></h6></div>
+                  <!-- project mini description -->
+                  <div class="miniDesc"><h6><span>	Small description about project	</span></h6></div>
+              </a>
+              
+              <!-- Project detail content -->
+              <div class="fullDetails">
+                  
+                  <div class="sixteen columns">
+                      <h3>E-Commerce Project 1</h3>
+                      <div class="separator_mini"></div> 
+                  </div>
+              
+                  <div class="eleven columns">
+                      <div class="fixedHeight">
+                          <a class="lazyload scale-img" href="./images/portfolio/image2.jpg" title="Some text">image</a>
+                      </div>
+                  </div>
+                      
+                  <div class="five columns">
+                      <div class="mobile_spacing">
+                      
+                          <h4>Mini Title text</h4>
+                          <div class="separator_mini"></div> 
+                          
+                          <a class=" list_hover "><span class="list7"> Chris </span></a>
+                          <a class=" list_hover"><span class="list9"> Featured </span></a>
+                          <a class=" list_hover"><span class="list10"> 75</span></a>
+                          
+                          <p>Eorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+                          
+                          <p><strong>Live Url:</strong>  <a class="underLine"><em>Mapiya Company</em></a></p>
+                          
+                          <!-- Social network link -->
+                          <ul class="social_bookmarks noMargin">
+                              <li class="twitter noMargin"><a title="twitter">Follow us on Twitter</a></li>
+                              <li class="facebook noMargin"><a title="Facebook">Join our Facebook Group</a></li>
+                              <li class="gplus noMargin"><a title="Google Plus">Join me on Google Plus</a></li>
+                              <li class="rss noMargin"><a title="RSS">RSS</a></li>
+                              <li class="digg noMargin"><a title="Digg">Digg</a></li>
+                          </ul>
+                          
+                      </div> 
+                  </div>
+
+              </div>
+              
+          </div>
+          
+                                            
+          <div class="item ecommerce">
+              <a class="detail_btn">
+                  <span class="portImg">
+                      <div class="overlay detail"></div>
+                      <img src="./images/portfolio/thumb3.jpg" alt="Wonder" />
+                  </span>
+                  <!-- project Name -->
+                  <div class="projName"><h6><span>E-Com Project 2 	</span></h6></div>
+                  <!-- project mini description -->
+                  <div class="miniDesc"><h6><span>	Small description about project	</span></h6></div>
+              </a> 
+              
+              <div class="fullDetails">
+                  
+                  <div class="nine columns">
+                      <div class="mobile_spacing">
+                          <!-- project video -->
+                          <div class="midVideo">
+                              <div class="addVideo" data-width="100%" data-height="100%" data-autoplay="false" data-url="http://vimeo.com/45778774"></div>
+                          </div>
+                      </div>
+                  </div>
+                      
+                  <div class="seven columns">
+                      <div class="mobile_spacing"> 
+                      
+                          <h3>E-Commerce Project 2</h3>
+                          <div class="separator_mini"></div> 
+                            
+                          <strong>Date:</strong> October 2012 <br />
+                          <strong>Client:</strong> Mapiya Company
+                          <div class="separator_mini"></div> 
+                          
+                          <ul>
+                              <li class="list4">jQuery</li><br />
+                              <li class="list4">CSS3</li><br />
+                          </ul>
+                          
+                          <p>Eorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p>
+                          
+                          <p><strong>Live Url:</strong>  <a class="underLine"><em>Mapiya Company</em></a></p>
+                          
+                          <!-- Social network link -->
+                          <ul class="social_bookmarks noMargin">
+                              <li class="twitter noMargin"><a title="twitter">Follow us on Twitter</a></li>
+                              <li class="facebook noMargin"><a title="Facebook">Join our Facebook Group</a></li>
+                              <li class="gplus noMargin"><a title="Google Plus">Join me on Google Plus</a></li>
+                              <li class="rss noMargin"><a title="RSS">RSS</a></li>
+                              <li class="digg noMargin"><a title="Digg">Digg</a></li>
+                          </ul>
+                          
+                      </div> 
+                  </div>
+
+              </div>
+              
+          </div>
+
+		</div>
+           	
+		<!-- Page scroll down to Next page -->  
+		<a class=" move_down" href="#sample_video"><span></span></a>
+        
+	</div>
+</div>
+
+
+
+
+
+
+<!-- Single video  -->
+
+<div class="contentWrapper " data-id="sample_video">
+ 
+	<div class="fullWidth titleTop darkStyle">
+		<div class="container">  
+        	<div class="sixteen columns"> 
+                    <div class="mobile_spacing">
+                    	<span class="title_text">sample video </span>
+                    </div>
+			</div>
+        </div>
+  	</div>
+    
+	<div class="fullWidth parallax" data-src="images/background/image3.jpg" data-src-small="images/background/image3_s.jpg">
+		<div class="parallaxPattern"></div>
+		<div class="container">     
+            <div class="table_middle">                
+                <div class="middle_align"> 
+                    <div class="fifteen columns videoLeftSpacing alpha">
+                        <!-- Add video -->
+                        <hr />
+                        <div class="addVideo video_content " id="video" data-url="http://vimeo.com/45778774"> 
+                        	<div class="video_hover"></div>
+                        	<img class="scale-with-grid" src="./images/video_img1.jpg" />
+                        </div> 
+                        <hr />
+                    </div>
+                </div> 
+                        
+            </div>
+        </div>
+        
+        <!-- Page scroll down to Next page -->
+		<a class="move_down" href="#contactus"><span></span></a>
+	</div>
+   
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- Contact us -->
+       
+<div class="contentWrapper contactPage" data-id="contactus">    
+
+	<div class="fullWidth titleTop darkStyle" style="padding:0px;">
+        <div class="container">  
+			<div class="sixteen columns"> 
+				<span class="title_text">Contact Us</span>
+			</div>
+		</div>
+	</div>
+  
+	<div class="fullWidth parallax removePadding" data-src="images/background/image4.jpg" data-src-small="images/background/image4_s.jpg">
+    <div class="overlayPattern"></div>
+		<div class="container contactUsPg">           
+			<hr /><hr />
+			<div class="one columns alpha">
+				<div class="separator_mini"></div>
+			</div>
+                
+			<div class=" fourteen columns alpha lightStyle "> 
+				<hr /><hr />
+				<!-- Place you Address here -->
+				<div class="six columns alpha textAlignRight">
+					<div class="mobile_spacing">     
+						<p>
+                            0025 street name<br />
+                            los Angle, 23589, USA
+                            <br /><br />                      
+                            Tel: 123.123.2586<br />
+                            Mob: +044-3658954869
+                            <br /><br />                    
+                            Email: <a>admin@websitename.com</a> <br />
+						</p>
+						<div class="separator_mini"></div>
+					</div>
+				</div>                          
+        
+				<div class="one columns alpha">
+					<div class="separator_mini"> </div>
+				</div>
+                            
+				<div id="contact" class="seven columns alpha">
+					<div class="mobile_spacing">        
+						<form name="contact" method="post" />
+							<input type="text" value="Name" id="name" name="name" onFocus="if(this.value == 'Name') {this.value = '';}" onBlur="if (this.value == '') {this.value = 'Name';}" />
+							<input type="text" value="Email" id="email" name="email" onFocus="if(this.value == 'Email') {this.value = '';}" onBlur="if (this.value == '') {this.value = 'Email';}" />
+							<hr />                                 
+							<textarea cols="30" rows="5" id="comments" name="comments" onFocus="if(this.value == 'Comments...') {this.value = '';}" onBlur="if (this.value == '') {this.value = 'Comments...';}">Comments...</textarea>
+							<br />                                
+							<button type="submit" id="email_submit" class="button alignLeft">SEND</button>                                  
+							<div id="reply_message"></div>                            
+						</form>                             
+					</div>
+				</div>
+				<hr />
+                    
+			</div>
+                
+		</div>
+        
+		<div class="footer_fit"> </div>  
+        
+		<div class="footer white_bg">
+			<div class="footer_container lightStyle bg_transparent"> 
+            
+				<a href="#home" class="move_up_white"><span></span></a>
+				<div class="separator_mini"></div>
+				<!-- Place your copyright text -->
+                
+				<h6 class="bottomText">Copyright © 2012 FMedia</h6>
+                
+				<div class="footer_social">
+					<ul class="social_bookmarks">                 
+						<li class="twitter noMargin"><a>Follow us on Twitter</a></li>
+						<li class="facebook noMargin"><a>Join our Facebook Group</a></li>
+						<li class="gplus noMargin"><a>Join me on Google Plus</a></li>
+						<li class="linkedin noMargin"><a>Add me on Linkedin</a></li>
+						<li class="rss noMargin"><a>RSS</a></li>
+					</ul>
+				</div>
+                       
+			</div>
+		</div>            
+
+	</div>
+    
+</div>
+
+
+</body>
+
+</html>

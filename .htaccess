@@ -1,0 +1,11 @@
+# Do not remove this line, otherwise mod_rewrite rules will stop working
+# RewriteBase /hotsecrets/
+
+Options +FollowSymlinks
+RewriteEngine on
+
+RewriteRule ^producto-(.+).html detalle.php?detalle=$1
+RewriteRule ^categoria-(.+)/$ categorias.php?cate=$1
+RewriteRule ^sub-categoria-(.+)/$ sub-categorias.php?subcat=$1
+RewriteRule ^todos-nuestros-(.+) productos.php
+RewriteRule ^nuestras-(.+) ofertas.php

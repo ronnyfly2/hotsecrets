@@ -1,0 +1,404 @@
+/*----------- dropdown menu  -----------*/
+#ma-dropdown {
+    width: 193px;
+}
+/* All Levels */ /* Style consistent throughout all nav levels */
+#ma-dropdown li {
+    position:relative;
+    text-align:left;
+    border-bottom: 1px solid #cdcdcd;
+}
+#ma-dropdown li.last {
+    border: none;
+}
+#ma-dropdown li.over {
+    z-index:998;
+}
+#ma-dropdown a,
+#ma-dropdown a:hover {
+    display:block;
+    line-height:1.3em;
+    text-decoration:none;
+}
+#ma-dropdown span {
+    display:block;
+    cursor:pointer;
+    white-space:nowrap;
+}
+#ma-dropdown li ul span {
+    white-space:normal;
+}
+#ma-dropdown ul li.parent a {
+}
+#ma-dropdown ul li.parent li a {
+
+}
+/* 0 Level */
+#ma-dropdown li.active a {
+    color:#d96708;
+}
+#ma-dropdown a {
+    padding:6px 10px;
+    color:#464646;
+    font-weight:bold;
+}
+#ma-dropdown li.over a,
+#ma-dropdown a:hover {
+    color:#d96708;
+}
+/* 1st Level */
+#ma-dropdown ul li,
+#ma-dropdown ul li.active {
+    margin:0;
+}
+#ma-dropdown ul li.last {
+    background:#ecf3f6;
+    padding-bottom:0;
+}
+#ma-dropdown ul a,
+#ma-dropdown ul a:hover {
+    background:none;
+}
+#ma-dropdown ul li a {
+    font-weight:normal !important;
+}
+/* 2nd Level */
+#ma-dropdown ul,
+#ma-dropdown div {
+    position:absolute;
+    width:193px;
+    top:-1px;
+    left:-10000px;
+    border:1px solid #cdcdcd;
+}
+#ma-dropdown div ul {
+    position:static;
+    width:auto;
+    border:none;
+}
+/* 3rd+ Level */
+#ma-dropdown ul ul,
+#ma-dropdown ul div {
+    top:-1px;
+}
+#ma-dropdown ul li a { background:#fff; }
+#ma-dropdown ul li a:hover { background:#d5e4eb; }
+#ma-dropdown ul li a,
+#ma-dropdown ul li a:hover { color:#2f2f2f !important; }
+#ma-dropdown ul span,
+#ma-dropdown ul li.last li span { }
+/* Show menu */
+#ma-dropdown li ul.shown-sub,
+#ma-dropdown li div.shown-sub { left:193px; z-index:999; }
+#ma-dropdown li .shown-sub ul.shown-sub,
+#ma-dropdown li .shown-sub li div.shown-sub { left:193px; }
+/********** Navigation > */
+
+
+/* ======================================================================================= */
+/*------Accordion ---------*/
+
+
+.accordion {
+	list-style-type: none;
+	padding: 0;
+}
+.accordion ul {
+	padding: 0;
+	margin: 0;
+	float: left;
+	display: block;
+	width: 100%;
+}
+.accordion li {
+	cursor: pointer;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	float: left;
+	display: block;
+	width: 100%;
+	position: relative;
+}
+.accordion li.active>a {
+	/*background: url('../imagenes/close.gif') no-repeat center right;*/
+}
+.accordion li div {
+	padding: 20px;
+	background: #aef;
+	display: block;
+	clear: both;
+	float: left;
+	width: 360px;
+}
+.accordion a {
+	text-decoration: none;
+	border-bottom: 1px solid #fff;
+	/*font: bold 1.1em/2em Arial, sans-serif;*/
+	font-size: 12px;
+	line-height: 28px;
+	color: #000;
+	padding: 0 10px;
+	display: block;
+	cursor: pointer;
+	text-transform: capitalize;
+}
+.accordion li.active a, .accordion a:hover {
+	color: #e5007d;
+}
+
+.accordion ul a {
+	text-decoration: none !important;
+}
+.accordion ul a:hover, .accordion ul li.active a {
+	color: #e5007d !important;
+}
+
+.accordion ul ul a, .accordion ul li.active ul a {
+	color: #000 !important;
+}
+.accordion ul ul a:hover, .accordion ul ul li.active a, .accordion ul li.active ul a:hover {
+	color: #e5007d !important;
+}
+
+.accordion ul ul ul a, .accordion ul ul li.active ul a {
+	color: #000 !important;
+}
+.accordion ul ul ul a:hover, .accordion ul ul ul li.active a, .accordion ul ul li.active ul a:hover {
+	color: #e5007d !important;
+}
+
+.accordion ul ul ul ul a, .accordion ul ul ul li.active ul a {
+	color: #000 !important;
+}
+.accordion ul ul ul ul a:hover, .accordion ul ul ul ul li.active a, .accordion ul ul ul li.active ul a:hover {
+	color: #e5007d !important;
+}
+
+
+
+.accordion li.parent>a {
+	/*background: url('../imagenes/open.gif') no-repeat center right;*/
+}
+
+.accordion li ul li {
+    font-size: 0.9em;
+}
+.accordion li.active>ul {
+
+}
+
+.accordion ul a {
+	padding-left: 25px;
+}
+.accordion ul ul a {
+	padding-left: 40px;
+}
+.accordion ul ul ul a {
+	padding-left: 55px;
+}
+.accordion ul ul ul ul a {
+	padding-left: 70px;
+}
+.accordion ul ul ul ul ul a {
+	padding-left: 85px;
+}
+
+/*----------- button accordion -------------*/
+.accordion span.head {
+	position: absolute;
+	top: 7px;
+	right: 0px;
+	width: 15px; height: 15px; 
+}
+.accordion span.head a { 
+	background: #3f3f3f url(../imagenes/bg_vertical.png) no-repeat;
+	color:#333333;
+	display:block;
+	height:15px;
+	padding:0;
+	width:15px;
+	border: 0;
+}
+.accordion span.head a:hover, .accordion li.active>span.head a {
+	background: #3f3f3f url(../imagenes/bg_vertical.png) no-repeat scroll 0 100%;
+}
+.accordion li.selected span.head a {
+	background: #3f3f3f url(../imagenes/bg_vertical.png) no-repeat scroll 0 100%;
+}
+.accordion li.selected span.head a:hover {
+	background: #3f3f3f url(../imagenes/bg_vertical.png) no-repeat;
+}
+
+
+/*
+#ma-accordion {
+	display: inline-block;
+}
+#ma-accordion li.level0 {
+	position: relative;
+}
+#ma-accordion li {
+	position: static;
+	background:#f6f6f6;
+	font-weight:normal;
+	list-style:none;
+	float:left;
+}
+
+#ma-accordion li {
+	width: 193px;
+}
+#ma-accordion li a {
+	padding: 3px 5px 3px 10px;
+	display: inline-block;
+	color: #2f2f2f;
+	text-decoration: none;
+	font-weight:bold;
+}
+#ma-accordion li.active a, #ma-accordion li a:hover {
+	color: #DC6809;
+}
+
+#ma-accordion li.active ul li.active a, #ma-accordion li.active ul li a:hover {
+	color: #DC6809;
+}
+#ma-accordion li.active ul li a {
+	color: #2f2f2f;
+}
+#ma-accordion ul.level0 {
+	clear:both;
+	display: none;
+}
+#ma-accordion li.active ul.level0 {
+	display: inline-block;
+}
+#ma-accordion ul li a { 
+	text-decoration:none;
+	text-transform:none;
+	padding: 3px 5px 3px 20px;
+	font-weight:normal;
+}
+#ma-accordion ul li a {
+	background:url("../imagenes/menu_bg_li1.gif") no-repeat scroll 10px 8px transparent;
+}
+
+
+#ma-accordion li.active ul li.active ul li.active a, #ma-accordion li.active ul li.active ul li a:hover {
+	color: #DC6809;
+}
+#ma-accordion li.active ul li.active ul li a {
+	color: #2f2f2f;
+}
+#ma-accordion ul ul {
+	float:left;
+	padding:0px;
+	width:100%;
+	display: inline-block !important;
+}
+#ma-accordion ul ul li { }
+#ma-accordion ul ul li a {
+	background:url("../imagenes/menu_bg_li2.gif") no-repeat scroll 20px 9px transparent; 
+	padding: 3px 5px 3px 30px;
+}
+
+#ma-accordion li.active ul li.active ul li.active ul li.active a, #ma-accordion li.active ul li.active ul li.active ul li a:hover {
+	color: #DC6809;
+}
+#ma-accordion li.active ul li.active ul li.active ul li a {
+	color: #2f2f2f;
+}
+#ma-accordion ul ul ul li a {
+	padding: 3px 5px 3px 40px;
+	background-position: 30px 9px;
+}
+
+#ma-accordion li.active ul li.active ul li.active ul li.active ul li.active a, #ma-accordion li.active ul li.active ul li.active ul li.active ul li a:hover {
+	color: #DC6809;
+}
+#ma-accordion li.active ul li.active ul li.active ul li.active ul li a {
+	color: #2f2f2f;
+}
+#ma-accordion ul ul ul ul li a {
+	padding: 3px 5px 3px 50px;
+	background-position: 40px 9px;
+}
+
+#ma-accordion span.head {
+	position: absolute;
+	top: 0;
+	right: 8px;
+}
+#ma-accordion span.head a { 
+	background: #f6f6f6 url(../imagenes/menu_down.gif) no-repeat;
+	color:#333333;
+	display:block;
+	height:15px;
+	margin-top:5px;
+	padding:0;
+	width:15px;
+}
+#ma-accordion span.head a:hover {
+	background: #ff0000 url(../imagenes/menu_up.gif) no-repeat;
+}
+#ma-accordion li.selected span.head a {
+	background: #f6f6f6 url(../imagenes/menu_up.gif) no-repeat;
+}
+#ma-accordion li.selected span.head a:hover {
+	background: #f6f6f6 url(../imagenes/menu_down.gif) no-repeat;
+}
+*/
+
+/* ======================================================================================= */
+/*----------- Tree ---------*/
+
+#ma-tree {
+	
+}
+#ma-tree li {
+	padding-left: 10px;
+	font-weight: bold;
+}
+#ma-tree li a {
+	padding: 3px 5px 3px 10px;
+	display: block;
+	text-decoration: none;
+	color: #2f2f2f;
+}
+#ma-tree li.active a, #ma-tree li a:hover {
+	color:#E26703; 
+}
+#ma-tree ul li a {
+	background: url(../imagenes/bg-li.gif) no-repeat 0 50%;
+}
+#ma-tree ul li {
+	font-weight: normal;
+}
+/*--------- level 2 ----------*/
+#ma-tree li.active ul li.active a, #ma-tree li.active ul li a:hover {
+	color:#E26703; 
+}
+#ma-tree li.active ul li a {
+	color:#2f2f2f; 
+}
+/*--------- level 3 ----------*/
+#ma-tree li.active ul li.active ul li.active a, #ma-tree li.active ul li.active ul li a:hover {
+	color:#E26703; 
+}
+#ma-tree li.active ul li.active ul li a {
+	color:#2f2f2f; 
+}
+/*--------- level 4 ----------*/
+#ma-tree li.active ul li.active ul li.active ul li.active a, #ma-tree li.active ul li.active ul li.active ul li a:hover {
+	color:#E26703; 
+}
+#ma-tree li.active ul li.active ul li.active ul li a {
+	color:#2f2f2f; 
+}
+/*--------- level 5 ----------*/
+#ma-tree li.active ul li.active ul li.active ul li.active ul li.active a, #ma-tree li.active ul li.active ul li.active ul li.active ul li a:hover {
+	color:#E26703; 
+}
+#ma-tree li.active ul li.active ul li.active ul li.active ul li a {
+	color:#2f2f2f; 
+}

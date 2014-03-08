@@ -1,0 +1,764 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css" media="all" />
+	
+	<title>Wiki</title>
+</head>
+<body>
+<div id="wrapper">
+
+	<div class="main-title">
+		<h1>Template name</h1>
+		<em>Created: November 29, 2011</em>
+		<em>By: <a href="http://themeforest.net/user/maarcin">maarcin</a> (Marcin Michalak)</em>
+	</div>
+	
+	<p>Thank You for purchasing Delicious. If You have any question about this theme You can always contact me through comments or contact form on my <a href="http://themeforest.net/user/maarcin">profile page.</a> I will try to do my best to help You.</p>
+	<p>Thank You<br />Marcin Michalak</p>
+	
+	<hr />
+	
+	<div id="toc">
+		
+        <h2>Table of Contents</h2>
+        
+        <ol>
+        	<li><a href="#html">HTML structure</a></li>
+        	<li><a href="#css">CSS structure</a></li>
+        	<li><a href="#js">Javascript files and scripts</a></li>
+        	<li><a href="#features">Features</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact form</a></li>
+        	<li><a href="#psd">PSD files</a></li>
+        	<li><a href="#credits">Credits and sources</a></li>
+        </ol>
+        
+	</div>
+	
+	<hr />
+    
+    <div id="html">
+    
+    	<h3>HTML structure <span>(<a href="#toc">top</a>)<span></h3>
+        
+        <p>In this package You can find 29 html files:</p>
+        <ul>
+        	<li>about-us.html</li>
+			<li>accordions-tabs.html</li>
+        	<li>blog-sidebar-left.html</li>
+        	<li>blog-sidebar-right.html</li>
+        	<li>blog-single-left.html</li>
+			<li>blog-single-right.html</li>
+			<li>blog-small-sidebar-left.html</li>
+			<li>blog-small-sidebar-right.html</li>
+        	<li>buttons.html</li>
+        	<li>columns.html</li>
+        	<li>contact-us.html</li>
+        	<li>features.html</li>
+        	<li>home-anything.html</li>
+        	<li>home-nivo.html</li>
+        	<li>home-piecemaker2.html</li>
+			<li>home-roundabout.html</li>
+			<li>home-static.html</li>
+        	<li>index.html (accordion slider)</li>
+			<li>lists.html</li>
+			<li>messages.html</li>
+        	<li>portfolio-1-col.html</li>
+        	<li>portfolio-2-col.html</li>
+        	<li>portfolio-3-col.html</li>
+        	<li>portfolio-4-col.html</li>
+        	<li>portfolio-single-sidebar-left.html</li>
+        	<li>portfolio-single-sidebar-right.html</li>
+			<li>pricing-tables.html</li>
+			<li>products-menu.html</li>
+			<li>tables-dividers.html</li>
+        	<li>typography.html</li>
+        </ul>        
+        
+        <h4>Home pages structure</h4>
+        <ul>
+        	<li>Top Section
+            	<ul>
+            		<li>Header
+                    	<ul>
+                    		<li>Logo</li>
+                    		<li>Navigation</li>
+                    	</ul>
+                    </li>
+            		<li>Featured
+                    	<ul>
+                    		<li>Slider</li>
+                    	</ul>
+                    </li>
+            	</ul>            
+            </li>
+            <li>Slogan</li>
+            <li>Content
+           		<ul>
+	            	<li>Columns</li>
+	            </ul>            
+            </li>
+            <li>Footer
+            <ul>
+            	<li>Latest Tips</li>
+            	<li>Flickr Feed</li>
+            	<li>Popular Posts</li>
+            </ul>
+            </li>
+            <li>Footer Bottom</li>
+        </ul>
+        
+        <h4>Pages without slider</h4>
+        <ul>
+        	<li>Top Section
+            	<ul>
+            		<li>Header
+                    	<ul>
+                    		<li>Logo</li>
+                    		<li>Navigation</li>
+                    	</ul>
+                    </li>
+            		<li>Featured Small
+                    	<ul>
+                    		<li>Page Title</li>
+                    	</ul>
+                    </li>
+            	</ul>            
+            </li>
+            <li>Content
+	            <ul>
+	            	<li>Columns</li>
+	            </ul>
+            </li>
+            <li>Footer
+            <ul>
+            	<li>Latest Tips</li>
+            	<li>Flickr Feed</li>
+            	<li>Popular Posts</li>
+            </ul>
+            </li>
+            <li>Footer Bottom</li>
+        </ul>
+        <br />
+        <p>Template is based on the custom 960 grid system. It's very easy to split content for parts. If You want to create a content with 1/2 and 1/2 You simply create two div with classes 'one_half' and to the last one add another class 'last_column':</p>
+        
+        <pre>&lt;div class="one_half"&gt;
+
+	your content here
+
+&lt;/div&gt;
+&lt;div class="one_half last_column"&gt;
+
+	your content here
+
+&lt;/div&gt;</pre>
+
+		<p>After this You should add <pre>&lt;div class="divider"&gt;&lt;/div&gt;
+        
+	if You want a divider after this div or
+        
+&lt;div class="clear"&gt;&lt;/div&gt;
+
+	if You don't or it's just the end of content.</pre></p>
+    
+    <p>Most common classes You can use for managing Your theme:</p>
+    <ul>
+    	<li><code>&lt;div class="one_half"&gt;&lt;/div&gt;</code></li>
+    	<li><code>&lt;div class="one_third"&gt;&lt;/div&gt;</code></li>
+    	<li><code>&lt;div class="one_fourth"&gt;&lt;/div&gt;</code></li>
+    	<li><code>&lt;div class="two_third"&gt;&lt;/div&gt;</code></li>
+    	<li><code>&lt;div class="three_fourth"&gt;&lt;/div&gt;</code></li>
+    	<li><code>&lt;div class="full_width"&gt;&lt;/div&gt;</code></li>
+    </ul>    
+    
+    </div>
+
+	<hr />
+
+	<div id="css">
+
+		<h3>CSS structure <span>(<a href="#toc">top</a>)<span></h3>
+        
+        <p>Stylesheets used in this template:</p>
+        <ul>
+        	<li>960.css (custom grid system)</li>
+        	<li>style.css (main styles and default skin)</li>
+        	<li>accordion.css (only if you'll use accordion slider)</li>
+        	<li>anythingslider.css (only if you'll use anything slider)</li>
+        	<li>jCarousel.css (only if you'll use jCarousel)</li>
+        	<li>piecemaker.css (only if you'll use piecemaker slider)</li>
+        	<li>prettyPhoto.css</li>
+        	<li>contact.css (for contact form)</li>
+        	<li>Skins
+            <ul>
+            	<li>skin1.css</li>
+				<li>skin2.css</li>
+            	<li>skin3.css</li>
+            	<li>skin4.css</li>
+            	<li>skin5.css</li>
+				<li>skin6.css</li>
+            	<li>skin7.css</li>
+            	<li>skin8.css</li>
+            	<li>skin9.css</li>
+            	<li>skin10.css</li>
+				<li>skin11.css</li>
+            	<li>skin12.css</li>
+				<li>triangles.css</li>
+				<li>clean-line.css</li>
+            </ul>            
+            </li>
+        </ul>
+        <br />
+        <p>As You can see I prepared twelve styles which You can use to customize this theme. To change style switch link to stylesheet from</p>
+        
+        <pre>&lt;link rel="stylesheet" type="text/css" href="css/skin1.css" media="all" /&gt;</pre>
+        
+        <p>to style which You want e.g.</p>
+        
+        <pre>&lt;link rel="stylesheet" type="text/css" href="css/skin12.css" media="all" /&gt;</pre>
+		
+		<p>If You want to change from default style to triangles or straight line just add link to proper css file</p>
+        
+        <pre>&lt;link rel="stylesheet" type="text/css" href="css/triangles.css" media="all" /&gt;</pre>
+        
+        <p>If You want to setup Your own colors, go to one of th prepared skins. Rename it to what You want e.g. custom_style.css and then copy paste styles from one of skin.css files and change what You want.</p>
+		
+		<p>If You want to change "Reservation" style to another You must edit .html files. In the header section You can find a code</p>
+		
+		<pre>&lt;!-- #reservation starts here --&gt;
+	&lt;div id="reservation" class="one_half last_column"&gt;
+	    &lt;a href="index.html"&gt;&lt;img src="images/skins/reservation1.png"
+		alt="Make a Reservation" width="208px" height="105px" /&gt;&lt;/a&gt;
+	&lt;/div&gt;
+&lt;!-- end #reservation --&gt;</pre>
+
+		<p>Just change <code>reservation1.png</code> to another e.g. <code>reservation12.png</code> or Your own.</p>
+
+	</div>
+    
+    <hr />
+    
+    <div id="js">
+    
+    <h3>Javascript files and scripts <span>(<a href="#toc">top</a>)<span></h3>
+    
+    <p>Javascript files used for theme:</p>
+    <ul>
+    	<li>latest version of jQuery</li>
+        <li>anythingslider.js</li>
+    	<li>custom.js</li>
+    	<li>easing.1.3.js</li>
+    	<li>fancyCaption.js</li>
+    	<li>jcarousel.min.js</li>
+    	<li>jflickrfeed.min.js</li>
+		<li>jquery.tweet.js</li>
+    	<li>jquery.cycle.lite.js</li>
+    	<li>jquery.jigowatt.js</li>
+    	<li>jquery.prettyPhoto.js</li>
+    	<li>jquery.quicksand.js</li>
+    	<li>jquery.roundabout.min.js</li>
+    	<li>jquery-ui.js</li>
+		<li>nivo.slider.js</li>
+		<li>swfobject.js (also expressinstall.swf is needed for piecemaker to work)</li>
+		<li>zaccordion.min.js</li>
+    </ul>
+    <br />
+    <p>If You want to change setting in plugins go to custom.js. You can find there all necessary stuff for plugins to work.</p>
+    
+    <h4>Customizing custom.js</h4>
+    
+    <h5>Changing navigation hover effect:</h5>
+    
+    <pre>$(this).find('ul:first').css({visibility: "visible",display: "none"}).show(400);</pre>
+    
+    <p>Change .show, to other effect like .fadeIn or .slideDown. You can also change the speed of effect, default is 400ms</p>
+    
+    <h5>Adding elements to opacity on hover:</h5>
+    
+    <pre>$("#latest-recipes img, .follow-us li a, ...")</pre>
+    
+    <p>You can add more elements to opacity hover effect, add new elements after comma. You can also change the opacity and transition speed by changing</p>
+    
+    <p><code>.fadeTo("fast", 1);</code> and <code>.fadeTo("fast", 0.7);</code></p>
+    
+    <h5>Changing number of jCarousel items on scroll</h5>
+    
+    <pre>scroll: 1</pre>
+    
+    <p>Change the value '1' to another if You want to have more images than one scrolled at once</p>
+    
+    <h5>Flickr Feed</h5>
+    
+    <pre>$('ul').jflickrfeed({
+	limit: 9,
+	qstrings: {
+		id: '10729228@N07'
+	},
+	itemTemplate: '&lt;li&gt;&lt;img alt="{{title}}" src="{{image_s}}" /&gt;&lt;/li&gt;'
+});</pre>
+    
+    <ul>
+    	<li>10729228@N07 - this is ID of the user on the flickr.com site</li>
+    	<li>limit 9 - this is the number of photos which are displayed</li>
+		<li>itemTemplate - template of Your Flickr Feed</li>
+    </ul>
+	<br />
+	<p>You can read more about options on <a href="http://www.gethifi.com/blog/a-jquery-flickr-feed-plugin">authors site</a>.</p>
+    
+	<h5>Twitter Feed</h5>
+	
+	<pre>jQuery(function($){
+	$(".tweet").tweet({
+		username: "mthemes",
+		count: 2,
+		loading_text: "loading tweets..."
+	});
+});</pre>
+		
+	<ul>
+		<li>username - change mthemes to Your username on twitter</li>
+		<li>count - number of displaying tweets</li>
+		<li>loading_text - text which appear before tweets load</li>
+	</ul>
+	<br />
+	<p>There are more options you can use here. For more information go to the <a href="http://tweet.seaofclouds.com/">author website</a>.</p>
+	
+	
+    </div>
+    
+    <hr />
+    
+    <div id="features">
+    
+    	<h3>Features <span>(<a href="#toc">top</a>)<span></h3>
+        
+        <h4>List styles</h4>
+        
+        <p>If You want to change list style You have to change the class for ul.</p>
+        
+        <pre>ul class="list-ok"</pre>
+        
+        <p>Available list styles</p>
+        
+        <ul>
+        	<li><code>ul.list-ok</code></li>
+        	<li><code>ul.list-chef</code></li>
+        	<li><code>ul.list-arrow</code></li>
+        	<li><code>ul.list-plus</code></li>
+        	<li><code>ul.list-time</code></li>
+        	<li><code>ul.list-question</code></li>
+        	<li><code>ul.list-star</code></li>
+        	<li><code>ul.list-warning</code></li>
+        	<li><code>ul.list-minus</code></li>
+        	<li><code>ul.list-check</code></li>
+        	<li><code>ul.list-help</code></li>
+        	<li><code>ul.list-heart</code></li>
+        </ul>
+		<br />
+		<h4>Buttons</h4>
+		
+		<p>Available buttons sizes</p>
+		<ul>
+        	<li><code>.button-small</code></li>
+        	<li><code>.button-medium</code></li>
+        	<li><code>.button-large</code></li>
+        	<li><code>.button-custom</code></li>
+        </ul>
+		
+		<p>Available buttons colors</p>
+		<ul>
+        	<li><code>.btn-white</code></li>
+        	<li><code>.btn-gray</code></li>
+			<li><code>.btn-black</code></li>
+			<li><code>.btn-navy</code></li>
+			<li><code>.btn-blue</code></li>
+			<li><code>.btn-lightblue</code></li>
+			<li><code>.btn-green</code></li>
+			<li><code>.btn-lightgreen</code></li>
+			<li><code>.btn-yellow</code></li>
+			<li><code>.btn-amber</code></li>
+			<li><code>.btn-darkamber</code></li>
+			<li><code>.btn-orange</code></li>
+			<li><code>.btn-red</code></li>
+			<li><code>.btn-orchid</code></li>
+			<li><code>.btn-purple</code></li>
+			<li><code>.btn-style1</code></li>
+			<li><code>.btn-style2</code></li>
+			<li><code>.btn-style3</code></li>
+			<li><code>.btn-style4</code></li>
+			<li><code>.btn-style5</code></li>
+			<li><code>.btn-style6</code></li>
+			<li><code>.btn-style7</code></li>
+			<li><code>.btn-style8</code></li>
+			<li><code>.btn-style9</code></li>
+			<li><code>.btn-style10</code></li>
+			<li><code>.btn-style11</code></li>
+			<li><code>.btn-style12</code></li>
+        </ul>
+		<br />
+		<p>To create a button You need a with additional classes e.g. <pre>&lt;a href="#" class="button-small btn-white"&gt;&lt;span&gt;Put here Your text&lt;/span&gt;&lt;/a&gt;</pre></p>
+		<p>Remember to wrap a text with <code>span</code> tag. It's required to make a link white. Otherwise the text color will be the color of <code>a href</code>.</p>
+
+        <h4>Messages</h4>
+        
+        <p>There are four default styles for message boxes: info, warning, success and error. Below You can see default structure of info message.</p>
+        
+        <pre>&lt;div class="message-box info"&gt;
+	&lt;div class="message-inner"&gt;
+		&lt;p&gt;Info message&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</pre>
+
+		<p>To change the box message You have to change class in first div <code>&lt;div class="message-box info"&gt;</code> to one of these:</p>
+        
+        <ul>
+        	<li><code>&lt;div class="message-box success"&gt;</code></li>
+        	<li><code>&lt;div class="message-box warning"&gt;</code></li>
+        	<li><code>&lt;div class="message-box error"&gt;</code></li>
+        </ul>
+        
+        <h4>Tabs</h4>
+        
+        <p>Default structure of the tabs:</p>
+        
+        <pre>&lt;!-- .tabs-wrapper starts here --&gt;
+&lt;div class="tabs-wrapper one_third"&gt;
+           
+    &lt;h2&gt;Tabs&lt;/h2&gt;
+	       
+    &lt;!-- ul.tabs starts here --&gt;
+	&lt;ul class="tabs"&gt;
+		&lt;li&gt;&lt;a href="#tab1"&gt;Tab 1&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#tab2"&gt;Tab 2&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#tab3"&gt;Tab 3&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+    &lt;!-- end .tabs --&gt;
+			
+    &lt;!-- .tabs-inner starts here --&gt;
+	&lt;div class="tabs-inner"&gt;
+		        
+		&lt;div id="tab1" class="tab-content"&gt;
+			&lt;!-- content goes here --&gt;
+		&lt;/div&gt;
+		            
+		&lt;div id="tab2" class="tab-content"&gt;
+			&lt;!-- content goes here --&gt;
+		&lt;/div&gt;
+                    
+		&lt;div id="tab3" class="tab-content"&gt;
+			&lt;!-- content goes here --&gt;
+		&lt;/div&gt;
+		            
+	&lt;/div&gt;
+    &lt;!-- end .tabs-inner --&gt;
+	        
+&lt;/div&gt;
+&lt;!-- end .tabs-wrapper --&gt;</pre>
+
+		<p>As You can see <code>&lt;li&gt;&lt;a href="<b>#tab1</b>"&gt;Tab 1&lt;/a&gt;&lt;/li&gt;</code> refers to</p>
+        
+        <pre>&lt;div <b>id="tab1"</b> class="tab-content"&gt;
+	&lt;!-- content goes here --&gt;
+&lt;/div&gt;</pre>
+
+		<p>If You want to add new tabs remember to have the same id in <code>href</code> and in <code>.tab-content</code></p>
+        
+        <h4>Accordion</h4>
+        
+        <p>Default structure for accordion</p>
+        
+        <pre>&lt;!-- #accordion-wrapper starts here --&gt;
+&lt;div id="accordion-wrapper" class="one_third last_column"&gt;
+           
+    &lt;h2&gt;Accordion&lt;/h2&gt;
+           
+	&lt;!-- #accordion starts here --&gt;
+	&lt;div id="accordion"&gt;
+	           
+		&lt;div&gt;
+			&lt;h4&gt;&lt;a href="#"&gt;First&lt;/a&gt;&lt;/h3&gt;
+			&lt;div&gt;&lt;!-- content goes here --&gt;&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div&gt;
+			&lt;h4&gt;&lt;a href="#"&gt;Second&lt;/a&gt;&lt;/h3&gt;
+			&lt;div&gt;&lt;!-- content goes here --&gt;&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div&gt;
+			&lt;h4&gt;&lt;a href="#"&gt;Third&lt;/a&gt;&lt;/h3&gt;
+			&lt;div&gt;&lt;!-- content goes here --&gt;&lt;/div&gt;
+		&lt;/div&gt;
+	           
+	&lt;/div&gt;
+	&lt;!-- end #accordion --&gt;
+           
+&lt;/div&gt;
+&lt;!-- end #accordion-wrapper --&gt;</pre>
+
+			<p><b>H4</b> tag is the key here. It's the trigger for panels. It's defined in custom.js file, so if You want to change it for, let's say, h5 heading just go there and change h4 to h5</p>
+            
+            <pre>$(document).ready(function(){
+	$("#accordion").accordion ({
+		header: <b>"h4"</b>
+	});
+});</pre>
+
+	<h4>Pricing Tables</h4>
+        
+        <p>Default structure for pricing tables</p>
+        
+        <pre>&lt;!-- .pricing-table starts here --&gt;
+&lt;div class="pricing-table"&gt;
+
+	&lt;!-- .pt-column starts here --&gt;
+	&lt;div class="pt-column pricing-3-col"&gt;
+	
+		&lt;!-- h3 here --&gt;
+		
+		&lt;div class="pt-cost"&gt;
+		
+			&lt;!-- p here --&gt;
+		
+		&lt;/div&gt;
+		
+		&lt;div class="pt-features"&gt;
+		
+			&lt;!-- ul here --&gt;
+		
+		&lt;/div&gt;
+		
+		&lt;div class="pt-buynow"&gt;
+		
+			&lt;!-- a href here --&gt;
+		
+		&lt;/div&gt;
+	
+	&lt;/div&gt;
+	&lt;!-- end .pt-column --&gt;
+	
+	&lt;!-- .pt-column starts here --&gt;
+	&lt;div class="pt-column pricing-3-col pt-recommended"&gt;
+	
+		&lt;!-- h3 here --&gt;
+		
+		&lt;div class="pt-cost"&gt;
+		
+			&lt;!-- p here --&gt;
+		
+		&lt;/div&gt;
+		
+		&lt;div class="pt-features"&gt;
+		
+			&lt;!-- ul here --&gt;
+		
+		&lt;/div&gt;
+		
+		&lt;div class="pt-buynow"&gt;
+		
+			&lt;!-- a href here --&gt;
+		
+		&lt;/div&gt;
+	
+	&lt;/div&gt;
+	&lt;!-- end .pt-column --&gt;
+	
+	&lt;!-- .pt-column starts here --&gt;
+	&lt;div class="pt-column pricing-3-col last_pt_column"&gt;
+	
+		&lt;!-- h3 here --&gt;
+		
+		&lt;div class="pt-cost"&gt;
+		
+			&lt;!-- p here --&gt;
+		
+		&lt;/div&gt;
+		
+		&lt;div class="pt-features"&gt;
+		
+			&lt;!-- ul here --&gt;
+		
+		&lt;/div&gt;
+		
+		&lt;div class="pt-buynow"&gt;
+		
+			&lt;!-- a href here --&gt;
+		
+		&lt;/div&gt;
+	
+	&lt;/div&gt;
+	&lt;!-- end .pt-column --&gt;
+	
+	&lt;div class="clear"&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;!-- end .pricing-table --&gt;</pre>
+
+			<p>For pricing table with 4 columns You must change a class for div from <code>pricing-3-col</code> to <code>pricing-4-col</code>.</p>
+			<p>If You want to check the recommended table in the header You have to add a span tag in h3 <code>&lt;h3&gt;Advanced&lt;span&gt;&lt;/span&gt;&lt;/h3&gt;
+</code></p>
+    
+    <hr />
+    
+    <div id="portfolio">
+    
+    	<h3>Portofolio <span>(<a href="#toc">top</a>)<span></h3>
+        
+        <p>Code for the filter menu</p>
+        
+		<pre>&lt;ul class="filter"&gt; 
+	&lt;li class="current all"&gt;&lt;a href="#"&gt;All&lt;/a&gt;&lt;/li&gt; 
+	&lt;li class="pizza"&gt;&lt;a href="#"&gt;Pizza&lt;/a&gt;&lt;/li&gt; 
+	&lt;li class="spaghetti"&gt;&lt;a href="#"&gt;Spaghetti&lt;/a&gt;&lt;/li&gt; 
+	&lt;li class="seafood"&gt;&lt;a href="#"&gt;Seafood&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</pre>
+
+		<p><code>Class</code> pointing to <code>data-type="pizza"</code> in the list item. It's very important to add a class to Your filter when You adding another <code>data-type</code>. Note here that every next item should have increased id e.g. first <code>&lt;li data-id="id-1" data-type="pizza"&gt;</code> and second <code>&lt;li data-id="id-2" data-type="seafood"&gt;</code></p>
+
+		<p>2, 3 and 4 columns portfolios are almost the same. One thing is changing here is size of the image.</p>
+        <ul>
+        	<li><b>430x250</b> for 2 columns portfolio</li>
+        	<li><b>275x180</b> for 3 columns portfolio</li>
+        	<li><b>200x150</b> for 4 columns portfolio</li>
+        </ul>
+		<br />
+		<p>Code for 1 column portfolio with description on the right</p>
+		<pre>&lt;li data-id="id-7" data-type="pizza"&gt;
+	&lt;div class="fancycaption fade-zoom"&gt;
+		&lt;a href="#"&gt;&lt;img class="fade" src="../photos/430x250/pizza4.jpg" alt="photo" /&gt;&lt;/a&gt;
+    &lt;/div&gt;
+						
+	&lt;div class="portfolio-small-desc"&gt;
+                        
+        &lt;h2&gt;Item title&lt;/h2&gt;
+                        
+		&lt;p&gt;Your description here&lt;/p&gt;
+                            
+		&lt;a href="#"&gt;Button text&lt;/a&gt;
+    
+	&lt;/div&gt;
+&lt;/li&gt;</pre><br />
+		<p>Code for portfolio item without description (portfolio 2, 3 and 4 column)</p>
+		<pre>&lt;li data-id="id-1" data-type="pizza" class="fancycaption fade-zoom"&gt;
+	&lt;a href="#"&gt;
+		&lt;img class="fade" src="yourimage.jpg" alt="photo" /&gt;
+	&lt;/a&gt;
+&lt;/li&gt;</pre>
+
+		<p><b>Remember to change data-id and data-type!</b></p>
+        
+    
+    </div>
+    
+    <hr />
+    
+    <div id="contact">
+    
+    	<h3>Contact form <span>(<a href="#toc">top</a>)<span></h3>
+        
+        <p>You can change errors messages, send message, subject and much more in contact.php file. The most basic and important is pasting Your email address. You can do this on <b>line 60</b></p>
+        
+        <pre>$address = "example@themeforest.net";</pre>
+        
+        <p>Change <code>example@themeforest.net</code> to Your own email address.</p>
+    
+    </div>
+    
+    <hr />
+    
+    <div id="psd">
+    
+    	<h3>PSD files <span>(<a href="#toc">top</a>)<span></h3>
+        
+        <p>In the package You can also find some PSD projects:</p>
+        
+        <ul>
+        	<li>bg.psd</li>
+        	<li>logo.psd</li>
+        	<li>pricing-table.psd</li>
+			<li>reservation.psd</li>
+        	<li>search.psd</li>
+			<li>slogan.psd</li>
+			<li>stuff.psd</li>
+        </ul>
+        <br />
+        
+        <p>Those psd files should help You customize this theme. You have here probably everything what's important in styling.</p>
+    
+    </div>
+    
+    <hr />
+    
+    <div id="credits">
+    
+    	<h3>Credits and sources <span>(<a href="#toc">top</a>)<span></h3>
+        
+        	<p>Many, many thanks for Your amazing work!</p>
+        
+        	<p>Icons and photos</p>
+
+			<ul>
+				<li><a href="http://www.iconfinder.com/icondetails/58827/128/cake_donut_food_icon?r=1">Donut Icon byIconBlock</a></li>
+                <li><a href="http://www.iconfinder.com/search/?q=iconset%3A30_Free_Black_ToolBar_Icons">Black ToolBar Icons by Billy Barker</a></li>
+                <li><a href="http://www.iconfinder.com/search/?q=iconset%3Aonebit">One bit by Icojoy</a></li>
+                <li><a href="http://www.iconfinder.com/search/?q=iconset%3Asocial">Picons Social by Picons</a></li>
+                <li><a href="http://iconsweets2.com/">Icon Sweets 2 by Yummygum</a></li>
+				<li><a href="http://www.flickr.com/photos/23421303@N05/2803267726/">The First Meal by Jrwooley6</a></li>
+				<li><a href="http://www.flickr.com/photos/18379367@N00/3885898460/">Italy Cefalu by Simon Welsh</a></li>
+				<li><a href="http://www.flickr.com/photos/98073722@N00/458512079/">Phsar Thmei Market by flydime</a></li>
+				<li><a href="http://www.flickr.com/photos/23597588@N00/1415492210/">Aurelio's Pizza by Navin75</a></li>
+				<li><a href="http://www.flickr.com/photos/57231735@N00/218086832/">Tombstone Pepperoni Pizza by callme_crochet</a></li>
+				<li><a href="http://www.flickr.com/photos/69864026@N00/2269983942/">Rainbow Pizza by Foodies</a></li>
+				<li><a href="http://www.flickr.com/photos/25597828@N00/387142237/">Singas Famous Pizza by wEnDaLicious</a></li>
+				<li><a href="http://www.flickr.com/photos/7927684@N03/6057076521/">Celebrating with pizza by jeffreyw</a></li>
+				<li><a href="http://www.flickr.com/photos/21559804@N00/824608884/">Spaghetti and meatballsby jshj</a></li>
+                <li><a href="http://www.flickr.com/photos/20912428@N04/2400492179/">Spaghetti al Pomodoro by paPisc</a></li>
+                <li><a href="http://www.flickr.com/photos/17879025@N00/140327810/">American Spaghetti and Meatballs by sporkist</a></li>
+                <li><a href="http://www.flickr.com/photos/43106757@N00/3035405786/">Food Photography by Wesley Oostvogels</a></li>
+                <li><a href="http://www.flickr.com/photos/7927684@N03/6033816666/">Sauted Grape Tomatoes by jeffreyw</a></li>
+			</ul>
+            <br />
+            <p>Plugins</p>
+            <ul>
+            	<li><a href="http://codelove.herz-as.net/jquery/jquery-fancycaption-plugin/">FancyCaption</a></li>
+            	<li><a href="http://www.armagost.com/zaccordion/">zAccordion</a></li>
+            	<li><a href="http://razorjack.net/quicksand/docs-and-demos.html">Quicksand</a></li>
+            	<li><a href="http://css-tricks.com/3412-anythingslider-jquery-plugin/">AnythingSlider</a></li>
+            	<li><a href="http://gsgd.co.uk/sandbox/jquery/easing/">Easing 1.3</a></li>
+				<li><a href="http://jquery.malsup.com/cycle/">jQuery Cycle Plugin</a></li>
+            	<li><a href="http://www.modularweb.net/#/en/piecemaker">Piecemaker 2</a></li>
+				<li><a href="http://fredhq.com/projects/roundabout">Roundabout for jQuery v1.1 by Fred LeBlanc</a></li>
+            	<li><a href="http://sorgalla.com/jcarousel/">jCarousel</a></li>
+            	<li><a href="http://www.no-margin-for-errors.com/projects/prettyphoto-jquery-lightbox-clone/">PrettyPhoto</a></li>
+            	<li><a href="http://www.gethifi.com/blog/a-jquery-flickr-feed-plugin">jFlickrFeed</a></li>
+				<li><a href="http://tweet.seaofclouds.com/">Twitter Feed</a></li>
+            	<li><a href="http://jqueryui.com/">jQuery UI</a></li>
+                <li><a href="http://nivo.dev7studios.com/">Nivo Slider</a></li>
+            </ul>
+            <br />
+            <p>Others</p>
+            <ul>
+            	<li><a href="http://www.flickr.com/photos/simon-bouchard/sets/72157624798241210/">Simon Bouchard photos used for Flickr Feed</a></li>
+                <li><a href="http://subtlepatterns.com/">Subtle Patterns</a></li>
+				<li><a href="http://www.dribbble.com">Dribbble Users for inspiration</a></li>
+				<li>ThemeForest reviewers (especially Siddharth) for great feedback and patience :)</li>
+            </ul>
+            <br />
+            <p>Photos are not included!</p>
+			
+			<hr />
+			
+			<p>Once again Thank You very much for purchasing this theme. If You'll have any trouble with it don't hesitate to ask for help via contact form on my <a href="http://themeforest.net/user/maarcin">profile page</a> or via comments. I'll do everything what's in my power to help. Any feedback and ideas for future will be useful.</p>
+			
+			<p>Best<br /><a href="http://themeforest.net/user/maarcin">Marcin Michalak</a></p>
+			
+			<span>(<a href="#toc">top</a>)<span>
+    
+    </div>
+	
+</div>
+
+
+
+</body>
+</html>

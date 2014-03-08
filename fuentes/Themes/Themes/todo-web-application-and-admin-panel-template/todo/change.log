@@ -1,0 +1,36 @@
+v.1.0.1 ¡ª 28 August 13
+
+add less files
+
+
+
+v.1.0.2 ¡ª 3 September 13
+
+add switch ------------- form.html
+add slimscroll --------- widgets.html
+add widgets ------------ widgets.html
+add bootstrap-wysiwyg -- form.html
+
+add invoice ------------ invoice.html
+add blog section ------- blog.html
+add dashboard option --- dashboard.html
+add pajax
+
+
+
+v.1.0.3 ¡ª Just
+
+add nestable list
+add markdown
+add calendar
+add more form example
+add dashboard-1.html
+add gallery.html
+
+fix form wizard
+fix off screen nav
+fix fullscreen input
+fix flex layout on ie
+
+improvment make the icon bigger for only-icon nav
+improvment some less file update

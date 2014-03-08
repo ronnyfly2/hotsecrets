@@ -1,0 +1,304 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- /**
+	STUDIO POINT - Parallax Responsive Retina Ready
+ 	Copyright (c) 2013, Subramanian 
+
+	Author: Subramanian
+    Profile: themeforest.net/user/FMedia/
+	
+    Version: 1.0.0
+	Release Date: February 2013
+**/ -->	
+
+    <html lang="en"> 
+    
+    <head>
+
+	<!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8" />
+	<title>STUDIO POINT - Parallax Responsive Retina Ready</title>
+	<meta name="description" content="" />
+	<meta name="author" content="" />
+
+	<!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+	<!-- CSS
+  ================================================== --> 
+  
+  <!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+
+	<!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="./images/favicon.ico" />
+	<link rel="apple-touch-icon" href="./images/apple-touch-icon.png" />
+	<link rel="apple-touch-icon" sizes="72x72" href="./images/apple-touch-icon-72x72.png" />
+	<link rel="apple-touch-icon" sizes="114x114" href="./images/apple-touch-icon-114x114.png" />
+  	
+    <!-- Included CSS files 
+	================================================== -->
+
+	<link rel="stylesheet" type="text/css" href="./css/skeleton.min.css" />
+    
+    <!--[if gte IE 9]>
+      <style type="text/css">
+        .gradient {
+           filter: none;
+        }
+      </style>
+    <![endif]-->
+
+    <!-- Included javascript files 
+	================================================== -->
+    
+    <script type="text/javascript" src="./js/jquery-1.7.1.min.js"></script>
+    
+    <style>
+		
+		
+		
+		body {
+			font: 14px/1.7 Arial, sans-serif;
+			font-weight:lighter;
+			-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
+			-webkit-text-size-adjust: 100%;
+			font-size: 100%;
+			vertical-align: baseline;
+			line-height: 1;
+			margin:0px;
+			padding:0px;
+			background: white url(./images/bg_pattern_white.jpg) ;
+			background-image: -Webkit-image-set(url(./images/bg_pattern_white.jpg) 1x, url(./images/bg_pattern_white@2x.jpg) 2x);  /* Image for Retina */
+		}
+		
+		.barkStyle {
+			background: white url(./images/bg_pattern_black.jpg) 10% 10% ;
+			background-image: -Webkit-image-set(url(./images/bg_pattern_black.jpg) 1x, url(./images/bg_pattern_black@2x.jpg) 2x);  /* Image for Retina */
+		}
+
+		img{ 
+			border:0px;
+		 }
+		 .imgShadow{
+			 -moz-box-shadow: 1px 1px 15px #000000;
+			-webkit-box-shadow: 1px 1px 15px #000000;
+			box-shadow: 1px 1px 15px #000000;
+		 }
+		@font-face {
+			font-family: 'bebas_neueregular';
+			src: url('./fonts/bebasneue-webfont.eot');
+			src: url('./fonts/bebasneue-webfont_162a16fe.eot') format('embedded-opentype'),
+				 url('./fonts/bebasneue-webfont.woff') format('woff'),
+				 url('./fonts/bebasneue-webfont.ttf') format('truetype'),
+				 url('./fonts/bebasneue-webfont.svg') format('svg');
+			font-weight: normal;
+    		font-style: normal;
+			}
+		
+			h1, h2, h3, h4 {
+				font-family: 'bebas_neueregular', Arial, Helvetica, sans-serif;
+				font-weight:lighter;
+			}
+			
+			h1{
+				font-size:36px;
+			}
+			
+			h3 {
+				font-size:30px;
+				line-height:1px;
+			}
+			
+			h4 {
+				font-size:20px;
+				line-height:1px;
+			}
+	
+			 h5{
+				font-family: Arial, Helvetica, sans-serif;
+				font-weight:lighter;
+			}
+		
+			img.scale-with-grid {
+				max-width: 100%;
+				height: auto; 
+			}
+
+			h6{ margin-top:-10px }
+		hr { background:transparent;border:0;clear:both;color:transparent;height:1px;margin:0;padding:0; border-style:none; clear: both; margin: 10px 0 22px; height: 2px; }
+		
+
+		
+		
+		.img_hover.addHover:hover {
+			-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+			filter: alpha(opacity=50);
+			-moz-opacity: .5;
+			-khtml-opacity: .5;
+			opacity : .5;
+		}
+		
+		.img_hover.addHover {
+			-webkit-transition: all 0.2s ease-in-out;
+			-moz-transition: all 0.2s ease-in-out;
+			-o-transition: all 0.2s ease-in-out;
+			-ms-transition: all 0.2s ease-in-out;
+			transition: all 0.2s ease-in-out;
+			
+			-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+			filter: alpha(opacity=100);
+			-moz-opacity: 1;
+			-khtml-opacity: 1;
+			opacity : 1;
+		}
+		
+		a, a:visited { text-decoration: none; outline: 0; cursor:pointer; color:#333 }
+		a:hover { text-decoration:none; color:#ef3d42 }
+		
+		.barkStyle a, .barkStyle a:visited { text-decoration: none; outline: 0; cursor:pointer; color:#aaaaaa }
+		.barkStyle a:hover { text-decoration:none; color:#ef3d42 }
+		
+		.fontBig{
+			font-family: 'bebas_neueregular', Arial, Helvetica, sans-serif;
+				font-weight:lighter;
+				font-size:20px;
+				line-height:1px;
+		}
+		
+		.fontBig2 {
+			font-family: 'bebas_neueregular', Arial, Helvetica, sans-serif;
+				font-weight:lighter;
+				font-size:30px;
+				letter-spacing:1px;
+				padding:20px 0px 20px 0px;
+		}
+			
+		.fontSmall{
+			font-family: Arial, Helvetica, sans-serif;
+				font-weight:lighter;
+				font-size:12px;
+				line-height:inherit;
+				letter-spacing:inherit;
+		}
+		
+	</style>
+    
+     <script>
+	
+		/* Site Main plug-in initilize */
+		var retinaDevice;
+		
+		$(document).ready(function(){
+			
+				if(!($.browser.msie && parseInt($.browser.version, 10)<9))
+				$(".img_hover").addClass("addHover");
+				
+				retinaDevice = window.devicePixelRatio !== undefined &&  window.devicePixelRatio > 1 ? true : false;
+
+				
+				
+				if(retinaDevice){
+					$(".logo").attr("src","./images/logo@2x.png");
+				}
+			});
+		
+
+	
+		
+	</script>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-38200124-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+    
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+
+<body>
+<div class="barkStyle" style="width:100%; margin:0px; padding:0px 0px 20px 0px;"> 
+    <div class="container">
+        <div class="sixteen columns">
+            <div style="text-align:center; margin-top:20px;">
+                <img class="logo" width="190px" height="75px" src="./images/logo.png" alt="STUDIO POINT - Parallax Responsive Retina Ready" />
+                <h2 style="margin-top:-4px; color:#CCC; font-weight:lighter; letter-spacing:1px">Parallax Responsive Retina Ready</h2>
+                <span class="fontBig"><a href="http://themeforest.net/user/FMedia">HTML Template - developed by FMedia</a></span>
+    
+            </div>
+       </div>
+       <hr />
+    </div>
+</div>
+ 
+ <div style="width:100%; margin:0px; padding:40px 0px 20px 0px;"> 
+ 
+     <div class="container">  
+           <div class="sixteen columns">
+                <div class="four columns"> <br /></div>
+                <a href="./index2.html" target="_blank">
+                    <div class="eight columns img_hover" style="text-align:center">
+                        <img class="scale-with-grid imgShadow" src="./preview_image/image1.jpg" />
+                         <br />
+                         <br />
+                          <span class="fontBig2">Dark &amp; Light Color - One page Version</span>
+                    </div>
+                 </a>
+           </div>
+	</div>
+</div>
+  
+  <div style="width:100%;"> 
+ 
+     <div class="container">       
+         <hr />
+       <div class="sixteen columns" style="text-align:center;">
+            <div class="one columns"> <br /></div>
+             <a href="./s_b_index.html" target="_blank">
+                <div class="four columns img_hover">
+                    <img class="scale-with-grid" src="./preview_image/image4.jpg" alt="STUDIO POINT - Parallax Responsive Retina Ready" />
+                    <h4>Dark Color</h4>
+                    <h6>Separate pages Version</h6>
+                </div>
+            </a>
+            <a href="./b_index.html" target="_blank">
+                <div class="three columns img_hover"> 
+                    <img class="scale-with-grid" src="./preview_image/image2.jpg" alt="STUDIO POINT - Parallax Responsive Retina Ready" />
+                    <h4>Dark Color</h4>
+                    <h6> One page Version</h6>
+                </div>
+            </a>
+            <a href="./s_w_index.html" target="_blank">
+                <div class="four columns img_hover">
+                    <img class="scale-with-grid" src="./preview_image/image5.jpg" alt="STUDIO POINT - Parallax Responsive Retina Ready" />
+                    <h4>Light Color</h4>
+                    <h6>Separate pages Version</h6>
+                </div>
+            </a>
+            <a href="./w_index.html" target="_blank">
+                <div class="three columns img_hover">
+                    <img class="scale-with-grid" src="./preview_image/image3.jpg" alt="STUDIO POINT - Parallax Responsive Retina Ready" />
+                    <h4>Light Color</h4>
+                    <h6> One page Version</h6>
+                </div>
+            </a>
+           
+       </div>
+    </div>
+</div>
+</body>
+</html>

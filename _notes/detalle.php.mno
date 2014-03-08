@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_DetalleProd" value="name:id_producto;datatype:int,name:nom_producto;datatype:string,name:url_seo_producto;datatype:string,name:precio_normal_producto;datatype:string,name:precio_oferta_producto;datatype:string,name:oferta_producto;datatype:int,name:resumen_producto;datatype:string,name:detalle_producto;datatype:blob,name:img_producto;datatype:string,name:stock;datatype:int,name:estado_producto;datatype:int,name:id_subcategoria;datatype:int,name:fecha_act_producto;datatype:datetime,name:fecha_reg_producto;datatype:datetime,name:clicks_producto;datatype:int" />
+	<infoitem key="UD_Imagenes" value="name:id_imagen_prod;datatype:int,name:id_producto;datatype:int,name:imagenes;datatype:string,name:posicion_imag;datatype:int" />
+	<infoitem key="UD_javaimag" value="name:id_imagen_prod;datatype:int,name:id_producto;datatype:int,name:imagenes;datatype:string,name:posicion_imag;datatype:int" />
+</info>

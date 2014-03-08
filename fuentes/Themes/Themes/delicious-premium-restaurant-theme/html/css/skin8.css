@@ -1,0 +1,36 @@
+/* Colors for skin8 */
+
+#top-section,
+#footer-bottom-wrapper {background: url(../images/skins/pattern8.jpg) repeat-x top center;}
+
+#slogan-wrapper {background: url(../images/skins/slogan-bg8.jpg) repeat-x top center;}
+
+.product-prize {background: url(../images/skins/prize8.png) no-repeat top left;}
+
+#nav-wrapper {background: url(../images/skins/nav-bg8.png) no-repeat top center;}
+#nav li:hover ul, #nav li li:hover ul, #nav li li li:hover ul, #nav li li li li:hover ul {background: url(../images/skins/subnav-bg8.jpg);}
+
+.highlight1,
+.table1 th {background: #CA341C url(../images/button-overlay.png) repeat-x;}
+#searchform #searchsubmit {background: #CA341C url(../images/search-btn.png) no-repeat 0 0;}
+
+h1, h2, h3, h4, h5, h6, a,
+#slider a,
+ul.tabs li a,
+#accordion h4.ui-state-default a,
+#latest-recipes .recipes-desc a:hover,
+.sidebar-widget a:hover,
+#popular-posts .popular-desc a:hover,
+#footer a:hover {color: #CA341C;}
+
+.filter a:hover, .filter li.current a:hover, .portfolio-small-desc a, #commentform input[type="submit"], .wp-pagenavi a:hover, .wp-pagenavi span.current {
+	color: #fff;
+	background: #CA341C;
+	background: -moz-linear-gradient(top, #D73D21 0%, #CA341C 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#D73D21), color-stop(100%,#CA341C));
+	background: -webkit-linear-gradient(top, #D73D21 0%,#CA341C 100%);
+	background: -o-linear-gradient(top, #D73D21 0%,#CA341C 100%);
+	background: -ms-linear-gradient(top, #D73D21 0%,#CA341C 100%);
+	background: linear-gradient(top, #D73D21 0%,#CA341C 100%);
+	border: 1px solid #B31B02;
+}

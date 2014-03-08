@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_Visitas" value="name:id_click;datatype:int,name:id_producto;datatype:int,name:fecha_click;datatype:date,name:hora_click;datatype:time,name:url_referen;datatype:string,name:navegador_click;datatype:blob" />
+</info>

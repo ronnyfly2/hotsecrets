@@ -1,0 +1,25 @@
+/* 
+
+   ---------- CLEAN-LINE STYLE ---------- 
+
+*/
+
+#broadcrumbs-wrapper {
+	background: url(../images/clean-line/broadcrumbs-bg.png) repeat-x bottom center;
+}
+
+#featured {
+	background: url(../images/clean-line/featured-bg.png) repeat-x top center;	
+}
+
+#featured-small {
+	background: url(../images/clean-line/featured-small-bg.png) repeat-x top center;	
+}
+
+#footer-top {
+	background: url(../images/clean-line/footer-top-bg.png) repeat-x top center;
+}
+
+#header-wrapper {
+	background: url(../images/clean-line/header-bg.png) repeat-x top center;
+}

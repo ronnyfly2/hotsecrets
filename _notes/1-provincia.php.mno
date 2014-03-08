@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_Provincias" value="name:id_provincia;datatype:int,name:nom_prov;datatype:string,name:desc_prov;datatype:string,name:id_departamento;datatype:int" />
+</info>

@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_CatePc" value="name:id_categoria;datatype:int,name:nom_cate;datatype:string,name:desc_cate;datatype:blob,name:img_cate;datatype:string,name:estado_categoria;datatype:int" />
+	<infoitem key="UD_CatePca" value="name:id_categoria;datatype:int,name:nom_cate;datatype:string,name:desc_cate;datatype:blob,name:img_cate;datatype:string,name:estado_categoria;datatype:int" />
+</info>

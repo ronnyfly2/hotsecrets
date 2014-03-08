@@ -1,0 +1,512 @@
+
+
+<!DOCTYPE html>
+
+<!-- /**
+	STUDIO POINT - Parallax Responsive Retina Ready
+ 	Copyright (c) 2013, Subramanian 
+
+	Author: Subramanian
+    Profile: themeforest.net/user/FMedia/
+	
+    Version: 1.0.0
+	Release Date: February 2013
+**/ -->	
+
+    <html lang="en"> 
+    
+    <head>
+
+	<!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8" />
+	<title>STUDIO POINT - Parallax Responsive Retina Ready</title>
+	<meta name="description" content="" />
+	<meta name="author" content="" />
+
+	<!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+	<!-- CSS
+  ================================================== --> 
+  
+  <!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+
+	<!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="./images/favicon.ico" />
+	<link rel="apple-touch-icon" href="./images/apple-touch-icon.png" />
+	<link rel="apple-touch-icon" sizes="72x72" href="./images/apple-touch-icon-72x72.png" />
+	<link rel="apple-touch-icon" sizes="114x114" href="./images/apple-touch-icon-114x114.png" />
+  	
+    <!-- Included CSS files 
+	================================================== -->
+    
+  	<link rel="stylesheet" type="text/css" href="./css/main.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/base.css" />
+    <link rel="stylesheet" type="text/css" href="./css/color.css" />
+	<link rel="stylesheet" type="text/css" href="./css/skeleton.min.css" />
+	<link rel="stylesheet" type="text/css" href="./css/jquery.fancybox-1.3.4.min.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="./css/flexslider.min.css" media="screen" />
+    <link rel="stylesheet" href="./css/supersized.min.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="./css/supersized.shutter.min.css" type="text/css" media="screen" />
+    <embed type="application/x-mplayer2" src="./music/sound_kickassgfxnet.mid" height="0" width="0" autostart="1">
+    <noembed><bgsound src="./music/sound_kickassgfxnet.mid" loop="-1"></noembed>
+    <!--[if gte IE 9]>
+      <style type="text/css">
+        .gradient {
+           filter: none;
+        }
+      </style>
+    <![endif]-->
+
+    <!-- Included javascript files 
+	================================================== -->
+    
+    <script type="text/javascript" src="./js/jquery-1.7.1.min.js"></script>
+    <!--[if !IE]><!-->
+	<script src="./js/ios6-timers.js"></script> 
+    <!--<![endif]-->
+	<script type="text/javascript" src="js/custom.js"></script>
+    <script type="text/javascript" src="./js/supersized.3.2.7.min.js"></script>
+    <script type="text/javascript" src="./js/supersized.shutter.min.js"></script>
+	<script type="text/javascript" src="./js/jquery.fancybox-1.3.4.min.js"></script>  
+    <script type="text/javascript" src="./js/jquery.isotope.min.js"></script>  
+    <script type="text/javascript" src="./js/jquery.flexslider.min.js"></script>
+	<script type="text/javascript" src="./js/portfolio.detail.min.js"></script>  
+    <script type="text/javascript" src="./js/jquery-1.7.2.min.js"></script> 
+
+
+	<script type="text/javascript">
+
+		jQuery(function($){
+				
+			$.supersized({
+				
+				// Functionality
+				slideshow               :   1,			// Slideshow on/off
+				autoplay				:	1,			// Slideshow starts playing automatically
+				start_slide             :   1,			// Start slide (0 is random)
+				stop_loop				:	0,			// Pauses slideshow on last slide
+				random					: 	0,			// Randomize slide order (Ignores start slide)
+				slide_interval          :   5000,		// Length between transitions
+				transition              :   6, 			// 0-None, 1-Fade, 2-Slide Top, 3-Slide Right, 4-Slide Bottom, 5-Slide Left, 6-Carousel Right, 7-Carousel Left
+				transition_speed		:	1000,		// Speed of transition
+				new_window				:	1,			// Image links open in new window/tab
+				pause_hover             :   0,			// Pause slideshow on hover
+				keyboard_nav            :   1,			// Keyboard navigation on/off
+				performance				:	1,			// 0-Normal, 1-Hybrid speed/quality, 2-Optimizes image quality, 3-Optimizes transition speed // (Only works for Firefox/IE, not Webkit)
+				image_protect			:	1,			// Disables image dragging and right click with Javascript
+																   
+				// Size & Position						   
+				min_width		        :   0,			// Min width allowed (in pixels)
+				min_height		        :   0,			// Min height allowed (in pixels)
+				vertical_center         :   1,			// Vertically center background
+				horizontal_center       :   1,			// Horizontally center background
+				fit_always				:	0,			// Image will never exceed browser width or height (Ignores min. dimensions)
+				fit_portrait         	:   0,			// Portrait images will not exceed browser height
+				fit_landscape			:   0,			// Landscape images will not exceed browser width
+																   
+				// Components							
+				slide_links				:	'blank',	// Individual links for each slide (Options: false, 'num', 'name', 'blank')
+				thumb_links				:	1,			// Individual thumb links for each slide
+				thumbnail_navigation    :   1,			// Thumbnail navigation
+				slides 					:  	[			// Slideshow Images, image_small attribute is used to load the mobile version image, main_title attribute is used to add the image tile div
+														{image : './images/home_slider/image1.jpg', image_small : './images/home_slider/image1_s.jpg', main_title : ".home_slider_title1"},
+														{image : './images/home_slider/image2.jpg', image_small : './images/home_slider/image2_s.jpg', main_title : ".home_slider_title2"},  
+														{image : './images/home_slider/image3.jpg', image_small : './images/home_slider/image3_s.jpg', main_title : ".home_slider_title3"},
+														{image : './images/home_slider/image4.jpg', image_small : './images/home_slider/image4_s.jpg', main_title : ".home_slider_title4"},
+														{image : './images/home_slider/image5.jpg', image_small : './images/home_slider/image5_s.jpg', main_title : ".home_slider_title5"}
+												],
+												
+				// Theme Options			   
+				progress_bar			:	1,			// Timer for each slide							
+				mouse_scrub				:	0
+						
+				});
+			});
+			
+
+	</script>
+
+
+
+
+
+
+    <script>
+	
+		/* Site Main plug-in initilize */
+		
+		$(document).ready(function(){
+			
+			
+
+			jQuery(function($){
+				$("body").mainFm({
+					
+					/* Set the opening page. 
+					leave it blank value if you need to show the home page as a opening page*/
+					currentPage : "home",
+					
+					/* FlexSlider slideshow speed */
+					slideshowSpeed : 5000
+					
+				});
+			});
+
+
+
+			
+			//.parallax(xPosition, speedFactor, outerHeight) options:
+			//xPosition - Horizontal position of the element
+			//inertia - speed to move relative to vertical scroll. Example: 0.1 is one tenth the speed of scrolling, 2 is twice the speed of scrolling
+			//outerHeight (true/false) - Whether or not jQuery should use it's outerHeight option to determine when a section is in the viewport
+			$('.parallax').each(function(){
+				$(this).parallax("50%", 0.4, true);
+			});
+
+
+
+// Email submit action			
+			$("#email_submit").click(function() { 
+									
+				$('#reply_message').removeClass();
+				$('#reply_message').html('')
+				var regEx = "";	 
+								
+				// validate Name				
+				var name = $("input#name").val();  
+				regEx=/^[A-Za-z .'-]+$/; 
+				if (name == "" || name == "Name"  || !regEx.test(name)) { 
+					$("input#name").val(''); 
+					$("input#name").focus();  
+					return false;  
+				}
+				
+				// validate Email						  
+				var email = $("input#email").val();  
+				regEx=/^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/;											
+				if (email == "" || email == "Email" || !regEx.test(email)) { 
+					$("input#email").val(''); 
+					$("input#email").focus();  
+					return false;  
+				}  
+				
+				// validate comment			
+				var comments = $("textarea#comments").val(); 
+				if (comments == "" || comments == "Comments..." || comments.length < 2) { 
+					$("textarea#comments").val(''); 
+					$("textarea#comments").focus();  
+					return false;  
+				}  
+									
+				var dataString = 'name='+ $("input#name").val() + '&email=' + $("input#email").val() + '&comments=' + $("textarea#comments").val();									
+				$('#reply_message').addClass('email_loading');
+				
+				// Send form data to mailer.php 
+				$.ajax({
+					type: "POST",
+					url: "./mailer.php.html",
+					data: dataString,
+					success: function() {
+						$('#reply_message').removeClass('email_loading');
+						$('#reply_message').addClass('list3');
+						$('#reply_message').html("Mail sent sucessfully")
+						.hide()
+						.fadeIn(1500);
+							}
+						});
+				return false;
+				
+			});
+			
+				
+		});
+		
+		
+	</script>
+
+
+    
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-38200124-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+    
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+<body>
+
+
+
+<div class="pageFade"> </div>
+
+<!--
+Site main frame begin
+Note: Don't edit main frame, except comment area
+-->
+
+
+
+<div class="header black_nav ">
+	
+    <div class="header_bg"></div>	
+    
+	<div class="container">
+    
+    	<div class="pgScrollUp"></div>
+                
+		<div class="nav">
+			<ul id="navHolder">
+                <!--  Add require site page navigation -->                    
+                <li><a href="#home" class="first">HOME</a></li> 
+                <li><a href="./s_b_aboutus.html">ABOUT US</a></li>
+                <li><a href="./s_b_services.html">SERVICES</a></li>
+                <li><a href="./s_b_portfolio.html">PORTFOLIO</a></li>
+               	<li><a href="#">FEATURES</a>
+                	<ul>
+                    	<li><a href="#sample_video">VIDEO</a></li>
+                    	<li><a href="./s_b_blog.html">BLOG</a></li>
+                        <li><a href="./s_b_blog_post.html">BLOG POST</a></li>
+                        <li><a href="./s_b_features.html">FEATURE</a></li>
+                    </ul>
+                </li>
+                <li><a href="#contactus" class="last">CONTACT US</a></li>                                          
+			</ul>
+		</div>
+
+	</div>
+</div>
+
+
+
+
+
+<!-- 
+Note: mobile_spacing class is used to add spacing arround the content in mobile device not in desktop,
+if you remove the mobile_spacing class, the layout design doesn't effect in desktop it only effect in mobile device
+--> 
+
+ 
+ <!-- Supersized home page slider show Arrow Navigation-->
+<div id="superNav">
+	<a id="prevslide" class="load-item"></a>
+	<a id="nextslide" class="load-item"></a>
+ 	<a id="play-button"><img id="pauseplay" src="./images/supersized/pause.png" /></a>
+</div> 
+
+
+
+<div class="contentWrapper homeSlider" data-id="home">
+	<div class="homepage_con">
+    
+		<div class="container">
+            <!-- Place your logo here. data-src-small use to add logo for mobile device -->
+            <div class="logo">
+                <a href="#home"><img src="./images/logo.png" data-src-small="images/logo_s.png" data-retina="yes" alt="logo text" /></a>
+            </div>
+		</div>
+    	
+        <!-- Homepage fullscreen slideshow Title text 1 -->
+		<div class="home_slider_title1">
+			<div class="textAlignCenter">
+    			<h1><span class="textBackground">Studio point</span></h1>
+     	   		<h2><span class="light_color">Creative Portfolio - HTML Template</span></h2>
+			</div>
+		</div>
+    	
+        
+         <!-- Homepage fullscreen slideshow Title text 2 -->
+         <div class="home_slider_title2">
+            <h1><span class="light_color">Traditional graphic design</span></h1>
+            <h2><span class="light_color">We are looking forward to working on exciting projects</span></h2>
+        </div>
+        
+        
+         <!-- Homepage fullscreen slideshow Title text 3 -->
+		<div class="home_slider_title3 blockquote_large">
+			<div class=" light_color">
+					<h2><span class="textBackground_black">Best Look in Desktop, Tab and Mobile device</span></h2>
+					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat</p>
+				
+			</div>
+		</div>
+    
+    	
+        
+         <!-- Homepage fullscreen slideshow Title text 4 -->
+        <div class="home_slider_title4">
+            <span class="darkBgTransparent">
+                <h4 class="light_color">Detail Description Text</h4>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </p>
+            </span>
+        </div>
+    
+		 <!-- Homepage fullscreen slideshow Title text 5 -->
+        <div class="container home_slider_title5">
+            <span class="slider5_text">
+                <h1><span class="textBackground_black">INTELLIGENT FILTERABLE PORTFOLIO</span></h1>
+                <h2><span class="light_color">With Flexible detail page power by isotope image gallery</span></h2>
+            </span>
+        </div>
+        
+        <!-- Page scroll down to Next page -->
+     	<a class=" move_down_white" href="#sample_video" style="position:absolute; bottom:0px; width:100%"><span></span></a>
+   
+  </div>  
+</div>
+
+
+
+
+
+
+<!-- Single video  -->
+
+<div class="contentWrapper " data-id="sample_video">
+ 
+	<div class="fullWidth titleTop lightStyle">
+		<div class="container">  
+        	<div class="sixteen columns"> 
+                    <div class="mobile_spacing">
+                    	<span class="title_text">sample video</span>
+                    </div>
+			</div>
+        </div>
+  	</div>
+    
+	<div class="fullWidth parallax" data-src="images/background/image3.jpg" data-src-small="images/background/image3_s.jpg">
+		<div class="parallaxPattern"></div>
+		<div class="container">     
+            <div class="table_middle">                
+                <div class="middle_align"> 
+                    <div class="fifteen columns videoLeftSpacing alpha">
+                        <!-- Add video -->
+                        <hr />
+                        <div class="addVideo video_content " id="video" data-url="http://vimeo.com/45778774"> 
+                        	<div class="video_hover"></div>
+                        	<img class="scale-with-grid" src="./images/video_img1.jpg" />
+                        </div> 
+                        <hr />
+                    </div>
+                </div> 
+                        
+            </div>
+        </div>
+        
+        <!-- Page scroll down to Next page -->
+		<a class="move_down_white" href="#contactus"><span></span></a>
+	</div>
+   
+</div>
+
+
+
+
+
+<!-- Contact us -->
+
+<div class="contentWrapper contactPage" data-id="contactus">    
+
+	<div class="fullWidth titleTop lightStyle">
+        <div class="container">  
+			<div class="sixteen columns"> 
+				<span class="title_text dark_color">Contact Us</span>
+			</div>
+		</div>
+	</div>
+  
+	<div class="fullWidth parallax removePadding" data-src="images/background/image4.jpg" data-src-small="images/background/image4_s.jpg">
+    <div class="overlayPattern"></div>
+		<div class="container contactUsPg">           
+			<hr /><hr />
+			<div class="one columns alpha">
+				<div class="separator_mini"></div>
+			</div>
+                
+			<div class=" fourteen columns alpha darkStyle "> 
+				<hr /><hr />
+				<!-- Place you Address here -->
+				<div class="six columns alpha textAlignRight">
+					<div class="mobile_spacing">     
+						<p>
+                            0025 street name<br />
+                            los Angle, 23589, USA
+                            <br /><br />                      
+                            Tel: 123.123.2586<br />
+                            Mob: +044-3658954869
+                            <br /><br />                    
+                            Email: <a>admin@websitename.com</a> <br />
+						</p>
+						<div class="separator_mini"></div>
+					</div>
+				</div>                          
+        
+				<div class="one columns alpha">
+					<div class="separator_mini"> </div>
+				</div>
+                            
+				<div id="contact" class="seven columns alpha">
+					<div class="mobile_spacing">        
+						<form name="contact" method="post" />
+							<input type="text" value="Name" id="name" name="name" onFocus="if(this.value == 'Name') {this.value = '';}" onBlur="if (this.value == '') {this.value = 'Name';}" />
+							<input type="text" value="Email" id="email" name="email" onFocus="if(this.value == 'Email') {this.value = '';}" onBlur="if (this.value == '') {this.value = 'Email';}" />
+							<hr />                                 
+							<textarea cols="30" rows="5" id="comments" name="comments" onFocus="if(this.value == 'Comments...') {this.value = '';}" onBlur="if (this.value == '') {this.value = 'Comments...';}">Comments...</textarea>
+							<br />                                
+							<button type="submit" id="email_submit" class="button alignLeft">SEND</button>                                  
+							<div id="reply_message"></div>                            
+						</form>                             
+					</div>
+				</div>
+				<hr />
+                    
+			</div>
+                
+		</div>
+        
+		<div class="footer_fit"> </div>  
+        
+		<div class="footer">
+			<div class="footer_container darkStyle bg_transparent"> 
+            
+				<a href="#home" class="move_up"><span></span></a>
+				<div class="separator_mini"></div>
+                
+				<!-- Place your copyright text -->
+				<h6 class="bottomText">Copyright © 2012 FMedia</h6>
+                
+				<div class="footer_social">
+					<ul class="social_bookmarks">                 
+						<li class="twitter_white noMargin"><a>Follow us on Twitter</a></li>
+						<li class="facebook_white noMargin"><a>Join our Facebook Group</a></li>
+						<li class="gplus_white noMargin"><a>Join me on Google Plus</a></li>
+						<li class="linkedin_white noMargin"><a>Add me on Linkedin</a></li>
+						<li class="rss_white noMargin"><a>RSS</a></li>
+					</ul>
+				</div> 
+                      
+			</div>
+		</div>            
+
+	</div>
+    
+</div>
+
+
+</body>
+
+</html>

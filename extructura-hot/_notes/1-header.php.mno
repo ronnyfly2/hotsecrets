@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_DatosCarrito" value="name:id_carrito;datatype:int,name:idusuario;datatype:int,name:id_producto;datatype:int,name:cantidad;datatype:int,name:fecha_carrito;datatype:datetime,name:transaccion_efectuada;datatype:int" />
+</info>

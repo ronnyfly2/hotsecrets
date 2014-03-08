@@ -1,0 +1,75 @@
+#header-wrapper {
+	position: relative;
+	z-index: 100;	
+}
+
+#nav li li:hover ul,
+#nav li li li:hover ul,
+#nav li li li li:hover ul {
+    margin-left: 0;
+}
+
+#page-title h1 {
+	padding-top: 20px;
+}
+
+#slogan-wrapper {
+	height: 160px;
+}
+
+#portfolio-cat-wrapper.portfolio-1-col li img {
+	float: left;
+}
+
+#broadcrumbs-inner p {
+	padding-top: 12px;
+}
+
+#most-popular ul li {
+	margin-bottom: 20px;
+}
+
+#columns {margin-bottom: 20px;}
+
+#from-flickr ul li {
+	float: left;
+}
+
+.portfolio-thumbs ul li {
+	display: inline;
+}
+
+.wp-pagenavi {
+	margin-bottom: 30px;
+}
+
+#popular-posts ul, #popular-posts li {list-style: none;}
+
+#footer-bottom {
+	padding-bottom: 20px;	
+}
+
+/* Navigation Arrows */
+div.anythingSlider .arrow {
+	top: 35% !important;
+}
+div.anythingSlider-metallic .arrow {
+	top: 40% !important;
+}
+div.anythingSlider-construction .arrow {
+	top: 14% !important;
+}
+div.anythingSlider-minimalist-round .arrow , div.anythingSlider-minimalist-square .arrow {
+	top: 45% !important;
+}
+div.anythingSlider-cs-portfolio .arrow {
+	bottom: -24px !important;
+}
+
+div.anythingSlider .arrow a,
+div.anythingSlider-metallic .arrow a,
+div.anythingSlider-minimalist-square .arrow a,
+div.anythingSlider-construction .arrow a,
+div.anythingSlider-minimalist-round .arrow a {
+	margin: 0 !important;
+}

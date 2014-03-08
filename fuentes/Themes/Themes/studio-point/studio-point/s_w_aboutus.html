@@ -1,0 +1,383 @@
+
+
+<!DOCTYPE html>
+
+<!-- /**
+	STUDIO POINT - Parallax Responsive Retina Ready
+ 	Copyright (c) 2013, Subramanian 
+
+	Author: Subramanian
+    Profile: themeforest.net/user/FMedia/
+	
+    Version: 1.0.0
+	Release Date: February 2013
+**/ -->	
+
+    <html lang="en"> 
+    
+    <head>
+
+	<!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8" />
+	<title>STUDIO POINT - Parallax Responsive Retina Ready</title>
+	<meta name="description" content="" />
+	<meta name="author" content="" />
+
+	<!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+	<!-- CSS
+  ================================================== --> 
+  
+  <!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+
+	<!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="./images/favicon.ico" />
+	<link rel="apple-touch-icon" href="./images/apple-touch-icon.png" />
+	<link rel="apple-touch-icon" sizes="72x72" href="./images/apple-touch-icon-72x72.png" />
+	<link rel="apple-touch-icon" sizes="114x114" href="./images/apple-touch-icon-114x114.png" />
+  	
+    <!-- Included CSS files 
+	================================================== -->
+    
+	<link rel="stylesheet" type="text/css" href="./css/main.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/base.css" />
+    <link rel="stylesheet" type="text/css" href="./css/color.css" />
+	<link rel="stylesheet" type="text/css" href="./css/skeleton.min.css" />
+	<link rel="stylesheet" type="text/css" href="./css/jquery.fancybox-1.3.4.min.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="./css/flexslider.min.css" media="screen" />
+    
+    <!--[if gte IE 9]>
+      <style type="text/css">
+        .gradient {
+           filter: none;
+        }
+      </style>
+    <![endif]-->
+
+    <!-- Included javascript files 
+	================================================== -->
+    
+    <script type="text/javascript" src="./js/jquery-1.7.1.min.js"></script>
+    <!--[if !IE]><!-->
+	<script src="./js/ios6-timers.js"></script> 
+    <!--<![endif]-->
+	<script type="text/javascript" src="js/custom.js"></script>
+	<script type="text/javascript" src="./js/jquery.fancybox-1.3.4.min.js"></script>  
+    <script type="text/javascript" src="./js/jquery.isotope.min.js"></script>  
+    <script type="text/javascript" src="./js/jquery.flexslider.min.js"></script>
+	<script type="text/javascript" src="./js/portfolio.detail.min.js"></script>  
+    <script type="text/javascript" src="./js/jquery-1.7.2.min.js"></script>  
+    
+   
+    <script>
+		
+		/* Site Main plug-in initilize */
+		
+		$(document).ready(function(){
+			
+			jQuery(function($){
+				$("body").mainFm({
+					
+				/* set whether it's an one page or separate page file, if it's set false, the template works like a separate page version*/
+					onePage : false,
+					
+				/* Set the opening page. 
+					leave it blank value if you need to show the home page as a opening page*/
+					currentPage : "./s_w_aboutus.html",
+					
+				/* FlexSlider slideshow speed */
+					slideshowSpeed : 5000
+					
+				});
+			});	
+			
+			
+			//.parallax(xPosition, speedFactor, outerHeight) options:
+			//xPosition - Horizontal position of the element
+			//inertia - speed to move relative to vertical scroll. Example: 0.1 is one tenth the speed of scrolling, 2 is twice the speed of scrolling
+			//outerHeight (true/false) - Whether or not jQuery should use it's outerHeight option to determine when a section is in the viewport
+			$('.parallax').each(function(){
+				$(this).parallax("50%", 0.4, true);
+			});
+
+		});
+			
+		
+		
+		
+			
+	</script>
+
+    
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-38200124-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+    
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+<body class="white_ver topSpacing">
+
+
+
+<!--
+Site main frame begin
+Note: Don't edit main frame, except comment area
+-->
+
+
+<div class="header white_nav singlePage ">
+	<div class="container">
+		<div class="logo">
+			<a href="./s_w_index.html"><img src="./images/logo.png" data-src-small="images/logo_s.png" data-retina="yes" alt="logo text" /></a>
+        </div>
+                
+		<div class="nav">
+			<ul id="navHolder">
+                <!--  Add require site page navigation -->                    
+                <li><a href="./s_w_index.html">HOME</a></li> 
+                <li><a href="./s_w_aboutus.html">ABOUT US</a></li>
+                <li><a href="./s_w_services.html">SERVICES</a></li>
+                <li><a href="./s_w_portfolio.html">PORTFOLIO</a></li>
+               	<li><a href="#">FEATURES</a>
+                	<ul>
+                    	<li><a href="s_w_index.html#sample_video">VIDEO</a></li>
+                    	<li><a href="./s_w_blog.html">BLOG</a></li>
+                        <li><a href="./s_w_blog_post.html">BLOG POST</a></li>
+                        <li><a href="./s_w_features.html">FEATURE</a></li>
+                    </ul>
+                </li>
+                <li><a href="s_w_index.html#contactus" class="last">CONTACT US</a></li>                                          
+			</ul>
+		</div>
+
+	</div>
+</div>
+
+
+
+
+<!-- 
+Begin Page content
+ 
+Note: mobile_spacing class is used to add spacing arround the content in mobile device not in desktop,
+if you remove the mobile_spacing class, the layout design doesn't effect in desktop it only effect in mobile device
+ -->
+
+<div class="contentWrapper  fullWidth titleTop darkStyle">
+      <div class="container">  
+          <div class="sixteen columns"> 
+                  <div class="mobile_spacing">
+                       <span class="title_text">About Us</span>
+                  </div>
+          </div>
+      </div>
+</div>
+
+<div class="contentWrapper fullWidth lightStyle">
+
+    <div class="container">        
+        
+        <div class="sixteen columns">
+            <div class="mini_description">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam.
+                Sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam.
+                <hr />
+            </div>
+        </div>
+        
+        <div class="clear"></div> 
+        
+        <div class="row">
+           
+                    
+            <div class="one-third column ">
+                <div class="mobile_spacing"> 
+                    <div class="img_place">
+                        <img src="./images/about_image1.jpg" class="scale-img " /> 
+                        <div class="overlay social">
+                            <ul class="social_bookmarks">                    
+                                <li class="twitter_white noMargin"><a>Follow us on Twitter</a></li>
+                                <li class="facebook_white noMargin"><a>Join our Facebook Group</a></li>
+                                <li class="gplus_white noMargin"><a>Join me on Google Plus</a></li>
+                                <li class="linkedin_white noMargin"><a>Add me on Linkedin</a></li>
+                                <li class="rss_white noMargin"><a>RSS</a></li>   
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="separator_mini"></div> 
+                    <h4><a>Michale clarke</a></h4>
+                    <h6>Project Manager</h6>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam.</p>
+                    <hr />
+                </div>
+            </div>                      
+                      
+                        
+            <div class="one-third column ">
+                 <div class="mobile_spacing"> 
+                    <div class="img_place">
+                        <img src="./images/about_image2.jpg" class="scale-img " />  
+                        <div class="overlay social">
+                            <ul class="social_bookmarks">                    
+                                <li class="twitter_white noMargin"><a>Follow us on Twitter</a></li>
+                                <li class="facebook_white noMargin"><a>Join our Facebook Group</a></li>
+                                <li class="gplus_white noMargin"><a>Join me on Google Plus</a></li>
+                                <li class="linkedin_white noMargin"><a>Add me on Linkedin</a></li>
+                                <li class="rss_white noMargin"><a>RSS</a></li>   
+                            </ul>
+                        </div>
+                    </div> 
+                    <div class="separator_mini"></div> 
+                    <h4><a>Stephen Fleming</a></h4>
+                    <h6>Graphic Designer</h6>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam.</p>
+                    <hr />
+                </div>
+            </div>  
+
+                                 
+            <div class="one-third column ">  
+                 <div class="mobile_spacing">                    
+                    <div class="img_place">
+                        <img src="./images/about_image3.jpg" class="scale-img" /> 
+                        <div class="overlay social">
+                            <ul class="social_bookmarks">                    
+                                <li class="twitter_white noMargin"><a>Follow us on Twitter</a></li>
+                                <li class="facebook_white noMargin"><a>Join our Facebook Group</a></li>
+                                <li class="gplus_white noMargin"><a>Join me on Google Plus</a></li>
+                                <li class="linkedin_white noMargin"><a>Add me on Linkedin</a></li>
+                                <li class="rss_white noMargin"><a>RSS</a></li>   
+                            </ul>
+                        </div> 
+                    </div> 
+                    <div class="separator_mini"></div> 
+                    <h4><a>Lisa Michale</a></h4>
+                    <h6>Relationship Manager</h6>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam.</p>
+                    <hr />
+                </div>
+            </div>
+        </div>
+
+  </div>     
+
+    
+</div>
+
+
+
+<!-- Client  -->
+
+<div class="contentWrapper  titleTop darkStyle">
+	<div class="container">  
+		<div class="sixteen columns"> 
+			<div class="mobile_spacing">
+				<span class="title_text">Our Clients</span>
+			</div>
+		</div>
+	</div>
+</div>
+  
+<!-- Parallax content data-src attribute is used to set the larg size image for desktop and 
+	 data-src-small is used to set the small size image for mobile device --> 
+        
+<div class="contentWrapper parallax" data-src="images/background/image1.jpg" data-src-small="images/background/image1_s.jpg">
+	<div class="parallaxPattern"></div>
+	<div class="container">
+		<div class="table_left">
+			<hr />
+			<a class="imgBtn">	<img src="./images/client1.png" />	</a>
+			<a class="imgBtn">	<img src="./images/client2.png" />	</a>
+			<a class="imgBtn">	<img src="./images/client3.png" />	</a>
+			<a class="imgBtn">	<img src="./images/client4.png" />	</a>
+			<hr /> 
+		</div>
+	</div>
+</div>
+
+
+
+<!-- Twitter section -->
+
+<div class="contentWrapper  titleTop darkStyle">
+	<div class="container">  
+		<div class="sixteen columns"> 
+			<div class="mobile_spacing">
+				<span class="title_text">Recent Twitter</span>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- Parallax content data-src attribute is used to set the larg size image for desktop and 
+	 data-src-small is used to set the small size image for mobile device --> 
+
+<div class="contentWrapper parallax lightStyle">
+	<div class="container  ">
+		<div class="table_left top_bot_pad">
+			<ul id="twitter_update_list"></ul>
+    	</div> 
+	</div> 
+</div>
+
+<script type="text/javascript" src="http://twitter.com/javascripts/blogger.js"></script>
+<script type="text/javascript" src="http://api.twitter.com/1/statuses/user_timeline.json?screen_name=envato&include_rts=true&count=3&callback=twitterCallback2"></script>
+
+
+
+
+
+
+
+<!-- Footer -->
+
+
+<div class="contentWrapper darkStyle noRetina ">  
+	<div class="fullWidth parallax">  
+      
+		<div class="footer white_bg">
+			<div class="footer_container lightStyle bg_transparent"> 
+            
+				<a class="move_up_white goTop"><span></span></a>
+				<div class="separator_mini"></div>
+                
+				<!-- Place your copyright text -->
+				<h6 class="bottomText"><span>Copyright © 2012 FMedia</span></h6>
+                
+				<div class="footer_social">
+					<ul class="social_bookmarks">                 
+						<li class="twitter noMargin"><a>Follow us on Twitter</a></li>
+						<li class="facebook noMargin"><a>Join our Facebook Group</a></li>
+						<li class="gplus noMargin"><a>Join me on Google Plus</a></li>
+						<li class="linkedin noMargin"><a>Add me on Linkedin</a></li>
+						<li class="rss noMargin"><a>RSS</a></li>
+					</ul>
+				</div> 
+                      
+			</div>
+		</div>
+                    
+	</div>
+</div>
+
+
+</body>
+
+</html>

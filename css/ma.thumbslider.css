@@ -1,0 +1,309 @@
+.ma-thumbnail-hor {
+	float:left;
+	width:267px;
+}
+.ma-thumbnail-slider-title {}
+.ma-thumbnail-slider-title h2 {
+	padding:5px;
+}
+.ma-thumbnail-slider {}
+.thumb-slider .jcarousel-container {
+    -moz-border-radius: 10px;
+    background: #fff;
+    border: 2px solid #000;
+}
+
+.thumb-slider .jcarousel-container-horizontal {
+    width: 1000px;
+    padding: 10px 0px;
+	padding-left:40px;
+	margin:0 auto;
+	margin-top:80px
+}
+
+.thumb-slider .jcarousel-container-vertical {
+    width: 75px;
+    height: 245px;
+    padding: 0px 0px;
+}
+
+.thumb-slider .jcarousel-clip-horizontal {
+    width:  960px;
+    height: 154px;
+}
+
+.thumb-slider .jcarousel-clip-vertical {
+    width:  240px;
+    height: 245px;
+}
+
+.thumb-slider .jcarousel-item {
+	float: left;
+    list-style: none outside none;
+	text-align:center;
+}
+
+.thumb-slider .jcarousel-item-horizontal {
+    margin-right: 0px;
+}
+.product-view .product-img-box .more-views li.jcarousel-item-horizontal {
+	margin: 0 0 0 7px;
+}
+.thumb-slider .jcarousel-item-vertical {
+    margin-bottom: 10px;
+}
+
+.thumb-slider .jcarousel-item-placeholder {
+    background: #fff;
+    color: #000;
+}
+.thumb-slider .product-image {
+	display:inline-block;
+	margin:0 0 8px;
+}
+
+/**
+ *  Horizontal Buttons
+ */
+.ma-thumbnail-slider .jcarousel-next-horizontal {
+    position: absolute;
+    top: 20%;
+    right: -30px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    background: transparent url(../images/next-horizontal.png) no-repeat 0 0;
+}
+
+.ma-thumbnail-slider .jcarousel-next-horizontal:hover {
+    background-position: -32px 0;
+}
+
+.ma-thumbnail-slider .jcarousel-next-horizontal:active {
+    background-position: -64px 0;
+}
+
+.ma-thumbnail-slider .jcarousel-next-disabled-horizontal,
+.ma-thumbnail-slider .jcarousel-next-disabled-horizontal:hover,
+.ma-thumbnail-slider .jcarousel-next-disabled-horizontal:active {
+    cursor: default;
+    background-position: -96px 0;
+}
+
+.ma-thumbnail-slider .jcarousel-prev-horizontal {
+    position: absolute;
+    top: 20%;
+    left: -30px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    background: transparent url(../images/prev-horizontal.png) no-repeat 0 0;
+}
+
+.ma-thumbnail-slider .jcarousel-prev-horizontal:hover {
+    background-position: -32px 0;
+}
+
+.ma-thumbnail-slider .jcarousel-prev-horizontal:active {
+    background-position: -64px 0;
+}
+
+.ma-thumbnail-slider .jcarousel-prev-disabled-horizontal,
+.ma-thumbnail-slider .jcarousel-prev-disabled-horizontal:hover,
+.ma-thumbnail-slider .jcarousel-prev-disabled-horizontal:active {
+    cursor: default;
+    background-position: -96px 0;
+}
+
+
+/**
+ * This <div> element is wrapped by jCarousel around the list
+ * and has the classname "jcarousel-container".
+ */
+.ma-thumbnail-slider .jcarousel-container {
+    position: relative;
+}
+.ma-thumbnail-slider .jcarousel-clip {
+    z-index: 2;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+}
+.ma-thumbnail-slider .jcarousel-list {
+    z-index: 1;
+    overflow: hidden;
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+}
+/**
+ * The buttons are added dynamically by jCarousel before
+ * the <ul> list (inside the <div> described above) and
+ * have the classnames "jcarousel-next" and "jcarousel-prev".
+ */
+
+.ma-thumbnail-slider .jcarousel-next {
+    z-index: 3;
+    display: none;
+}
+.ma-thumbnail-slider .jcarousel-prev {
+    z-index: 3;
+    display: none;
+}
+
+.ma-thumbnail-vert {
+	float: left;
+}
+#ma-thumb-vert-slider {
+	height: 5555px !important;
+}
+
+.ma-thumbnail-vert  .jcarousel-container-vertical {
+    width: 62px;
+    padding: 35px 10px;
+}
+.ma-thumbnail-vert  .jcarousel-clip {
+    overflow: hidden;
+}
+.ma-thumbnail-vert  .jcarousel-clip-vertical {
+    width: 60px;
+    height: 267px;
+}
+.ma-thumbnail-vert  .jcarousel-item {
+    width: 60px;
+    height: 60px;
+    margin-left: 0 !important;
+}
+.ma-thumbnail-vert .product-image {
+	float: left;
+}
+.ma-thumbnail-vert .product-name  {
+	margin: 0 0 5px;
+}
+
+.ma-thumbnail-vert  .jcarousel-item-placeholder {
+    background: #fff;
+    color: #000;
+}
+.ma-thumbnail-vert .block-content li.item {
+	padding: 0;
+}
+
+/**
+ *  Vertical Buttons
+ */
+.ma-thumbnail-vert .jcarousel-next-vertical, 
+.ma-thumbnail-vert  .jcarousel-prev-vertical {
+    background: transparent url(../images/prev-vertical.png) no-repeat 0 0;
+	width: 30px;
+	height: 32px;
+	position: absolute;
+	left: 32%;
+	cursor: pointer;
+}
+.ma-thumbnail-vert .jcarousel-next-vertical {
+    background: transparent url(../images/next-vertical.png) no-repeat 0 0;
+	width: 30px;
+	height: 32px;
+	position: absolute;
+	left: 30%;
+	cursor: pointer;
+}
+
+.ma-thumbnail-vert  .jcarousel-next-vertical:hover,
+.ma-thumbnail-vert  .jcarousel-next-vertical:focus {
+    background-position: 0 -32px;
+}
+.ma-thumbnail-vert  .jcarousel-prev-vertical {
+    top: 5px;
+}
+.ma-thumbnail-vert  .jcarousel-prev-vertical:hover,
+.ma-thumbnail-vert  .jcarousel-prev-vertical:focus {
+    background-position: 0 -32px;
+}
+
+.product-view .product-img-box .more-views ul { }
+.product-view .product-img-box .more-views li {
+	margin: 0 5px 8px 0 !important;
+}
+.product-view .product-img-box .more-views li.thumbnail-item a {
+    border: 1px solid #e7e7e7;
+    float: left;
+    height: auto;
+    width: auto;
+}
+
+/* Browser Resets */
+.ma-thumbnail-container .flex-container a:active,
+.ma-thumbnail-container .flexslider a:active,
+.ma-thumbnail-container .flex-container a:focus,
+.ma-thumbnail-container .flexslider a:focus  {outline: none;}
+.ma-thumbnail-container .slides,
+.ma-thumbnail-container .flex-control-nav,
+.ma-thumbnail-container .flex-direction-nav {margin: 0; padding: 0; list-style: none;} 
+
+/* FlexSlider Necessary Styles
+*********************************/ 
+.ma-thumbnail-container .flexslider {margin: 0; padding: 0;}
+.ma-thumbnail-container .flexslider .slides > li {display: none; -webkit-backface-visibility: hidden;} /* Hide the slides before the JS is loaded. Avoids image jumping */
+.product-view .product-img-box .more-views .flex-direction-nav li a { border: 0; width: auto; height: auto; }
+.ma-thumbnail-container .flexslider .slides img { width: 100%; display: block;}
+.ma-thumbnail-container .flex-pauseplay span {text-transform: capitalize;}
+
+/* Clearfix for the .slides element */
+.ma-thumbnail-container .slides:after {content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0;} 
+html[xmlns] .ma-thumbnail-container .slides {display: block;} 
+* html .ma-thumbnail-container .slides {height: 1%;}
+
+/* No JavaScript Fallback */
+/* If you are not using another script, such as Modernizr, make sure you
+ * include js that eliminates this class on page load */
+.no-js .ma-thumbnail-container .slides > li:first-child {display: block;}
+
+
+/* FlexSlider Default Theme
+*********************************/
+.ma-thumbnail-container .flexslider {margin: 10px 0; position: relative; zoom: 1; padding: 0 33px;}
+.ma-thumbnail-container .flex-viewport {max-height: 2000px; -webkit-transition: all 1s ease; -moz-transition: all 1s ease; transition: all 1s ease;}
+.ma-thumbnail-container .loading .flex-viewport {max-height: 300px;}
+.ma-thumbnail-container .flexslider .slides {zoom: 1;}
+
+.ma-thumbnail-container .carousel li {margin-right: 5px; text-align: center; }
+
+
+/* Direction Nav */
+.ma-thumbnail-container .flex-direction-nav {*height: 0;}
+
+.ma-thumbnail-container .flexslider:hover .flex-next:hover, .ma-thumbnail-container .flexslider:hover .flex-prev:hover {opacity: 1;}
+.ma-thumbnail-container .flex-direction-nav .flex-disabled {opacity: .3!important; filter:alpha(opacity=30); cursor: default;}
+
+/* Control Nav */
+.ma-thumbnail-container .flex-control-nav {width: 100%; position: absolute; top: -16px; text-align: center;}
+.ma-thumbnail-container .flex-control-nav li { margin: 0 6px; display: inline-block; zoom: 1; *display: inline;}
+.ma-thumbnail-container .flex-control-paging li a {width: 11px; height: 11px; display: block; background: #aaa; cursor: pointer; text-indent: -9999px; -webkit-border-radius: 20px; -moz-border-radius: 20px; -o-border-radius: 20px; border-radius: 20px; box-shadow: inset 0 0 3px rgba(0,0,0,0.3);}
+.ma-thumbnail-container .flex-control-paging li a:hover { background: #fff; }
+.ma-thumbnail-container .flex-control-paging li a.flex-active { background: #fff; cursor: default; }
+
+.ma-thumbnail-container .flex-control-thumbs {margin: 5px 0 0; position: static; overflow: hidden;}
+.ma-thumbnail-container .flex-control-thumbs li {width: 25%; float: left; margin: 0;}
+.ma-thumbnail-container .flex-control-thumbs img {width: 100%; display: block; opacity: .7; cursor: pointer;}
+.ma-thumbnail-container .flex-control-thumbs img:hover {opacity: 1;}
+.ma-thumbnail-container .flex-control-thumbs .flex-active {opacity: 1; cursor: default;}
+
+@media screen and (max-width: 860px) {
+  .ma-thumbnail-container .flex-direction-nav .flex-prev {opacity: 1; left: 0;}
+  .ma-thumbnail-container .flex-direction-nav .flex-next {opacity: 1; right: 0;}
+}
+.ma-thumbnail-container .ma-loading {
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	z-index: 99;
+	background: url(../images/loader.gif) no-repeat ;
+	top: 50%;
+	left: 50%;
+	margin: -8px 0 0 -8px;
+}

@@ -1,0 +1,79 @@
+/*
+ * jQuery FlexSlider v2.0
+ * http://www.woothemes.com/flexslider/
+ *
+ * Copyright 2012 WooThemes
+ * Free to use under the GPLv2 license.
+ * http://www.gnu.org/licenses/gpl-2.0.html
+ *
+ * Contributing author: Tyler Smith (@mbmufffin)
+ */
+
+ 
+/* Browser Resets */
+.ma-onsaleproductslider-container .flex-container a:active,
+.ma-onsaleproductslider-container .flexslider a:active,
+.ma-onsaleproductslider-container .flex-container a:focus,
+.ma-onsaleproductslider-container .flexslider a:focus  {outline: none;}
+.ma-onsaleproductslider-container .slides,
+.ma-onsaleproductslider-container .flex-control-nav,
+.ma-onsaleproductslider-container .flex-direction-nav {margin: 0; padding: 0; list-style: none;} 
+
+/* FlexSlider Necessary Styles
+*********************************/ 
+.ma-onsaleproductslider-container .flexslider {margin: 0; padding: 0;}
+.ma-onsaleproductslider-container .flexslider .slides > li { margin-top: 20px; display: none; -webkit-backface-visibility: hidden;} /* Hide the slides before the JS is loaded. Avoids image jumping */
+.ma-onsaleproductslider-container .flexslider .slides img { display: inline-block;border-radius:12px;}
+.ma-onsaleproductslider-container .flex-pauseplay span {text-transform: capitalize;}
+
+/* Clearfix for the .slides element */
+.ma-onsaleproductslider-container .slides:after {content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0;} 
+html[xmlns] .ma-onsaleproductslider-container .slides {display: block;} 
+* html .ma-onsaleproductslider-container .slides {height: 1%;}
+
+/* No JavaScript Fallback */
+/* If you are not using another script, such as Modernizr, make sure you
+ * include js that eliminates this class on page load */
+.no-js .ma-onsaleproductslider-container .slides > li:first-child {display: block;}
+
+
+/* FlexSlider Default Theme
+*********************************/
+.ma-onsaleproductslider-container .flexslider {margin: 0; position: relative; zoom: 1;}
+.ma-onsaleproductslider-container .flex-viewport {max-height: 2000px; -webkit-transition: all 1s ease; -moz-transition: all 1s ease; transition: all 1s ease;}
+.ma-onsaleproductslider-container .loading .flex-viewport {max-height: 300px;}
+.ma-onsaleproductslider-container .flexslider .slides {zoom: 1;}
+
+.ma-onsaleproductslider-container .carousel li {margin-right: 5px; text-align: center; }
+
+
+/* Direction Nav */
+.ma-onsaleproductslider-container .flex-direction-nav {*height: 0;}
+
+.ma-onsaleproductslider-container .flexslider:hover .flex-next:hover, .ma-onsaleproductslider-container .flexslider:hover .flex-prev:hover {opacity: 1;}
+.ma-onsaleproductslider-container .flex-direction-nav .flex-disabled {}
+
+/* Control Nav */
+.ma-onsaleproductslider-container .flex-control-nav {width: 100%; position: absolute; top: -16px; text-align: center;}
+.ma-onsaleproductslider-container .flex-control-nav li { margin: 0 6px; display: inline-block; zoom: 1; *display: inline;}
+.ma-onsaleproductslider-container .flex-control-paging li a {width: 11px; height: 11px; display: block; background: #aaa; cursor: pointer; text-indent: -9999px; -webkit-border-radius: 20px; -moz-border-radius: 20px; -o-border-radius: 20px; border-radius: 20px; box-shadow: inset 0 0 3px rgba(0,0,0,0.3);}
+.ma-onsaleproductslider-container .flex-control-paging li a:hover { background: #fff; }
+.ma-onsaleproductslider-container .flex-control-paging li a.flex-active { background: #fff; cursor: default; }
+
+.ma-onsaleproductslider-container .flex-control-thumbs {margin: 5px 0 0; position: static; overflow: hidden;}
+.ma-onsaleproductslider-container .flex-control-thumbs li {width: 25%; float: left; margin: 0;}
+.ma-onsaleproductslider-container .flex-control-thumbs img {width: 100%; display: block; opacity: .7; cursor: pointer;}
+.ma-onsaleproductslider-container .flex-control-thumbs img:hover {opacity: 1;}
+.ma-onsaleproductslider-container .flex-control-thumbs .flex-active {opacity: 1; cursor: default;}
+
+
+.ma-onsaleproductslider-container .ma-loading {
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	z-index: 99;
+	background: url(../imagenes/loader.gif) no-repeat ;
+	top: 50%;
+	left: 50%;
+	margin: -8px 0 0 -8px;
+}

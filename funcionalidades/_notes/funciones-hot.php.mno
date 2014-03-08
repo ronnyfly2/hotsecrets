@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_Subcat" value="name:nom_subcat;datatype:string" />
+	<infoitem key="UD_ConsultaFuncion" value="name:id_talla;datatype:int,name:nom_talla;datatype:string,name:precio_talla;datatype:string" />
+	<infoitem key="UD_nomb" value="name:nombre_ordenador;datatype:string" />
+	<infoitem key="UD_UsuNomb" value="name:nombre;datatype:string" />
+	<infoitem key="UD_Marca" value="name:nom_producto;datatype:string" />
+	<infoitem key="UD_Tallon" value="name:nom_talla;datatype:string" />
+	<infoitem key="UD_PrecDist" value="name:costo;datatype:string" />
+</info>

@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_SubCategorias" value="name:id_subcategoria;datatype:int,name:nom_subcat;datatype:string,name:url_seo_subcat;datatype:string,name:desc_subcat;datatype:blob,name:img_subcat;datatype:string,name:estado;datatype:int,name:fecha_subcat;datatype:datetime,name:id_categoria;datatype:int,name:clicks;datatype:int" />
+	<infoitem key="UD_EdProducto" value="name:id_producto;datatype:int,name:nom_producto;datatype:string,name:url_seo_producto;datatype:string,name:precio_normal_producto;datatype:string,name:precio_oferta_producto;datatype:string,name:oferta_producto;datatype:int,name:resumen_producto;datatype:string,name:detalle_producto;datatype:blob,name:img_producto;datatype:string,name:composiciones;datatype:string,name:video_producto;datatype:blob,name:stock;datatype:int,name:estado_producto;datatype:int,name:id_subcategoria;datatype:int,name:fecha_act_producto;datatype:datetime,name:fecha_reg_producto;datatype:datetime,name:clicks_producto;datatype:int" />
+</info>

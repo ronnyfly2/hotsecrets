@@ -1,0 +1,25 @@
+/* 
+
+   ---------- TRIANGLE STYLE ---------- 
+
+*/
+
+#broadcrumbs-wrapper {
+	background: url(../images/triangles/broadcrumbs-bg.png) repeat-x bottom center;
+}
+
+#featured {
+	background: url(../images/triangles/featured-bg.png) repeat-x top center;	
+}
+
+#featured-small {
+	background: url(../images/triangles/featured-small-bg.png) repeat-x top center;	
+}
+
+#footer-top {
+	background: url(../images/triangles/footer-top-bg.png) repeat-x top center;
+}
+
+#header-wrapper {
+	background: url(../images/triangles/header-bg.png) repeat-x top center;
+}

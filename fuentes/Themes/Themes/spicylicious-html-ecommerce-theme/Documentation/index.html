@@ -1,0 +1,390 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<head lang="en">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<title>“Spicylicious” - HTML template by Dimitar Koev v1.0</title>
+	<!-- Framework CSS -->
+	<link rel="stylesheet" href="assets/blueprint-css/screen.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="assets/blueprint-css/print.css" type="text/css" media="print">
+	<!--[if lt IE 8]><link rel="stylesheet" href="assets/blueprint-css/ie.css" type="text/css" media="screen, projection"><![endif]-->
+	<link rel="stylesheet" href="assets/blueprint-css/plugins/fancy-type/screen.css" type="text/css" media="screen, projection">
+	<style type="text/css" media="screen">
+		p, table, hr, .box { margin-bottom:25px; }
+		.box p { margin-bottom:10px; }
+	</style>
+</head>
+
+
+<body>
+	<div class="container">
+	
+		<h3 class="center alt">“Spicylicious” - HTML template by Dimitar Koev v1.0</h3>
+		
+		<hr>
+		
+		<h1 class="center">“Spicylicious” - HTML template by Dimitar Koev v1.0</h1>
+		
+		<div class="borderTop">
+			<div class="span-6 colborder info prepend-1">
+				<p class="prepend-top">
+					<strong>
+					Created: 30/09/2011<br>
+					By: Dimitar Koev/ the AlThemist<br>
+					Email: <a href="mailto:office@mgdesign.eu">office@mgdesign.eu</a>
+					</strong>
+				</p>
+			</div><!-- end div .span-6 -->		
+	
+			<div class="span-12 last">
+				<p class="prepend-top append-0">Thank you for purchasing my theme. If you have any questions that are beyond the scope of this help file, please feel free to email via my user page contact form <a href="http://themeforest.net/user/Koev">here</a>. Thanks so much!</p>
+			</div>
+		</div><!-- end div .borderTop -->
+		
+		<hr>
+		
+        <img src="assets/big_thumb.jpg" width="800" height="606" alt="Spicylicious" />
+        
+		<h2 id="toc" class="alt">Table of Contents</h2>
+		<ol class="alpha">
+        	<li><a href="#overview">Overview</a></li>
+            <li><a href="#install">Installation</a></li>
+            <li><a href="#htmlStructure">HTML Structure</a></li>
+			<li><a href="#cssFiles">CSS Files and Structure</a></li>
+			<li><a href="#javascript">JavaScript</a></li>
+			<li><a href="#psdFiles">PSD Files</a></li>
+			<li><a href="#credits">Sources and Credits</a></li>
+		</ol>
+		
+		<hr>
+        
+        <h3 id="overview"><strong>1) Overview - </strong> - <a href="#toc">top</a></h3>
+        <p>Before we start, lets take a look on the folder structure of the theme. All theme files are placed in the HTML folder. The main HTML folder consists of 3 more folders for diferent types of theme assets:</p><br />
+        <ol class="alpha">
+        	<li>Image - contaning all images for the theme design</li>
+            <li>js -containing all scripts for the jquery effects</li>
+            <li>Stylesheet - containing all CSS files for the theme</li>
+		</ol>
+        
+        <img src="assets/folders.jpg" width="636" height="168" alt="Spicylicious" /><br/>
+
+		
+        <h3 id="install"><strong>2) Installation</strong> - <a href="#toc">top</a></h3>
+        <p>This is an HTML theme and doesn't require instalation in the traditional meaning of the word. You only need to place the content (HTML files and the three folders) in your prefered web directory</p><br />
+        
+        <p>Keep in mind that the folder structure and file/folder names are important for the correct theme work</p><br />
+        
+        <div class="line"></div><!-- line end --><br />
+
+		<hr>
+        
+        <h3 id="htmlStructure"><strong>3) HTML Structure</strong> - <a href="#toc">top</a></h3>
+		<p>The main HTML structure of the template consists of 4 main containers containing all page ellements:</p><br />
+        
+        <ol class="alpha">
+        	<li>Header</li>
+            <li>Content Holder</li>
+            <li>Pre-Footer</li>
+            <li>Footer</li>
+		</ol>
+        
+        <p>All 4 containers are wrapped in one main div with ID #container</p><br />
+        
+        <p>Every one of the main 4 containers have a full width and and a subcontainer with class .inner for the content</p><br />
+        
+        <img src="assets/structure.jpg" width="800" height="625" alt="Spicylicious" /><br />
+        
+        <h4><strong>Header</strong></h4><br />
+        <p>The header div contains all navigation ellements of the template:</p><br />
+        
+        <ol class="alpha">
+        	<li>Logo</li>
+            <li>Main menu for pages</li>
+            <li>Category menu</li>
+		</ol>
+        
+        <img src="assets/header.jpg" width="800" height="305" alt="Spicylicious" /><br />
+        
+        <p>The main menu is divided by two pieces for the left and right side of the logo. In order to achieve the centered effect, the left menu <pre><ul class="main_menu menu_left"></ul></pre> if floated to the right and the right menu <pre><ul class="main_menu menu_right"></ul></pre> is floated to the left.</p>
+        <p>Both parts are based on Unordered lists.</p><br />
+        
+        <p>Every item in the main menu, could have a fading drop-down submenu. It is based on nested unordered lists and the fading effect for the submenu is controlled by JavaScript function.</p>
+        
+        <p>The category menu is a 3 level drop-down menu powered by jQuery custom script. The menu is again based on Unordered list with nested list for the sub-menus. The structure of the menu is as follows:</p>
+        
+        <img src="assets/categories.jpg" width="800" height="503" alt="Spicylicious" /><br />
+        
+        <p>Where "children" is a second level (sub-menu) and "children2" is a third level (sub-sub-menu) menu.</p>
+        
+        <p>The drop down effect is again controlled by custom jQuery script.</p>
+        
+        <img src="assets/sub-menu.jpg" width="800" height="310" alt="Spicylicious" /><br /><br />
+        
+        <h4><strong>Content</strong></h4><br />
+        
+        <p>Most of the page ellements are placed in a container div with class "box". The "box" container have two main parts: Heading title (h2 with a specific class assigned for the line effect) and the real container with class "box-content". All important parts of every page segment is placed within the "box-conten" div.</p>
+        
+        <p><strong>Example</strong></p>
+        
+        <img src="assets/box.jpg" width="800" height="179" alt="Spicylicious" /><br />
+        
+        
+        <p><strong>Featured Roundabout slider</strong></p>
+        
+        <p>The featured slider is using a complex structure of html ellements powered by Roundbout JS script.</p>
+        <p>The slider is Unordered list and every product in it is wrapped in a list item "li". There are many relatively and absolute positioned ellements in every product contains, thus changes in the structure are not recommended.</p>
+        
+        <p><strong>Roundbout slider structure</strong></p>
+        
+        <img src="assets/featured.jpg" width="800" height="242" alt="Spicylicious" /><br />
+        
+        <img src="assets/roundabout.jpg" width="800" height="354" alt="Spicylicious" /><br /><br />
+        
+        <h4><strong>Product listings</strong></h4>
+        
+        <img src="assets/info.jpg" width="800" height="503" alt="Spicylicious" /><br />
+        
+        <p>The product listings in modules and category view are using a combination of complex HTML/CSS techniques and JavaScript. The products are presented by a picture with a pricetag, and hidden info pannel, visible on hover. The sliding effect of the info pannel is powered by custom jQuery script.</p>
+        
+        <p>Here is the basic structure of the product listings:</p>
+        
+        <img src="assets/listing.jpg" width="800" height="354" alt="Spicylicious" /><br />
+        
+        <p>All other page ellements are using the same principles except the JS functionality which will be explaned a bit later.</p>
+        
+
+		<hr>
+        
+        
+		<h3 id="cssFiles"><strong>4) CSS files and structure</strong> - <a href="#toc">top</a></h3>
+		
+		<p>The theme comes with several CSS (stylesheet) files grouped in the stylesheet folder:</p>
+		
+			<ol>
+				<li>stylesheet.css - the main CSS file containg the layout styling of the pages.</li>
+				<li>jquery-ui-1.8.9.custom.css - custom skinned version of the jQuery UI library</li>
+				<li>cloud-zoom.css - custom skinned version of the CloudZoom jQuery plugin used in product page</li>
+                <li>carousel.css - a custom skinned version of the jQuery plugin jcarouses</li>
+			</ol>
+         
+         <p>The main sections of the stylesheet.css are separated by comments and the classes are named with clear names for better understanding and easier navigation.</p>
+            
+         <p>There are more plugin-speciffic CSS files in the "js" folder. These CSS files are critically important for the correct work of the plugins and changes in them are not recommended.</p>   
+            
+         <ol>
+				<li>css.tipsy.css - js\tipsy.</li>
+				<li>prettyPhoto.css - js\prettyphoto\css</li>
+				<li>jquery.lightbox-0.5.css - js\lightbox-0.5\css</li>
+                <li>skin.css - js\li-slider\skins\Trend</li>
+			</ol>   
+          
+          <p>If you would like to edit or change any color, font, or style of any elements in the template, you must edit the general CSS file (stylesheet.css). If you would like to change the general color for links for example, you would cnahge the following:</p>
+
+<pre>	a, a:visited {
+	color: #9D0043;
+	text-decoration: underline;
+	cursor: pointer;
+	}
+</pre>
+
+		<p>If you find that your new style is not overriding, it is most likely because of a specificity problem. Scroll down in your CSS file and make sure that there isn't a similar style that has more weight.</p>
+
+		<p>e.g.</p>
+
+<pre>	#header .div5 a.toplinks {
+    	color: #7C7C7C;
+    	float: left;
+    	font-size: 14px;
+    	margin-right: 2px;
+    	padding: 10px 8px;
+    	text-align: center;
+    	text-decoration: none;
+	}
+</pre>
+
+		<p>So, to ensure that your new styles are applied, make sure that they carry enough "weight" and that there isn't a style lower in the CSS file that is being applied after yours.</p>
+            		
+		<hr>
+		
+		<h3 id="javascript"><strong>5) JavaScript</strong> - <a href="#toc">top</a></h3>
+		
+		<p>This template is heavili loaded with both custom JS functions and free jQuery plugins. All JS files are placed in a separate folder called "js". The list of files is as follows:</p>
+		
+			<ol>
+				<li>jquery-1.5.2.min.js</li>
+				<li>jquery-ui-1.8.9.custom.min.js</li>
+                <li>tabs.js</li>
+                <li>jquery.roundabout.min.js</li>
+                <li>jquery.jcarousel.min.js</li>
+                <li>jquery.cycle.lite.1.0.min.js</li>
+                <li>cloud-zoom.1.0.2.min.min.js</li>
+                <li>custom_scripts.js</li>
+                <li>jquery.tipsy.js</li>
+                <li>jquery.prettyPhoto.js</li>
+                <li>jquery.tipsy.js</li>
+                <li>jquery.prettyPhoto.js</li>
+                <li>li-slider-1.1.min.js</li>
+                <li>li-slider-animations-1.1.min.js</li>
+                <li>jquery.easing.1.3.js</li>
+                <li>jquery.lightbox-0.5.min.js</li>
+			</ol>
+            
+            <p>some of the jQuery plugins are heavily customized and chages in their files are not recommended.</p>
+            
+            <p>All JS functions related to the theme content management are placed in custom_scripts.js or inline in the HTML files if required. The custom_scripts.js file is responsible for the main functions like menus, sliding effects, tooltips, image fading effects, and the SlideFeatures panel (Cart, Currency switcher, Language switcher, Search bar)</p>
+            
+            <p>For example - If you would like to edit the speed of the sliding info pannel for the product listings, you would need to open custom.scripts.js and find lines 23-29:</p>
+            
+            <pre>
+$("div.prod_hold").hover(function () {
+												 
+$('.info', this).css({visibility: "visible",display: "none"}).slideDown('normal'); //the speed could be 'normal', 'fast', 'medium' or 'slow'
+}, function () {
+			
+$('.info', this).css({visibility: "hidden"});
+});
+            </pre>
+            
+            <p>If you would like to change the speed for the fading cart in header:</p>
+            
+            <pre>
+$("li.side_cart").hover(function () {
+												 
+$('#cart', this).fadeIn(500); //speed of the fading effect in milliseconds
+}, function () {
+			
+$('#cart', this).fadeOut(200); //speed of the fading effect in milliseconds
+		});
+            </pre>
+            
+            
+        <p><strong>Controlling the Li slider:</strong></p>
+        
+        <p>The Li slider is advanced jQuery slider plugin with hundreds of options and more than 140 transitions. The call function must be placed in the "head" area of the HTML file:</p>
+        
+        <img src="assets/slider.jpg" width="800" height="561" alt="Spicylicious" /><br />
+        
+        <p>The full list of options and features could be found here: - <a href="http://www.spotnil.com/envato/codecanyon/li-slider/">Li Slider</a></p> 
+        
+        <p><strong>Roundabout Featured slider:</strong></p>
+        
+        <p>The roundabout Featured slider must be called with a JS function before the closing body tag. This is a customized variation of the default roundabout function and changes are not recommended. For the full information about Roundabout jQuery plugin, visit <a href="http://fredhq.com/projects/roundabout/">Roundabout project site by Fred LeBlanc</a></p>
+        
+        <pre>
+$(document).ready(function() {
+var interval;
+$('ul#myRoundabout')
+.roundabout({
+'btnNext': '.next_round', //the class of the HTML ellement used as button "next"
+'btnPrev': '.previous_round'  //the class of the HTML ellement used as button "previous"
+}
+)
+.hover(
+function() {
+
+clearInterval(interval);
+},
+function() {
+
+interval = startAutoPlay();
+});
+
+interval = startAutoPlay();
+});
+function startAutoPlay() {
+return setInterval(function() {
+$('ul#myRoundabout').roundabout_animateToPreviousChild();
+}, 3000); // the pause between rotations
+} 
+</pre>   
+
+<p><strong>Accordions, Tabs and Toggles</strong></p>
+        
+        <p>Spicylicios theme is using a customized version of the jQuery UI library. The usage of tabs, toggles and accordions must be innitiated by JS function before the closing body tag:</p>
+        
+        <p><strong>Accordion</strong></p>
+        
+        <pre>
+        $(function() {
+		$( "#your-accordion-contaner-class-or-id" ).accordion({
+			autoHeight: false,
+			navigation: true
+		});
+	});
+        </pre>
+        
+        <p><strong>Tabs</strong></p>
+        
+        <pre>
+        $('#tabs-contaner-class-or-id a').tabs();
+        </pre>
+        
+        <p><strong>Toggle</strong></p>
+        
+        <pre>
+        $('.toggle-heading-class-or-id').bind('click', function() {
+	if ($(this).hasClass('active')) {
+		$(this).removeClass('active');
+	} else {
+		$(this).addClass('active');
+	}
+		
+	$(this).parent().find('.toggle-content-class-or-id').slideToggle('slow');
+});
+        </pre>
+        
+        <p><strong>Tooltips</strong></p>
+        
+        <p>This theme is using the "Tipsy" jQuery plugin. If you want to add a tooltip to any ellement, you only need to put the tip content in the ellement's title tag and add the ellement class in the tooltip function in custom_scripts.js - line 84.</p>
+        
+        <img src="assets/tipsy.jpg" width="800" height="158" alt="Spicylicious" /><br />
+        
+        <p>For more options and advanced use of the Tipsy plugin, visit the oficial page at <a href="http://plugins.jquery.com/project/tipsy">jquery.com</a></p>
+            		
+		<hr>
+        
+        
+		<h3 id="psdFiles"><strong>6) PSD Files</strong> - <a href="#toc">top</a></h3>
+		
+		<p>The template comes with 14 customizable layered PSD files as follows:</p>
+		
+			<ol>
+				<li>01_home.psd</li>
+				<li>02_home_active_state.psd</li>
+				<li>03_category.psd</li>
+                <li>04_category_active_state.psd</li>
+                <li>05_product.psd</li>
+				<li>06_product_active.psd</li>
+				<li>07_info_page.psd</li>
+                <li>08_contacts_page.psd</li>
+                <li>09_cart_page.psd</li>
+				<li>10_compare_page.psd</li>
+				<li>11_login_page.psd</li>
+                <li>12_ratings_template.psd</li>
+                <li>13_slider_template.psd</li>
+				<li>13_logo_template.psd</li>                
+			</ol>
+            		
+		<hr>
+		
+		<h3 id="credits"><strong>7) Sources and Credits</strong> - <a href="#toc">top</a></h3>
+		
+		<p>I've used the following images, icons or other files as listed.
+		
+		<ul>
+			<li>Li jQuery Slider by Spotnil</li>
+            <li>Roundabout Slider by Fred LeBlanc</li>
+            <li>Tipsy jQuery Plugin</li>
+            <li>prettyPhoto jQuery Plugin by Stephane Caron</li>
+            <li>Lobster font by Pablo Impallari powered by Google Fonts</li>
+		</ul>
+		
+		<hr>
+		
+		<p>Once again, thank you so much for purchasing this theme. As I said at the beginning, I'd be glad to help you if you have any questions relating to this theme. No guarantees, but I'll do my best to assist. If you have a more general question relating to the themes on ThemeForest, you might consider visiting the forums and asking your question in the "Item Discussion" section.</p> 
+		
+		<p class="append-bottom alt large"><strong>Dimitar Koev, metaGraphics Design Studio</strong></p>
+		<p><a href="#toc">Go To Table of Contents</a></p>
+		
+		<hr class="space">
+	</div><!-- end div .container -->
+</body>
+</html>

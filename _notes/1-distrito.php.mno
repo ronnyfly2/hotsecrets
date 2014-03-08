@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_Distritos" value="name:id_distrito;datatype:int,name:nom_distrito;datatype:string,name:id_provincia;datatype:int,name:id_departamento;datatype:int,name:costo;datatype:string" />
+</info>
