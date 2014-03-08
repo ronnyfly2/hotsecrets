@@ -30,29 +30,39 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
   return $theValue;
 }
 }
+$VarCate_Categorias = "0";
+if (isset($_GET["editar"])) {
+  $VarCate_Categorias = $_GET["editar"];
+}
+mysql_select_db($database_HotSecrets, $HotSecrets);
+$query_Categorias = sprintf("SELECT * FROM categorias WHERE categorias.id_categoria = %s", GetSQLValueString($VarCate_Categorias, "int"));
+$Categorias = mysql_query($query_Categorias, $HotSecrets) or die(mysql_error());
+$row_Categorias = mysql_fetch_assoc($Categorias);
+$totalRows_Categorias = mysql_num_rows($Categorias);
 
 $editFormAction = $_SERVER['PHP_SELF'];
 if (isset($_SERVER['QUERY_STRING'])) {
   $editFormAction .= "?" . htmlentities($_SERVER['QUERY_STRING']);
 }
 
-if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form2")) {
-  $insertSQL = sprintf("INSERT INTO categorias (nom_cate, urlseo, desc_cate, img_cate, estado_categoria) VALUES (%s, %s, %s, %s, %s)",
+if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
+  $updateSQL = sprintf("UPDATE categorias SET nom_cate=%s, urlseo=%s, desc_cate=%s, img_cate=%s, estado_categoria=%s WHERE id_categoria=%s",
                        GetSQLValueString($_POST['nom_cate'], "text"),
                        GetSQLValueString($_POST['urlseo'], "text"),
                        GetSQLValueString($_POST['desc_cate'], "text"),
                        GetSQLValueString($_POST['img_cate'], "text"),
-                       GetSQLValueString($_POST['estado_categoria'], "int"));
+                       GetSQLValueString($_POST['estado_categoria'], "int"),
+                       GetSQLValueString($_POST['id_categoria'], "int"));
 
   mysql_select_db($database_HotSecrets, $HotSecrets);
-  $Result1 = mysql_query($insertSQL, $HotSecrets) or die(mysql_error());
+  $Result1 = mysql_query($updateSQL, $HotSecrets) or die(mysql_error());
 
-  $insertGoTo = "lista-categorias.php";
+  $updateGoTo = "lista-categorias.php";
   if (isset($_SERVER['QUERY_STRING'])) {
-    $insertGoTo .= (strpos($insertGoTo, '?')) ? "&" : "?";
-    $insertGoTo .= $_SERVER['QUERY_STRING'];
+    $updateGoTo .= (strpos($updateGoTo, '?')) ? "&" : "?";
+    $updateGoTo .= $_SERVER['QUERY_STRING'];
   }
-  header(sprintf("Location: %s", $insertGoTo));
+  header(sprintf("Location: %s", $updateGoTo));
 }
 ?>
 <!DOCTYPE html>
@@ -65,7 +75,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form2")) {
     <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
     <link rel="shortcut icon" href="img/favicon.png">
 
-    <title>Agregar Producto</title>
+    <title>Editar Categoria</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -86,7 +96,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form2")) {
 <script src="js/jquery.js"></script>
   </head>
 
-  <body>
+<body>
 
   <section id="container" class="">
       <!--header start-->
@@ -114,20 +124,20 @@ Inline form
 <div class="col-lg-12">
 <section class="panel">
 <div class="panel-body">
-<form class="form-horizontal tasi-form" method="post" name="form2" action="<?php echo $editFormAction; ?>">
+<form class="form-horizontal tasi-form" method="post" name="form1" action="<?php echo $editFormAction; ?>">
 
 <script type="text/javascript" src="js/jquery.stringToSlug.js"></script>
 <div class="form-group">
 <label class="col-sm-2 control-label col-lg-2" for="nom_cate">Nombre De Categoria</label>
 <div class="col-lg-4">
-<input type="text" class="form-control" name="nom_cate" id="categoria" placeholder="Nombre del Categoria">
+<input type="text" class="form-control" name="nom_cate" id="categoria" value="<?php echo htmlentities($row_Categorias['nom_cate'], ENT_COMPAT, 'utf-8'); ?>" placeholder="Nombre del Categoria">
 </div>
 </div>
 
 <div class="form-group">
 <label class="col-sm-2 control-label col-lg-2" for="urlseo">Url SEO</label>
 <div class="col-lg-4">
-<input type="text" class="form-control" name="urlseo" id="url" placeholder="Url SEO">
+<input type="text" class="form-control" name="urlseo" id="url" value="<?php echo htmlentities($row_Categorias['urlseo'], ENT_COMPAT, 'utf-8'); ?>" placeholder="Url SEO">
 </div>
 </div>
 
@@ -152,7 +162,7 @@ remote.focus();
 <div class="form-group">
 <label class="col-sm-2 control-label col-lg-2" for="img_cate">Imagen</label>
 <div class="col-md-4 input-group">
-<input type="text" class="form-control" name="img_cate" placeholder="Imagen">
+<input type="text" class="form-control" value="<?php echo htmlentities($row_Categorias['img_cate'], ENT_COMPAT, 'utf-8'); ?>" name="img_cate" placeholder="Imagen">
 <div class="input-group-btn">
 <button type="button" class="btn btn-info date-set" onClick="javascript:subirpeque();">Subir Imagen</button>
 </div>
@@ -162,7 +172,7 @@ remote.focus();
 <div class="form-group">
 <label class="col-sm-2 control-label col-lg-2" for="desc_cate">Descripcion de la Categoria</label>
 <div class="col-lg-4">
-<textarea class="form-control" cols="55" rows="4" name="desc_cate" placeholder="Descripcion de la Categoria"></textarea>
+<textarea class="form-control" cols="55" rows="4" name="desc_cate" placeholder="Descripcion de la Categoria"><?php echo htmlentities($row_Categorias['desc_cate'], ENT_COMPAT, 'utf-8'); ?></textarea>
 </div>
 </div>
 
@@ -170,15 +180,16 @@ remote.focus();
 <label class="col-sm-2 control-label col-lg-2" for="estado_categoria">¿El producto Está Activo?</label>
 <div class="col-lg-4">
 <select class="form-control m-bot15" name="estado_categoria">
-<option value="1" <?php if (!(strcmp(1, ""))) {echo "SELECTED";} ?>>Activo</option>
-<option value="0" <?php if (!(strcmp(0, ""))) {echo "SELECTED";} ?>>Inactivo</option>
+<option value="1" <?php if (!(strcmp(1, htmlentities($row_Categorias['estado_categoria'], ENT_COMPAT, 'utf-8')))) {echo "SELECTED";} ?>>Activo</option>
+        <option value="0" <?php if (!(strcmp(0, htmlentities($row_Categorias['estado_categoria'], ENT_COMPAT, 'utf-8')))) {echo "SELECTED";} ?>>Inactivo</option>
 </select>
 </div>
 </div>
 
 <div class="col-lg-4">
-<button type="submit" class="btn btn-success">Insertar Categoria</button>
-<input type="hidden" name="MM_insert" value="form2">
+<button type="submit" class="btn btn-success">Actualizar Categoria</button>
+  <input type="hidden" name="MM_update" value="form1">
+  <input type="hidden" name="id_categoria" value="<?php echo $row_Categorias['id_categoria']; ?>">
 </div>
 </form>
 </div>
@@ -214,3 +225,6 @@ remote.focus();
 <script src="js/form-component.js"></script>
 </body>
 </html>
+<?php
+mysql_free_result($Categorias);
+?>
