@@ -1,58 +1,70 @@
 <?php require_once('../Connections/HotSecrets.php'); ?>
 <?php
-if (!function_exists("GetSQLValueString")) {
-function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
-{
-  if (PHP_VERSION < 6) {
-    $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
-  }
+// The GetSQLValueString function is now expected to be included from funcionalidades/funciones-hot.php
+// which should be included by Connections/HotSecrets.php (if HotSecrets.php includes funcionalities/funciones-hot.php)
+// However, for prepared statements, direct binding is preferred over GetSQLValueString.
 
-  $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
-
-  switch ($theType) {
-    case "text":
-      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-      break;    
-    case "long":
-    case "int":
-      $theValue = ($theValue != "") ? intval($theValue) : "NULL";
-      break;
-    case "double":
-      $theValue = ($theValue != "") ? doubleval($theValue) : "NULL";
-      break;
-    case "date":
-      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-      break;
-    case "defined":
-      $theValue = ($theValue != "") ? $theDefinedValue : $theNotDefinedValue;
-      break;
-  }
-  return $theValue;
-}
+// Ensure $HotSecrets is a valid mysqli object
+if (!($HotSecrets instanceof mysqli)) {
+    error_log("MySQLi connection object is not available in organizador/agregar-categoria.php");
+    die("Error de conexión a la base de datos.");
 }
 
-$editFormAction = $_SERVER['PHP_SELF'];
-if (isset($_SERVER['QUERY_STRING'])) {
+$editFormAction = htmlspecialchars($_SERVER['PHP_SELF']); // Sanitize self URL
+if (isset($_SERVER['QUERY_STRING']) && !empty($_SERVER['QUERY_STRING'])) {
+  // It's generally safer to rebuild the query string with expected parameters
+  // than to append htmlentities($_SERVER['QUERY_STRING']) directly.
+  // For this example, we keep it simple, but be aware of potential XSS if $editFormAction is used insecurely later.
   $editFormAction .= "?" . htmlentities($_SERVER['QUERY_STRING']);
 }
 
 if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form2")) {
-  $insertSQL = sprintf("INSERT INTO categorias (nom_cate, urlseo, desc_cate, img_cate, estado_categoria) VALUES (%s, %s, %s, %s, %s)",
-                       GetSQLValueString($_POST['nom_cate'], "text"),
-                       GetSQLValueString($_POST['urlseo'], "text"),
-                       GetSQLValueString($_POST['desc_cate'], "text"),
-                       GetSQLValueString($_POST['img_cate'], "text"),
-                       GetSQLValueString($_POST['estado_categoria'], "int"));
+  // Validate and sanitize inputs
+  $nom_cate = isset($_POST['nom_cate']) ? trim($_POST['nom_cate']) : '';
+  $urlseo = isset($_POST['urlseo']) ? trim($_POST['urlseo']) : '';
+  $desc_cate = isset($_POST['desc_cate']) ? trim($_POST['desc_cate']) : '';
+  $img_cate = isset($_POST['img_cate']) ? trim($_POST['img_cate']) : ''; // Assuming path or filename, further validation might be needed
+  $estado_categoria = isset($_POST['estado_categoria']) ? filter_var($_POST['estado_categoria'], FILTER_VALIDATE_INT) : 0;
 
-  mysql_select_db($database_HotSecrets, $HotSecrets);
-  $Result1 = mysql_query($insertSQL, $HotSecrets) or die(mysql_error());
-
-  $insertGoTo = "lista-categorias.php";
-  if (isset($_SERVER['QUERY_STRING'])) {
-    $insertGoTo .= (strpos($insertGoTo, '?')) ? "&" : "?";
-    $insertGoTo .= $_SERVER['QUERY_STRING'];
+  if ($estado_categoria === false) { // Check if filter_var failed
+      error_log("Invalid estado_categoria in organizador/agregar-categoria.php: " . $_POST['estado_categoria']);
+      // Handle error, perhaps redirect with message or set a default
+      $estado_categoria = 0; // Default to inactive if invalid
   }
-  header(sprintf("Location: %s", $insertGoTo));
+  
+  // Basic validation: ensure required fields are not empty
+  if (empty($nom_cate) || empty($urlseo)) {
+      // Handle error: redirect back with message or display error on page
+      // For simplicity, we'll just log and not insert.
+      error_log("Required fields (nom_cate or urlseo) are empty in organizador/agregar-categoria.php.");
+      // Optionally, set an error message to display to the user
+      // $_SESSION['form_error'] = "Nombre de categoría y URL SEO son obligatorios.";
+      // header("Location: " . $editFormAction); // Redirect back to the form
+      // exit;
+  } else {
+      $insertSQL = "INSERT INTO categorias (nom_cate, urlseo, desc_cate, img_cate, estado_categoria) VALUES (?, ?, ?, ?, ?)";
+      $stmt = $HotSecrets->prepare($insertSQL);
+
+      if ($stmt === false) {
+          error_log("Prepare failed (INSERT categorias) in organizador/agregar-categoria.php: (" . $HotSecrets->errno . ") " . $HotSecrets->error);
+          die("Error al preparar la inserción de categoría."); // User-friendly message
+      }
+
+      $stmt->bind_param("ssssi", $nom_cate, $urlseo, $desc_cate, $img_cate, $estado_categoria);
+
+      if ($stmt->execute()) {
+          $stmt->close();
+          $insertGoTo = "lista-categorias.php";
+          // Avoid appending user-supplied QUERY_STRING directly to redirect URL for security.
+          // If specific parameters are needed, add them explicitly.
+          header(sprintf("Location: %s", $insertGoTo));
+          exit;
+      } else {
+          error_log("Execute failed (INSERT categorias) in organizador/agregar-categoria.php: (" . $stmt->errno . ") " . $stmt->error);
+          $stmt->close();
+          die("Error al insertar la categoría."); // User-friendly message
+      }
+  }
 }
 ?>
 <!DOCTYPE html>

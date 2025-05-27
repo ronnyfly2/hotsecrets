@@ -1,35 +1,9 @@
 <?php require_once('../Connections/HotSecrets.php'); 
  require_once('no-entra.php');
-if (!function_exists("GetSQLValueString")) {
-function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
-{
-  if (PHP_VERSION < 6) {
-    $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
-  }
-
-  $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
-
-  switch ($theType) {
-    case "text":
-      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-      break;    
-    case "long":
-    case "int":
-      $theValue = ($theValue != "") ? intval($theValue) : "NULL";
-      break;
-    case "double":
-      $theValue = ($theValue != "") ? doubleval($theValue) : "NULL";
-      break;
-    case "date":
-      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-      break;
-    case "defined":
-      $theValue = ($theValue != "") ? $theDefinedValue : $theNotDefinedValue;
-      break;
-  }
-  return $theValue;
-}
-}
+// The GetSQLValueString function is now expected to be included from funcionalidades/funciones-hot.php
+// which should be included by Connections/HotSecrets.php (if HotSecrets.php includes funcionalities/funciones-hot.php)
+// For any direct DB operations in this file or its direct includes (not deeper ones like xtructura/*),
+// direct binding with prepared statements is preferred.
 ?>
 <!DOCTYPE html>
 <html lang="en">

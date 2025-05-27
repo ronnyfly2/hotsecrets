@@ -1,47 +1,47 @@
 <?php require_once('Connections/HotSecrets.php');
-if (!function_exists("GetSQLValueString")) {
-function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
-{
-  if (PHP_VERSION < 6) {
-    $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
-  }
-
-  $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
-
-  switch ($theType) {
-    case "text":
-      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-      break;    
-    case "long":
-    case "int":
-      $theValue = ($theValue != "") ? intval($theValue) : "NULL";
-      break;
-    case "double":
-      $theValue = ($theValue != "") ? doubleval($theValue) : "NULL";
-      break;
-    case "date":
-      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-      break;
-    case "defined":
-      $theValue = ($theValue != "") ? $theDefinedValue : $theNotDefinedValue;
-      break;
-  }
-  return $theValue;
-}
-}
+// The GetSQLValueString function is now expected to be included from funcionalidades/funciones-hot.php
+// which is included by Connections/HotSecrets.php
 
 if (isset($_GET['eliminar'])) {
-  $deleteSQL = sprintf("DELETE FROM carrito WHERE id_carrito=%s",
-                       GetSQLValueString($_GET['eliminar'], "int"));
+  $id_carrito_to_delete = $_GET['eliminar'];
 
-  mysql_select_db($database_HotSecrets, $HotSecrets);
-  $Result1 = mysql_query($deleteSQL, $HotSecrets) or die(mysql_error());
-
-  $deleteGoTo = "lista-carrito.php";
-  if (isset($_SERVER['QUERY_STRING'])) {
-    $deleteGoTo .= (strpos($deleteGoTo, '?')) ? "&" : "?";
-    $deleteGoTo .= $_SERVER['QUERY_STRING'];
+  // Ensure $HotSecrets is a valid mysqli object
+  if (!($HotSecrets instanceof mysqli)) {
+      error_log("MySQLi connection object is not available in 2-eliminar-producto-carrito.php");
+      die("Error de conexión a la base de datos.");
   }
+
+  // Validate that $_GET['eliminar'] is an integer
+  if (!filter_var($id_carrito_to_delete, FILTER_VALIDATE_INT)) {
+      error_log("Invalid input for id_carrito in 2-eliminar-producto-carrito.php: " . $id_carrito_to_delete);
+      // Redirect or show an error, but avoid using the invalid input in a query
+      header("Location: lista-carrito.php?error=invalid_input");
+      exit;
+  }
+  
+  $deleteSQL = "DELETE FROM carrito WHERE id_carrito=?";
+  $stmt = $HotSecrets->prepare($deleteSQL);
+
+  if ($stmt === false) {
+      error_log("Prepare failed in 2-eliminar-producto-carrito.php: (" . $HotSecrets->errno . ") " . $HotSecrets->error);
+      die("Error al preparar la consulta de eliminación.");
+  }
+
+  $stmt->bind_param("i", $id_carrito_to_delete);
+
+  if (!$stmt->execute()) {
+      error_log("Execute failed in 2-eliminar-producto-carrito.php: (" . $stmt->errno . ") " . $stmt->error);
+      die("Error al ejecutar la eliminación.");
+  }
+
+  $stmt->close();
+
+  // Construct the redirect URL carefully, avoiding direct use of $_SERVER['QUERY_STRING']
+  // if it might contain the 'eliminar' parameter, leading to a loop or error.
+  // For simplicity, just redirecting to lista-carrito.php without query string.
+  // If specific query parameters need to be preserved, they should be explicitly added.
+  $deleteGoTo = "lista-carrito.php";
   header(sprintf("Location: %s", $deleteGoTo));
+  exit; // Ensure script termination after header redirect
 }
 ?>
