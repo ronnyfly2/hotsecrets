@@ -1,66 +1,72 @@
 <?php require_once('../Connections/HotSecrets.php');
-if (!function_exists("GetSQLValueString")) {
-function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
-{
-  if (PHP_VERSION < 6) {
-    $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
-  }
+// The GetSQLValueString function is now expected to be included from funcionalidades/funciones-hot.php
+// and has been updated to require a mysqli connection object as the first parameter.
+// Ensure that funcionalidades/funciones-hot.php is included if GetSQLValueString is used directly in this file later.
+// For the login query, we will use prepared statements instead.
 
-  $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
-  switch ($theType) {
-    case "text":
-      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-      break;    
-    case "long":
-    case "int":
-      $theValue = ($theValue != "") ? intval($theValue) : "NULL";
-      break;
-    case "double":
-      $theValue = ($theValue != "") ? doubleval($theValue) : "NULL";
-      break;
-    case "date":
-      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-      break;
-    case "defined":
-      $theValue = ($theValue != "") ? $theDefinedValue : $theNotDefinedValue;
-      break;
-  }
-  return $theValue;
-}
-}
 $loginFormAction = $_SERVER['PHP_SELF'];
 if (isset($_GET['accesscheck'])) {
   $_SESSION['PrevUrl'] = $_GET['accesscheck'];
 }
 if (isset($_POST['usuario_ordenador'])) {
-  $loginUsername=$_POST['usuario_ordenador'];
-  $password=md5($_POST['password_ordenador']);
-  $MM_fldUserAuthorization = "";
+  $loginUsername = $_POST['usuario_ordenador'];
+  $password = md5($_POST['password_ordenador']); // MD5 is not secure for passwords. Consider migrating to password_hash().
   $MM_redirectLoginSuccess = "panel.php";
   $MM_redirectLoginFailed = "index.php";
-  $MM_redirecttoReferrer = true;
-  mysql_select_db($database_HotSecrets, $HotSecrets);  
-  $LoginRS__query=sprintf("SELECT id_ordenador, usuario_ordenador, password_ordenador FROM ordenador WHERE usuario_ordenador=%s AND password_ordenador=%s AND estao_ordenador>0",
-    GetSQLValueString($loginUsername, "text"), GetSQLValueString($password, "text")); 
-   
-  $LoginRS = mysql_query($LoginRS__query, $HotSecrets) or die(mysql_error());
-  $row_LoginRS = mysql_fetch_assoc($LoginRS);
-  $loginFoundUser = mysql_num_rows($LoginRS);
+  $MM_redirecttoReferrer = true; // This variable is set but not used in the provided snippet.
+
+  // Ensure $HotSecrets is a valid mysqli object from Connections/HotSecrets.php
+  if (!($HotSecrets instanceof mysqli)) {
+    // Handle error: $HotSecrets is not correctly initialized
+    // For example, log the error and redirect to an error page or show a generic error message.
+    error_log("MySQLi connection object is not available in organizador/index.php");
+    header("Location: ". $MM_redirectLoginFailed . "?error=db_connection");
+    exit;
+  }
+
+  $stmt = $HotSecrets->prepare("SELECT id_ordenador, usuario_ordenador, password_ordenador FROM ordenador WHERE usuario_ordenador=? AND password_ordenador=? AND estao_ordenador > 0");
+  
+  if ($stmt === false) {
+    // Handle error: prepare failed
+    error_log("Prepare failed: (" . $HotSecrets->errno . ") " . $HotSecrets->error);
+    header("Location: ". $MM_redirectLoginFailed . "?error=prepare_failed");
+    exit;
+  }
+  
+  $stmt->bind_param("ss", $loginUsername, $password);
+  
+  if (!$stmt->execute()) {
+    // Handle error: execute failed
+    error_log("Execute failed: (" . $stmt->errno . ") " . $stmt->error);
+    header("Location: ". $MM_redirectLoginFailed . "?error=execute_failed");
+    $stmt->close();
+    exit;
+  }
+  
+  $result = $stmt->get_result();
+  $loginFoundUser = $result->num_rows;
+  $row_LoginRS = $result->fetch_assoc(); // Fetch the first row
+
   if ($loginFoundUser) {
-     $loginStrGroup = "";    
-	if (PHP_VERSION >= 5.1) {session_regenerate_id(true);} else {session_regenerate_id();}
-    //declare two session variables and assign them
+    $loginStrGroup = ""; // This variable seems unused or its purpose needs clarification.
+    if (PHP_VERSION >= 5.1) {session_regenerate_id(true);} else {session_regenerate_id();}
+    
     $_SESSION['MM_Username2'] = $loginUsername;
-    $_SESSION['MM_UserGroup2'] = $loginStrGroup;
-	$_SESSION['MM_IdAdmin'] = $row_LoginRS["id_ordenador"];	    
-    if (isset($_SESSION['PrevUrl']) && true) {
-      $MM_redirectLoginSuccess = $_SESSION['PrevUrl'];	
+    $_SESSION['MM_UserGroup2'] = $loginStrGroup; // Consider if this is still needed.
+    $_SESSION['MM_IdAdmin'] = $row_LoginRS["id_ordenador"];
+
+    if (isset($_SESSION['PrevUrl']) && true) { // The 'true' condition is redundant here.
+      $MM_redirectLoginSuccess = $_SESSION['PrevUrl'];
     }
     header("Location: " . $MM_redirectLoginSuccess );
-  }
-  else {
+    $stmt->close();
+    exit;
+  } else {
     header("Location: ". $MM_redirectLoginFailed );
-}}
+    $stmt->close();
+    exit;
+  }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

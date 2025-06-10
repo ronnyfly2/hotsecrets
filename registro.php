@@ -1,70 +1,70 @@
 <?php require_once('Connections/HotSecrets.php'); 
-if (!function_exists("GetSQLValueString")) {
-function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
-{
-  if (PHP_VERSION < 6) {
-    $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
-  }
+// The GetSQLValueString, getRealIP, ComprobarCorreoUnico, Darse_Alta_usuario functions are from funcionalidades/funciones-hot.php
 
-  $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
-
-  switch ($theType) {
-    case "text":
-      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-      break;    
-    case "long":
-    case "int":
-      $theValue = ($theValue != "") ? intval($theValue) : "NULL";
-      break;
-    case "double":
-      $theValue = ($theValue != "") ? doubleval($theValue) : "NULL";
-      break;
-    case "date":
-      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-      break;
-    case "defined":
-      $theValue = ($theValue != "") ? $theDefinedValue : $theNotDefinedValue;
-      break;
-  }
-  return $theValue;
+// Ensure $HotSecrets is a valid mysqli object
+if (!($HotSecrets instanceof mysqli)) {
+    error_log("MySQLi connection object is not available in registro.php");
+    die("Error de conexión a la base de datos.");
 }
-}
-$_POST['estado']= 0;
-$estadoinactivo = $_POST['estado'];
-$_POST['ipus']= getRealIP();
-$ipusuario = $_POST['ipus'];
 
-$editFormAction = $_SERVER['PHP_SELF'];
+// It's better to initialize these from $_POST directly inside the form processing block
+// $estadoinactivo = 0; // Default state
+// $ipusuario = getRealIP(); // getRealIP() doesn't need $HotSecrets
+
+$editFormAction = htmlspecialchars($_SERVER['PHP_SELF']);
 if (isset($_SERVER['QUERY_STRING'])) {
+  // Sanitize QUERY_STRING if it's used to construct redirect URLs
   $editFormAction .= "?" . htmlentities($_SERVER['QUERY_STRING']);
 }
-if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "formregistro")) {
-if (!ComprobarCorreoUnico($_POST['correo']))
-{
-$insertGoTo = "correo-repetido.php";
-header(sprintf("Location: %s", $insertGoTo));
-}
-else
-{
-  $insertSQL = sprintf("INSERT INTO usuarios (nombre, apellido, correo, password, fecha_reg, estado, suscrito, ipus) VALUES (%s, %s, %s, %s, NOW(), %s, %s, %s)",
-                       GetSQLValueString($_POST['nombre'], "text"),
-                       GetSQLValueString($_POST['apellido'], "text"),
-                       GetSQLValueString($_POST['correo'], "text"),
-                       GetSQLValueString(md5($_POST['password']), "text"),                      
-					   GetSQLValueString($estadoinactivo, "int"),
-					   GetSQLValueString(isset($_POST['suscrito']) ? "true" : "", "defined","1","0"),
-					   GetSQLValueString($ipusuario, "text"));
 
-mysql_select_db($database_HotSecrets, $HotSecrets);
-$Result1 = mysql_query($insertSQL, $HotSecrets) or die(mysql_error());
-Darse_Alta_usuario($_POST['correo'],$_POST['nombre']);
-$insertGoTo = "confirmar-correo.php";
-if (isset($_SERVER['QUERY_STRING'])) {
-$insertGoTo .= (strpos($insertGoTo, '?')) ? "&" : "?";
-$insertGoTo .= $_SERVER['QUERY_STRING'];
-}
-header(sprintf("Location: %s", $insertGoTo));
-}
+if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "formregistro")) {
+    $correo = $_POST['correo'];
+    $nombre = $_POST['nombre'];
+    $apellido = $_POST['apellido'];
+    $password = $_POST['password']; // Consider using password_hash() instead of md5()
+    $suscrito = isset($_POST['suscrito']) ? 1 : 0;
+    $estadoinactivo = 0; // Explicitly set state for new registration
+    $ipusuario = getRealIP();
+
+    // Validate email
+    if (!filter_var($correo, FILTER_VALIDATE_EMAIL)) {
+        // Handle invalid email, maybe redirect back with an error
+        $insertGoTo = "registro.php?error=invalid_email";
+        header(sprintf("Location: %s", $insertGoTo));
+        exit;
+    }
+
+    if (!ComprobarCorreoUnico($HotSecrets, $correo)) {
+        $insertGoTo = "correo-repetido.php";
+        header(sprintf("Location: %s", $insertGoTo));
+        exit;
+    } else {
+        $hashed_password = md5($password); // Still md5 as per original, but recommend password_hash()
+
+        $insertSQL = "INSERT INTO usuarios (nombre, apellido, correo, password, fecha_reg, estado, suscrito, ipus) VALUES (?, ?, ?, ?, NOW(), ?, ?, ?)";
+        $stmt = $HotSecrets->prepare($insertSQL);
+
+        if ($stmt === false) {
+            error_log("Prepare failed (User Insert) in registro.php: (" . $HotSecrets->errno . ") " . $HotSecrets->error);
+            die("Error al preparar el registro de usuario.");
+        }
+
+        $stmt->bind_param("ssssiis", $nombre, $apellido, $correo, $hashed_password, $estadoinactivo, $suscrito, $ipusuario);
+
+        if (!$stmt->execute()) {
+            error_log("Execute failed (User Insert) in registro.php: (" . $stmt->errno . ") " . $stmt->error);
+            $stmt->close();
+            die("Error al registrar el usuario.");
+        }
+        $stmt->close();
+
+        Darse_Alta_usuario($HotSecrets, $correo, $nombre); // Pass $HotSecrets
+        
+        $insertGoTo = "confirmar-correo.php";
+        // Avoid appending QUERY_STRING if it's not necessary or could cause issues
+        header(sprintf("Location: %s", $insertGoTo));
+        exit;
+    }
 }
 ?>
 <!DOCTYPE html>

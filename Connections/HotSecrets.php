@@ -10,7 +10,20 @@ $hostname_HotSecrets = "localhost";
 $database_HotSecrets = "lenceriahot";
 $username_HotSecrets = "root";
 $password_HotSecrets = "eresmias";
-$HotSecrets = mysql_pconnect($hostname_HotSecrets, $username_HotSecrets, $password_HotSecrets) or trigger_error(mysql_error(),E_USER_ERROR); 
+
+// Attempt to establish a persistent connection
+$HotSecrets = new mysqli("p:" . $hostname_HotSecrets, $username_HotSecrets, $password_HotSecrets, $database_HotSecrets);
+
+// Check connection
+if ($HotSecrets->connect_error) {
+    trigger_error("Connection failed: " . $HotSecrets->connect_error, E_USER_ERROR);
+}
+
+// Set character set to UTF-8
+if (!$HotSecrets->set_charset("utf8mb4")) {
+    trigger_error("Error loading character set utf8mb4: " . $HotSecrets->error, E_USER_ERROR);
+}
+
 ?>
 <?php 
 if (is_file("funcionalidades/funciones-hot.php")){

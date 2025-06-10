@@ -1,55 +1,68 @@
 <?php require_once('Connections/HotSecrets.php');
-if (!function_exists("GetSQLValueString")) {
-function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
-{
-  if (PHP_VERSION < 6) {
-    $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
-  }
+// The GetSQLValueString function is now expected to be included from funcionalidades/funciones-hot.php
+// The ObtenerUrlSEOCategoria function is also from funcionalidades/funciones-hot.php
 
-  $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
+// Ensure $HotSecrets is a valid mysqli object
+if (!($HotSecrets instanceof mysqli)) {
+    error_log("MySQLi connection object is not available in categorias.php");
+    die("Error de conexión a la base de datos.");
+}
 
-  switch ($theType) {
-    case "text":
-      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-      break;    
-    case "long":
-    case "int":
-      $theValue = ($theValue != "") ? intval($theValue) : "NULL";
-      break;
-    case "double":
-      $theValue = ($theValue != "") ? doubleval($theValue) : "NULL";
-      break;
-    case "date":
-      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-      break;
-    case "defined":
-      $theValue = ($theValue != "") ? $theDefinedValue : $theNotDefinedValue;
-      break;
-  }
-  return $theValue;
-}
-}
 $maxRows_TodSubCat = 12;
 $pageNum_TodSubCat = 0;
 
 if (isset($_GET['pagina'])) {
-  $pageNum_TodSubCat = $_GET['pagina'];
+  // It's good practice to validate or sanitize page number input
+  $pageNum_TodSubCat = filter_var($_GET['pagina'], FILTER_VALIDATE_INT, ["options" => ["min_range" => 0]]);
+  if ($pageNum_TodSubCat === false) {
+      $pageNum_TodSubCat = 0; // Default to page 0 if validation fails
+  }
 }
 
 $startRow_TodSubCat = $pageNum_TodSubCat * $maxRows_TodSubCat;
 
-$_GET["cate"] = ObtenerUrlSEOCategoria($_GET["cate"]);
-$VarCate_TodSubCat = "0";
+// Call ObtenerUrlSEOCategoria with $HotSecrets
+// Ensure $_GET["cate"] is set and sanitized before use
+$VarCate_TodSubCat = "0"; // Default value
 if (isset($_GET["cate"])) {
-  $VarCate_TodSubCat = $_GET["cate"];
+    // Sanitize $_GET["cate"] before passing to the function if it's used in a query directly
+    // However, ObtenerUrlSEOCategoria should handle its own sanitization/preparation
+    $url_seo_categoria = $_GET["cate"]; // Consider sanitizing this if it's directly from user input and not yet processed
+    $id_categoria_from_seo = ObtenerUrlSEOCategoria($HotSecrets, $url_seo_categoria);
+    if ($id_categoria_from_seo !== null && filter_var($id_categoria_from_seo, FILTER_VALIDATE_INT)) {
+        $VarCate_TodSubCat = $id_categoria_from_seo;
+    } else if ($id_categoria_from_seo === null && isset($_GET["cate"]) && filter_var($_GET["cate"], FILTER_VALIDATE_INT)) {
+        // Fallback if SEO URL lookup fails but a valid integer ID might have been passed
+        $VarCate_TodSubCat = $_GET["cate"];
+    }
 }
-mysql_select_db($database_HotSecrets, $HotSecrets);
-$query_TodSubCat = sprintf("SELECT * FROM subcategorias WHERE subcategorias.id_categoria= %s AND subcategorias.estado = 1", GetSQLValueString($VarCate_TodSubCat, "int"));
-$TodSubCat = mysql_query($query_TodSubCat, $HotSecrets) or die(mysql_error());
-$row_TodSubCat = mysql_fetch_assoc($TodSubCat);
-$totalRows_TodSubCat = mysql_num_rows($TodSubCat);
 
-$currentPage  = $_SERVER["PHP_SELF"];
+
+$query_TodSubCat = "SELECT * FROM subcategorias WHERE subcategorias.id_categoria = ? AND subcategorias.estado = 1";
+// For pagination, you would typically add: " LIMIT ?, ?" to the query
+// And bind $startRow_TodSubCat and $maxRows_TodSubCat as parameters.
+// However, the original code fetches all rows and then implies pagination might be handled in included files or client-side.
+// For now, I will replicate the existing logic of fetching all relevant subcategories.
+
+$stmt = $HotSecrets->prepare($query_TodSubCat);
+if ($stmt === false) {
+    error_log("Prepare failed (TodSubCat) in categorias.php: (" . $HotSecrets->errno . ") " . $HotSecrets->error);
+    die("Error al preparar la consulta de subcategorías.");
+}
+
+$stmt->bind_param("i", $VarCate_TodSubCat);
+
+if (!$stmt->execute()) {
+    error_log("Execute failed (TodSubCat) in categorias.php: (" . $stmt->errno . ") " . $stmt->error);
+    $stmt->close();
+    die("Error al ejecutar la consulta de subcategorías.");
+}
+
+$TodSubCat_result = $stmt->get_result();
+// $row_TodSubCat = $TodSubCat_result->fetch_assoc(); // This would fetch only the first row. Iteration happens in the included file.
+$totalRows_TodSubCat = $TodSubCat_result->num_rows;
+
+$currentPage  = htmlspecialchars($_SERVER["PHP_SELF"]); // Sanitize server variable
 
 $queryString_TodSubCat = "";
 if (!empty($_SERVER['QUERY_STRING'])) {
@@ -124,5 +137,10 @@ Usted debe tener Javascript activado en tu navegador para utilizar la funcionali
 </body>
 </html>
 <?php
-mysql_free_result($TodSubCat);
+if (isset($TodSubCat_result)) {
+    $TodSubCat_result->free();
+}
+if (isset($stmt)) {
+    $stmt->close();
+}
 ?>

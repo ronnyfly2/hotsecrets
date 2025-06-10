@@ -1,38 +1,21 @@
 <?php require_once('Connections/HotSecrets.php');
-if (!function_exists("GetSQLValueString")) {
-function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
-{
-  if (PHP_VERSION < 6) {
-    $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
-  }
+// The GetSQLValueString function is now expected to be included from funcionalidades/funciones-hot.php
+// which is included by Connections/HotSecrets.php
 
-  $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
+// Ensure session is started. Connections/HotSecrets.php should handle this.
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 
-  switch ($theType) {
-    case "text":
-      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-      break;    
-    case "long":
-    case "int":
-      $theValue = ($theValue != "") ? intval($theValue) : "NULL";
-      break;
-    case "double":
-      $theValue = ($theValue != "") ? doubleval($theValue) : "NULL";
-      break;
-    case "date":
-      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-      break;
-    case "defined":
-      $theValue = ($theValue != "") ? $theDefinedValue : $theNotDefinedValue;
-      break;
-  }
-  return $theValue;
-}
-}
 $_SESSION['MM_Username'] = "";
 $_SESSION['MM_UserGroup'] = "";	
 $_SESSION['MM_Usuario'] = "";
 
+// Optional: Destroy the session completely for a more secure logout
+// session_unset(); // Unset all session variables
+// session_destroy(); // Destroy the session
+
 $updateGoTo = "index.php";
 header(sprintf("Location: %s", $updateGoTo));	
+exit; // Ensure script termination after redirect
 ?>

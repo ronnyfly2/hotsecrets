@@ -1,69 +1,73 @@
 <?php require_once('Connections/HotSecrets.php');
-if (!function_exists("GetSQLValueString")) {
-function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
-{
-  if (PHP_VERSION < 6) {
-    $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
-  }
+// The GetSQLValueString function is now expected to be included from funcionalidades/funciones-hot.php
 
-  $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
+// Ensure $HotSecrets is a valid mysqli object
+if (!($HotSecrets instanceof mysqli)) {
+    error_log("MySQLi connection object is not available in iniciar-sesion.php");
+    die("Error de conexión a la base de datos.");
+}
 
-  switch ($theType) {
-    case "text":
-      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-      break;    
-    case "long":
-    case "int":
-      $theValue = ($theValue != "") ? intval($theValue) : "NULL";
-      break;
-    case "double":
-      $theValue = ($theValue != "") ? doubleval($theValue) : "NULL";
-      break;
-    case "date":
-      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-      break;
-    case "defined":
-      $theValue = ($theValue != "") ? $theDefinedValue : $theNotDefinedValue;
-      break;
-  }
-  return $theValue;
-}
-}
-$loginFormAction = $_SERVER['PHP_SELF'];
+$loginFormAction = htmlspecialchars($_SERVER['PHP_SELF']);
 if (isset($_GET['accesscheck'])) {
-  $_SESSION['PrevUrl'] = $_GET['accesscheck'];
+  $_SESSION['PrevUrl'] = $_GET['accesscheck']; // Note: Consider sanitizing or validating accesscheck
 }
-if (isset($_POST['correo'])) {
-  $loginUsername=$_POST['correo'];
-  $password=md5($_POST['password']);
-  $MM_fldUserAuthorization = "";
-  $MM_redirectLoginSuccess = "index.php";
-  $MM_redirectLoginFailed = "iniciar-sesion.php";
-  $MM_redirecttoReferrer = true;
-  mysql_select_db($database_HotSecrets, $HotSecrets);
-  
-  $LoginRS__query=sprintf("SELECT id_usuario, correo, password FROM usuarios WHERE correo=%s AND password=%s AND estado= 1",
-    GetSQLValueString($loginUsername, "text"), GetSQLValueString($password, "text")); 
-   
-  $LoginRS = mysql_query($LoginRS__query, $HotSecrets) or die(mysql_error());
-  $row_LoginRS = mysql_fetch_assoc($LoginRS);
-  $loginFoundUser = mysql_num_rows($LoginRS);
-  if ($loginFoundUser) {
-     $loginStrGroup = "";
-    
-	if (PHP_VERSION >= 5.1) {session_regenerate_id(true);} else {session_regenerate_id();}
-    //declare two session variables and assign them
-    $_SESSION['MM_Username'] = $loginUsername;
-    $_SESSION['MM_UserGroup'] = $loginStrGroup;
-	$_SESSION['MM_Usuario'] = $row_LoginRS["id_usuario"];	    
 
-    if (isset($_SESSION['PrevUrl']) && true) {
+if (isset($_POST['correo'])) {
+  $loginUsername = $_POST['correo'];
+  $password = $_POST['password']; // Password will be hashed before comparison or use
+  $MM_redirectLoginSuccess = "index.php";
+  $MM_redirectLoginFailed = "iniciar-sesion.php?login_failed=1"; // Add a parameter for feedback
+  // $MM_redirecttoReferrer = true; // This variable is set but not used
+
+  // Validate email format
+  if (!filter_var($loginUsername, FILTER_VALIDATE_EMAIL)) {
+      error_log("Invalid email format on login attempt: " . $loginUsername);
+      header("Location: ". $MM_redirectLoginFailed );
+      exit;
+  }
+  
+  $hashed_password = md5($password); // Still md5 as per original, but recommend password_hash() and password_verify()
+
+  $LoginRS__query = "SELECT id_usuario, correo, password FROM usuarios WHERE correo=? AND password=? AND estado=1";
+  $stmt = $HotSecrets->prepare($LoginRS__query);
+
+  if ($stmt === false) {
+      error_log("Prepare failed (LoginRS) in iniciar-sesion.php: (" . $HotSecrets->errno . ") " . $HotSecrets->error);
+      die("Error al preparar la consulta de inicio de sesión.");
+  }
+
+  $stmt->bind_param("ss", $loginUsername, $hashed_password);
+  
+  if (!$stmt->execute()) {
+      error_log("Execute failed (LoginRS) in iniciar-sesion.php: (" . $stmt->errno . ") " . $stmt->error);
+      $stmt->close();
+      die("Error al ejecutar la consulta de inicio de sesión.");
+  }
+
+  $result = $stmt->get_result();
+  $loginFoundUser = $result->num_rows;
+  $row_LoginRS = $result->fetch_assoc(); // Fetch the first row
+
+  $stmt->close();
+  $result->free();
+
+  if ($loginFoundUser) {
+    $loginStrGroup = ""; // This variable seems unused or its purpose needs clarification.
+    
+    if (PHP_VERSION >= 5.1) {session_regenerate_id(true);} else {session_regenerate_id();}
+    
+    $_SESSION['MM_Username'] = $loginUsername;
+    $_SESSION['MM_UserGroup'] = $loginStrGroup; // Consider if this is still needed.
+    $_SESSION['MM_Usuario'] = $row_LoginRS["id_usuario"];	    
+
+    if (isset($_SESSION['PrevUrl']) && $_SESSION['PrevUrl']) { // Ensure PrevUrl is not empty
       $MM_redirectLoginSuccess = $_SESSION['PrevUrl'];	
     }
     header("Location: " . $MM_redirectLoginSuccess );
-  }
-  else {
+    exit;
+  } else {
     header("Location: ". $MM_redirectLoginFailed );
+    exit;
   }
 }
 ?>
